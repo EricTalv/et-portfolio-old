@@ -1,5 +1,5 @@
 <template>
-  <div class="container w-screen">
+  <div class="container " style="width: 100%">
     <div id="canvas" class="mt-16 flex flex-col items-center"></div>
 
    <div class="intro flex flex-col items-center">
