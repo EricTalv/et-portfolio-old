@@ -4,6 +4,11 @@
 
    <div class="flex flex-col items-center">
      <div class="intro-container">
+         <small class="intro-text text-gray-600">
+           <p>
+              Estonia, Tallinn
+           </p>
+         </small>
        <p class="intro-text">
          I am Eric Talviste.
        </p>
@@ -11,19 +16,19 @@
          I develop websites, music and create digital art.
        </p>
        <hr class="my-3">
-       <div class="flex justify-between">
+       <div class="nav flex justify-between">
          <a href="">
-           <p class="nav-item">
+           <p class="nav-item text-gray-600">
              portfolio
            </p>
          </a>
          <a href="">
-           <p class="nav-item">
+           <p class="nav-item text-gray-600">
              about
            </p>
          </a>
          <a href="">
-           <p class="nav-item">
+           <p class="nav-item text-gray-600">
              contact
            </p>
          </a>
@@ -88,8 +93,8 @@ export default {
       var render = function() {
         requestAnimationFrame(render);
 
-        cube.rotation.x += 0.0050;
-        cube.rotation.y += 0.0050;
+        cube.rotation.x += 0.0040;
+        cube.rotation.y += 0.0040;
 
         renderer.render(scene, camera);
       };
@@ -119,9 +124,14 @@ export default {
 }
 */
 
-  .mybutton {
-    &:hover {
-      background-color: red;
+  .nav {
+    a {
+      p {
+        transition: all .5s;
+        &:hover {
+          color: whitesmoke;
+        }
+      }
     }
   }
 
