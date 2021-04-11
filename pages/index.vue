@@ -18,17 +18,17 @@
        <hr class="my-3">
        <div class="nav flex justify-between">
          <a href="">
-           <p class="nav-item text-gray-600">
+           <p class="nav-item text-gray-800">
              portfolio
            </p>
          </a>
          <a href="">
-           <p class="nav-item text-gray-600">
+           <p class="nav-item text-gray-800">
              about
            </p>
          </a>
          <a href="">
-           <p class="nav-item text-gray-600">
+           <p class="nav-item text-gray-800">
              contact
            </p>
          </a>
