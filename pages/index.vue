@@ -1,15 +1,23 @@
 <template>
-  <div class="container " style="width: 100%">
+  <div class="container mx-auto" >
     <div id="canvas" class="mt-16 flex flex-col items-center"></div>
 
-   <div class="intro flex flex-col items-center">
-     <div class="paragraph-container">
+   <div class="flex flex-col items-center">
+     <div class="intro-container">
        <p class="intro-text">
-         I am Eric Talviste
+         I am Eric Talviste.
        </p>
        <p class="intro-text">
          I develop websites, music and create digital art.
        </p>
+       <hr class="my-3">
+       <div class="flex justify-between">
+         <a href="">portfolio</a>
+         <a href="">about</a>
+         <a href="">contact</a>
+       </div>
+
+
      </div>
    </div>
   </div>
