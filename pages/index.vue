@@ -12,9 +12,21 @@
        </p>
        <hr class="my-3">
        <div class="flex justify-between">
-         <a href="">portfolio</a>
-         <a href="">about</a>
-         <a href="">contact</a>
+         <a href="">
+           <p class="nav-item">
+             portfolio
+           </p>
+         </a>
+         <a href="">
+           <p class="nav-item">
+             about
+           </p>
+         </a>
+         <a href="">
+           <p class="nav-item">
+             contact
+           </p>
+         </a>
        </div>
 
 
@@ -33,10 +45,14 @@ export default {
   mounted() {
 
 
-    // Baffle Animation
-    let b = baffle('.intro-text');
 
-    b.reveal(1500);
+    // Baffle Animation
+    let introText = baffle('.intro-text');
+    introText.reveal(1000);
+
+    let navItem = baffle('.nav-item');
+    navItem.reveal(3500);
+
 
     // Sphere Animation
     let camera, scene, renderer;
