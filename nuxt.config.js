@@ -19,6 +19,10 @@ export default {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css2?family=VT323&display=swap'
       },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap'
+      },
     ],
     script: [
       {
