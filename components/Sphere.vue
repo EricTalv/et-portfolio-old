@@ -1,7 +1,7 @@
 <template >
 <!--  <div id="canvas" class="mt-16 flex flex-col items-center"></div>-->
 
-  <div class="canvasContainer mt-16 flex flex-col items-center" >
+  <div class="canvasContainer flex flex-col items-center" >
     <canvas id="mainCanvas"></canvas>
   </div>
 
@@ -118,7 +118,13 @@ export default {
 
 <style>
  #mainCanvas {
-   width: 70%;
-   height: 70%;
+   width: 80%;
+
+ }
+
+ @media (max-width: 540px) {
+    #mainCanvas {
+      width: 110%;
+    }
  }
 </style>

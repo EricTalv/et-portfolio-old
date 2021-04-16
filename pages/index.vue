@@ -1,10 +1,9 @@
 <template>
-  <div class="container mx-auto" >
-
+  <div class="content-container container mx-auto h-screen" >
+<!--    Welcome Section start -->
   <sphere></sphere>
-
    <div class="flex flex-col items-center">
-     <div class="intro-container">
+     <div class="intro-container p-7 text-xs sm:text-sm md:text-base">
          <small class="intro-text text-gray-600">
            <p>
               Estonia, Tallinn
@@ -34,10 +33,10 @@
            </p>
          </a>
        </div>
-
-
      </div>
    </div>
+    <!--    Welcome Section End -->
+
   </div>
 </template>
 
@@ -68,7 +67,6 @@ export default {
 @apply min-h-screen flex justify-center items-center text-center mx-auto;
 }
 */
-
   .nav {
     a {
       p {
