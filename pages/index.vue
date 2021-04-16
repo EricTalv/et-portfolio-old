@@ -15,7 +15,7 @@
             I am Eric Talviste.
           </p>
           <p class="intro-text">
-            I develop websites, music and create digital art. 
+            I develop websites, music and create digital art.
           </p>
           <hr class="my-3">
           <div class="intro-nav flex justify-between">
@@ -40,28 +40,6 @@
     </div>
     <!--    Welcome Section End -->
 
-    <!--    About Section Start -->
-<!--    <div class="about-section my-24 h-screen mx-auto w-3/5 text-xs sm:text-sm md:text-base">-->
-<!--      <div class="about-section-wrapper h-full flex flex-wrap content-center">-->
-
-<!--          <sphere style="width: 130%"></sphere>-->
-
-<!--        <div class="about-text">-->
-<!--          <div class="">-->
-<!--            <p>I am Eric Talviste.</p>-->
-<!--            <p>I develop websites, music and create digital art.</p>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <hr class="my-2 w-full">-->
-<!--        <div class="about-nav w-full flex justify-between">-->
-<!--          <a class="text-gray-800" href="">portfolio</a>-->
-<!--          <a class="text-gray-800 mx-5" href="">about</a>-->
-<!--          <a class="text-gray-800">contact</a>-->
-<!--        </div>-->
-
-<!--      </div>-->
-<!--    </div>-->
-    <!--    About Section End -->
 
     <!--    About Section Start -->
     <div class="about-section my-24 h-screen mx-auto w-3/5 text-xs sm:text-sm md:text-base">
@@ -94,17 +72,17 @@
     </div>
     <!--    About Section End -->
 
-  <!--    Portfolio Section Start -->
-    <div class="about-section my-24 h-screen mx-auto w-3/5 text-xs sm:text-sm md:text-base">
-      <div class="about-section-wrapper h-full flex flex-wrap content-center">
-        <div class="about-nav w-full flex">
+    <!--    Portfolio Section Start -->
+    <div class="portfolio-section my-24 h-screen mx-auto w-3/5 text-xs sm:text-sm md:text-base">
+      <div class="portfolio-section-wrapper h-full flex flex-wrap content-center">
+        <div class="portfolio-nav w-full flex">
           <a class="text-gray-800" href="">about</a>
           <a class="text-gray-800 mx-5" href="">contact</a>
           <p class="text-right w-full">Portfolio</p>
         </div>
         <hr class="my-2 w-full">
-        <div class="about-text">
-          <div class="about-paragraph-section my-4">
+        <div class="portfolio-text">
+          <div class="portfolio-paragraph-section my-4">
             <p class="text-lg">This is the portfolio section</p>
             <p>hello.</p>
           </div>
@@ -115,17 +93,17 @@
     </div>
     <!--    Portfolio Section End -->
 
-  <!--    Contact Section Start -->
-    <div class="about-section my-24 h-screen mx-auto w-3/5 text-xs sm:text-sm md:text-base">
-      <div class="about-section-wrapper h-full flex flex-wrap content-center">
-        <div class="about-nav w-full flex">
+    <!--    Contact Section Start -->
+    <div class="contact-section my-24 h-screen mx-auto w-3/5 text-xs sm:text-sm md:text-base">
+      <div class="contact-section-wrapper h-full flex flex-wrap content-center">
+        <div class="contact-nav w-full flex">
           <a class="text-gray-800" href="">about</a>
           <a class="text-gray-800 mx-5" href="">portfolio</a>
           <p class="text-right w-full">Contact</p>
         </div>
         <hr class="my-2 w-full">
-        <div class="about-text">
-          <div class="about-paragraph-section my-4">
+        <div class="contact-text">
+          <div class="contact-paragraph-section my-4">
             <p class="text-lg">This is the Contact section</p>
             <p>hello.</p>
           </div>
