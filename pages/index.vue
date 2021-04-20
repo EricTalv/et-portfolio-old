@@ -79,7 +79,7 @@
           <p class="text-right w-full">Portfolio</p>
         </div>
         <hr class="my-2 w-full">
-        <div class="portfolio-content p-5">
+        <div class="portfolio-content py-2 px-5">
           <ul>
             <li>
               <p class="title">project 1</p>
@@ -88,6 +88,36 @@
             <li>
               <p class="title">Consequuntur</p>
               <p class="portfolio-item-description text-xs">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, fugiat?
+              </p>
+            </li>
+            <li>
+              <p class="title">Adipisicing elit</p>
+              <p class="portfolio-item-description text-xs">Lorem ipsum dolor sit amet, consectetur
+              </p>
+            </li>
+            <li>
+              <p class="title">Adipisicing elit</p>
+              <p class="portfolio-item-description text-xs">Lorem ipsum dolor sit amet, consectetur
+              </p>
+            </li>
+            <li>
+              <p class="title">Adipisicing elit</p>
+              <p class="portfolio-item-description text-xs">Lorem ipsum dolor sit amet, consectetur
+              </p>
+            </li>
+            <li>
+              <p class="title">Adipisicing elit</p>
+              <p class="portfolio-item-description text-xs">Lorem ipsum dolor sit amet, consectetur
+              </p>
+            </li>
+            <li>
+              <p class="title">Adipisicing elit</p>
+              <p class="portfolio-item-description text-xs">Lorem ipsum dolor sit amet, consectetur
+              </p>
+            </li>
+            <li>
+              <p class="title">Adipisicing elit</p>
+              <p class="portfolio-item-description text-xs">Lorem ipsum dolor sit amet, consectetur
               </p>
             </li>
             <li>
@@ -154,7 +184,21 @@
   */
 
   .portfolio-content {
+
+    max-height: 260px;
+    overflow-y: scroll;
     width: 100%;
+    margin-top: 15px;
+
+    &::-webkit-scrollbar {
+      width: 20px;
+      border: 1px solid white;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border: 1px solid white;
+      background-color: #5A5A5A;
+    }
 
     ul {
       list-style: none;
