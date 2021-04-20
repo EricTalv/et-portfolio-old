@@ -65,9 +65,7 @@
               and out of line. </p>
             <p>I also play the guitar and write music.</p>
           </div>
-
         </div>
-
       </div>
     </div>
     <!--    About Section End -->
@@ -81,15 +79,24 @@
           <p class="text-right w-full">Portfolio</p>
         </div>
         <hr class="my-2 w-full">
-        <div class="portfolio-text">
-          <div class="portfolio-paragraph-section my-4">
-            <p class="text-lg">This is the portfolio section</p>
-            <p>hello.</p>
-
-          </div>
-
+        <div class="portfolio-content p-5">
+          <ul>
+            <li>
+              <p class="title">project 1</p>
+                <p class="portfolio-item-description text-xs">the project description</p>
+            </li>
+            <li>
+              <p class="title">Consequuntur</p>
+              <p class="portfolio-item-description text-xs">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, fugiat?
+              </p>
+            </li>
+            <li>
+              <p class="title">Adipisicing elit</p>
+              <p class="portfolio-item-description text-xs">Lorem ipsum dolor sit amet, consectetur
+              </p>
+            </li>
+          </ul>
         </div>
-
       </div>
     </div>
     <!--    Portfolio Section End -->
@@ -146,7 +153,42 @@
   }
   */
 
-  .content-container {
+  .portfolio-content {
+    width: 100%;
+
+    ul {
+      list-style: none;
+    }
+
+    li {
+
+      margin-bottom: 10px;
+
+      p:before {
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+        content: "○";
+        color: white;
+      }
+
+    }
+  }
+
+  .portfolio-item-description {
+    position: relative;
+    overflow: hidden;
+
+    &:after {
+      display: inline-block;
+      content: "";
+      height: 1px;
+      background: white;
+      position: absolute;
+      width: 100%;
+      bottom: 5px;
+      margin-left: 5px;
+    }
   }
 
   .about-paragraph-section {
@@ -155,7 +197,7 @@
     }
   }
 
-  .about-nav {
+  .about-nav, .portfolio-nav, .contact-nav {
     a {
       transition: color .5s;
 
