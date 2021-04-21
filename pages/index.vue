@@ -79,51 +79,13 @@
           <p class="text-right w-full">Portfolio</p>
         </div>
         <hr class="my-2 w-full">
-        <div class="portfolio-content py-2 px-5">
+        <div class="portfolio-content py-2 px-10">
           <ul>
             <li>
-              <p class="title">project 1</p>
+              <a href="#">
+                <p class="title">project 1</p>
                 <p class="portfolio-item-description text-xs">the project description</p>
-            </li>
-            <li>
-              <p class="title">Consequuntur</p>
-              <p class="portfolio-item-description text-xs">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, fugiat?
-              </p>
-            </li>
-            <li>
-              <p class="title">Adipisicing elit</p>
-              <p class="portfolio-item-description text-xs">Lorem ipsum dolor sit amet, consectetur
-              </p>
-            </li>
-            <li>
-              <p class="title">Adipisicing elit</p>
-              <p class="portfolio-item-description text-xs">Lorem ipsum dolor sit amet, consectetur
-              </p>
-            </li>
-            <li>
-              <p class="title">Adipisicing elit</p>
-              <p class="portfolio-item-description text-xs">Lorem ipsum dolor sit amet, consectetur
-              </p>
-            </li>
-            <li>
-              <p class="title">Adipisicing elit</p>
-              <p class="portfolio-item-description text-xs">Lorem ipsum dolor sit amet, consectetur
-              </p>
-            </li>
-            <li>
-              <p class="title">Adipisicing elit</p>
-              <p class="portfolio-item-description text-xs">Lorem ipsum dolor sit amet, consectetur
-              </p>
-            </li>
-            <li>
-              <p class="title">Adipisicing elit</p>
-              <p class="portfolio-item-description text-xs">Lorem ipsum dolor sit amet, consectetur
-              </p>
-            </li>
-            <li>
-              <p class="title">Adipisicing elit</p>
-              <p class="portfolio-item-description text-xs">Lorem ipsum dolor sit amet, consectetur
-              </p>
+              </a>
             </li>
           </ul>
         </div>
@@ -186,7 +148,7 @@
   .portfolio-content {
 
     max-height: 260px;
-    overflow-y: scroll;
+    overflow-y: auto;
     width: 100%;
     margin-top: 15px;
 
