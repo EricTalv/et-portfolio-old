@@ -87,6 +87,16 @@
                 <p class="portfolio-item-description text-xs">the project description</p>
               </a>
             </li>
+
+
+            <li v-for="portfolioItem of portfolio" :key="portfolioItem.slug" >
+              <nuxt-link :to="`/portfolio/${portfolioItem.slug}`">
+
+                <p class="title">{{ portfolioItem.slug }}</p>
+                <p class="portfolio-item-description text-xs">{{ portfolioItem.description }}</p>
+
+              </nuxt-link>
+            </li>
           </ul>
         </div>
       </div>
@@ -123,6 +133,11 @@
 
   export default {
 
+    data() {
+      return {
+      }
+    },
+
     mounted() {
 
       // Baffle Animation
@@ -132,6 +147,16 @@
       let navItem = baffle('.intro-nav-item');
       navItem.reveal(3500);
 
+    },
+
+    async asyncData({ $content, params }){
+      const portfolio = await $content('portfolio')
+        .only(['title', 'description', 'slug'])
+        .fetch()
+
+      return {
+        portfolio
+      }
     },
 
   }
