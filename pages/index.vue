@@ -19,7 +19,7 @@
           </p>
           <hr class="my-3">
           <div class="intro-nav flex justify-between">
-            <a  href="#about">
+            <a href="#about">
               <p class="intro-nav-item text-gray-800">
                 about
               </p>
@@ -72,32 +72,47 @@
 
     <!--    Portfolio Section Start -->
     <div id="portfolio" class="portfolio-section my-24 h-screen mx-auto w-3/5 text-xs sm:text-sm md:text-base">
-      <div class="portfolio-section-wrapper h-full flex flex-wrap content-center">
-        <div class="portfolio-nav w-full flex">
-          <a class="text-gray-800" href="#about">about</a>
-          <a class="text-gray-800 mx-5" href="#contact">contact</a>
-          <p class="text-right w-full">Portfolio</p>
+      <div class="portfolio-section-wrapper h-full w-full flex flex-row flex-nowrap overflow-x-auto" >
+        <div id="portfolioList" class="portfolio-sec-wrapper min-w-full flex flex-wrap content-center">
+
+          <div class="portfolio-nav w-full flex">
+            <a class="text-gray-800" href="#about">about</a>
+            <a class="text-gray-800 mx-5" href="#contact">contact</a>
+            <p class="text-right w-full">Portfolio</p>
+          </div>
+          <hr class="my-2 w-full">
+          <div class="portfolio-content py-2 px-10">
+            <ul>
+              <li>
+                <a href="#project">
+                  <p class="title">project 1</p>
+                  <p class="portfolio-item-description text-xs">the project description</p>
+                </a>
+              </li>
+
+              <li v-for="portfolioItem of portfolio" :key="portfolioItem.slug">
+                <nuxt-link :to="`/portfolio/${portfolioItem.slug}`">
+
+                  <p class="title">{{ portfolioItem.slug }}</p>
+                  <p class="portfolio-item-description text-xs">{{ portfolioItem.description }}</p>
+
+                </nuxt-link>
+              </li>
+            </ul>
+          </div>
         </div>
-        <hr class="my-2 w-full">
-        <div class="portfolio-content py-2 px-10">
-          <ul>
-            <li>
-              <a href="#">
-                <p class="title">project 1</p>
-                <p class="portfolio-item-description text-xs">the project description</p>
-              </a>
-            </li>
 
-
-            <li v-for="portfolioItem of portfolio" :key="portfolioItem.slug" >
-              <nuxt-link :to="`/portfolio/${portfolioItem.slug}`">
-
-                <p class="title">{{ portfolioItem.slug }}</p>
-                <p class="portfolio-item-description text-xs">{{ portfolioItem.description }}</p>
-
-              </nuxt-link>
-            </li>
-          </ul>
+        <div id="project" class="portfolio-sec-wrapper min-w-full flex flex-wrap content-center">
+          <div class="portfolio-nav w-full flex">
+            <a class="text-gray-800" href="#portfolioList"><-</a>
+            <a class="text-gray-800 mx-5" href="#about">about</a>
+            <a class="text-gray-800 " href="#contact">contact</a>
+            <p class="text-right w-full">Project Item</p>
+          </div>
+          <hr class="my-2 w-full">
+          <div class="portfolio-content py-2 px-10">
+            content
+          </div>
         </div>
       </div>
     </div>
@@ -129,125 +144,128 @@
 
 <script>
 
-  import baffle from 'baffle';
+import baffle from 'baffle';
 
-  export default {
+export default {
 
-    data() {
-      return {
-      }
-    },
+  data() {
+    return {}
+  },
 
-    mounted() {
+  mounted() {
 
-      // Baffle Animation
-      let introText = baffle('.intro-text');
-      introText.reveal(1000);
+    // Baffle Animation
+    let introText = baffle('.intro-text');
+    introText.reveal(1000);
 
-      let navItem = baffle('.intro-nav-item');
-      navItem.reveal(3500);
+    let navItem = baffle('.intro-nav-item');
+    navItem.reveal(3500);
 
-    },
+  },
 
-    async asyncData({ $content, params }){
-      const portfolio = await $content('portfolio')
-        .only(['title', 'description', 'slug'])
-        .fetch()
+  async asyncData({$content, params}) {
+    const portfolio = await $content('portfolio')
+      .only(['title', 'description', 'slug'])
+      .fetch()
 
-      return {
-        portfolio
-      }
-    },
+    return {
+      portfolio
+    }
+  },
 
-  }
+}
 </script>
 
 
 <style lang="scss">
-  /* Sample `apply` at-rules with Tailwind CSS
-  .container {
-  @apply min-h-screen flex justify-center items-center text-center mx-auto;
-  }
-  */
+/* Sample `apply` at-rules with Tailwind CSS
+.container {
+@apply min-h-screen flex justify-center items-center text-center mx-auto;
+}
+*/
 
-  .portfolio-content {
+ .portfolio-section-wrapper, {
+  scroll-behavior: smooth;
+}
 
-    max-height: 260px;
-    overflow-y: auto;
-    width: 100%;
-    margin-top: 15px;
+.portfolio-content {
 
-    &::-webkit-scrollbar {
-      width: 20px;
-      border: 1px solid white;
-    }
+  max-height: 260px;
+  overflow-y: auto;
+  width: 100%;
+  margin-top: 15px;
 
-    &::-webkit-scrollbar-thumb {
-      border: 1px solid white;
-      background-color: #5A5A5A;
-    }
-
-    ul {
-      list-style: none;
-    }
-
-    li {
-
-      margin-bottom: 10px;
-
-      p:before {
-        display: inline-block;
-        width: 1em;
-        margin-left: -1em;
-        content: "○";
-        color: white;
-      }
-
-    }
+  &::-webkit-scrollbar {
+    width: 20px;
+    border: 1px solid white;
   }
 
-  .portfolio-item-description {
-    position: relative;
-    overflow: hidden;
+  &::-webkit-scrollbar-thumb {
+    border: 1px solid white;
+    background-color: #5A5A5A;
+  }
 
-    &:after {
+  ul {
+    list-style: none;
+  }
+
+  li {
+
+    margin-bottom: 10px;
+
+    p:before {
       display: inline-block;
-      content: "";
-      height: 1px;
-      background: white;
-      position: absolute;
-      width: 100%;
-      bottom: 5px;
-      margin-left: 5px;
+      width: 1em;
+      margin-left: -1em;
+      content: "○";
+      color: white;
+    }
+
+  }
+}
+
+.portfolio-item-description {
+  position: relative;
+  overflow: hidden;
+
+  &:after {
+    display: inline-block;
+    content: "";
+    height: 1px;
+    background: white;
+    position: absolute;
+    width: 100%;
+    bottom: 5px;
+    margin-left: 5px;
+  }
+}
+
+.about-paragraph-section {
+  p {
+    margin: 10px 0 10px 0;
+  }
+}
+
+.about-nav, .portfolio-nav, .contact-nav {
+  a {
+    transition: color .5s;
+
+    &:hover {
+      color: white;
     }
   }
+}
 
-  .about-paragraph-section {
+.intro-nav {
+  a {
     p {
-      margin: 10px 0 10px 0;
-    }
-  }
-
-  .about-nav, .portfolio-nav, .contact-nav {
-    a {
-      transition: color .5s;
+      transition: all .5s;
 
       &:hover {
         color: white;
       }
     }
   }
-
-  .intro-nav {
-    a {
-      p {
-        transition: all .5s;
-
-        &:hover {
-          color: white;
-        }
-      }
-    }
-  }
+}
 
 </style>
