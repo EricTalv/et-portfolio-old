@@ -91,7 +91,7 @@
               </li>
 
               <li v-for="portfolioItem of portfolio" :key="portfolioItem.slug">
-                <nuxt-link :to="`/portfolio/${portfolioItem.slug}`">
+                <nuxt-link @click="setCurrentPortfolioItem(portfolioItem)" :to="`${portfolioItem.slug}`">
 
                   <p class="title">{{ portfolioItem.slug }}</p>
                   <p class="portfolio-item-description text-xs">{{ portfolioItem.description }}</p>
@@ -102,7 +102,7 @@
           </div>
         </div>
 
-        <div id="project" class="portfolio-sec-wrapper min-w-full flex flex-wrap content-center">
+        <div v-if="currentPortfolioItem" :id="currentPortfolioItem.slug" class="portfolio-sec-wrapper min-w-full flex flex-wrap content-center">
           <div class="portfolio-nav w-full flex">
             <a class="text-gray-800" href="#portfolioList"><-</a>
             <a class="text-gray-800 mx-5" href="#about">about</a>
@@ -149,7 +149,30 @@ import baffle from 'baffle';
 export default {
 
   data() {
-    return {}
+    return {
+      currentPortfolioItem: []
+    }
+  },
+
+  // Fetch all data from Portfolio
+  async asyncData({$content, params}) {
+    const portfolio = await $content('portfolio')
+      //.only(['title', 'description', 'slug'])
+      .fetch()
+
+    return {
+      portfolio
+    }
+  },
+
+  methods: {
+
+    setCurrentPortfolioItem(portfolioItem){
+
+        this.currentPortfolioItem = portfolioItem;
+
+    }
+
   },
 
   mounted() {
@@ -163,15 +186,7 @@ export default {
 
   },
 
-  async asyncData({$content, params}) {
-    const portfolio = await $content('portfolio')
-      .only(['title', 'description', 'slug'])
-      .fetch()
 
-    return {
-      portfolio
-    }
-  },
 
 }
 </script>
