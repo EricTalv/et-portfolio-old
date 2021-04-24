@@ -72,8 +72,8 @@
 
     <!--    Portfolio Section Start -->
     <div id="portfolio" class="portfolio-section my-24 h-screen mx-auto w-3/5 text-xs sm:text-sm md:text-base">
-      <div class="portfolio-section-wrapper h-full w-full flex flex-row flex-nowrap overflow-x-hidden" >
-        <div id="portfolioList" class="portfolio-sec-wrapper min-w-full flex flex-wrap content-center">
+      <div class="portfolio-section-wrapper h-full w-full flex flex-row flex-nowrap overflow-x-hidden">
+        <div id="portfolio-list" class="portfolio-sec-wrapper min-w-full flex flex-wrap content-center">
 
           <nuxt-content :document="portfolio"></nuxt-content>
 
@@ -86,13 +86,6 @@
           <hr class="my-2 w-full">
           <div class="portfolio-content py-2 px-10">
             <ul>
-              <li>
-                <a href="#project">
-                  <p class="title">project 1</p>
-                  <p class="portfolio-item-description text-xs">the project description</p>
-                </a>
-              </li>
-
               <li v-for="portfolioItem of portfolio" :key="portfolioItem.slug">
                 <a @click="setCurrentPortfolioItem(portfolioItem)" :href="`#${portfolioItem.slug}`">
 
@@ -101,22 +94,26 @@
 
                 </a>
               </li>
-
-
             </ul>
           </div>
         </div>
 
-        <div v-if="currentPortfolioItem" :id="currentPortfolioItem.slug" class="portfolio-sec-wrapper min-w-full flex flex-wrap content-center">
+        <div v-if="currentPortfolioItem" :id="currentPortfolioItem.slug"
+             class="portfolio-sec-wrapper min-w-full flex flex-wrap content-center ">
           <div class="portfolio-nav w-full flex">
-            <a class="text-gray-800" href="#portfolioList"><-</a>
+            <a class="text-gray-800" href="#portfolio-list"><-</a>
             <a class="text-gray-800 mx-5" href="#about">about</a>
             <a class="text-gray-800 " href="#contact">contact</a>
             <p class="text-right w-full">{{ currentPortfolioItem.title }}</p>
           </div>
           <hr class="my-2 w-full">
-          <div class="portfolio-content py-2 px-10">
-            {{ currentPortfolioItem.body }}
+          <div class="portfolio-content  block sm:flex py-2 px-10">
+            <div class="w-48 mx-auto sm:mx-0">
+              <img class="w-48 h-48" src="#" alt="">
+              <a href="#" class="mt-2 float-right">view</a>
+            </div>
+            <div class="portfolio-item-body mt-10 sm:mt-0 sm:ml-5 text-xs sm:text-sm" v-html="currentPortfolioItem.body">
+            </div>
           </div>
         </div>
       </div>
@@ -170,16 +167,22 @@ export default {
           description: "Second projects dsecription is slightly longer than usual",
           body: "Body should contain more variety of text so I am not sure what to do here"
         },
+        {
+          slug: "consectetur-adipisicing-elit",
+          title: "Consectetur adipisicing elit",
+          description: "Lorem ipsum",
+          body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam blanditiis commodi cupiditate debitis, <br><br> distinctio, dolorem iste labore magni maiores officiis praesentium quam quisquam quod reiciendis rem sed sequi similique ullam veniam voluptates? A ad deserunt doloribus est eum incidunt laboriosam maxime praesentium provident recusandae repellendus, saepe vero. A aliquam aliquid architecto blanditiis consectetur corporis culpa cumque delectus dicta dolorem et eum exercitationem expedita, id illum incidunt iure iusto libero maxime molestias nihil officia optio pariatur perferendis perspiciatis provident quae quis quod ratione rem repellat sed similique tempore temporibus tenetur ut voluptas. Ab accusamus ad adipisci aliquid aperiam aut beatae consequuntur cum cupiditate debitis delectus doloribus ducimus in ipsa magni, maiores molestiae neque nostrum obcaecati placeat, porro quibusdam reiciendis sit! Animi aperiam aspernatur cumque, deserunt distinctio doloribus eius facere hic incidunt ipsam itaque nihil perferendis quae quam quis reprehenderit similique soluta suscipit ut veniam? In, non perspiciatis placeat quasi quod voluptatibus!\n"
+        },
       ]
     }
   },
 
   methods: {
 
-    setCurrentPortfolioItem(portfolioItem){
+    setCurrentPortfolioItem(portfolioItem) {
 
-        this.currentPortfolioItem = portfolioItem;
-        console.log(this.currentPortfolioItem);
+      this.currentPortfolioItem = portfolioItem;
+      console.log(this.currentPortfolioItem);
     }
 
   },
@@ -196,7 +199,6 @@ export default {
   },
 
 
-
 }
 </script>
 
@@ -208,7 +210,7 @@ export default {
 }
 */
 
- .portfolio-section-wrapper, {
+.portfolio-section-wrapper, {
   scroll-behavior: smooth;
 }
 
