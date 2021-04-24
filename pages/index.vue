@@ -112,7 +112,8 @@
               <img class="w-48 h-48" src="#" alt="">
               <a href="#" class="mt-2 float-right">view</a>
             </div>
-            <div class="portfolio-item-body mt-10 sm:mt-0 sm:ml-5 text-xs sm:text-sm" v-html="currentPortfolioItem.body">
+            <div class="portfolio-item-body mt-10 sm:mt-0 sm:ml-5 text-xs sm:text-sm"
+                 v-html="currentPortfolioItem.body">
             </div>
           </div>
         </div>
@@ -129,10 +130,26 @@
           <p class="text-right w-full">Contact</p>
         </div>
         <hr class="my-2 w-full">
-        <div class="contact-text">
-          <div class="contact-paragraph-section my-4">
-            <p class="text-lg">This is the Contact section</p>
-            <p>hello.</p>
+        <div class="contact-text pt-10 flex mx-auto">
+          <div class="py-5 mr-14">
+            <div class="text-base ">Email</div>
+            <div class="text-sm">eric.talviste@gmail.com</div>
+
+            <div class="my-3">
+              <div class="text-base">Phone</div>
+              <div class="text-sm">upon request</div>
+            </div>
+
+            <div class="text-base ">Location</div>
+            <div class="text-sm ">Estonia, Tallinn</div>
+          </div>
+
+          <div class="border border-white w-52 h-48 ml-14 flex">
+            <div class="m-auto">
+              <div>GitHub</div>
+              <br>
+              <div>LinkedIn</div>
+            </div>
           </div>
 
         </div>
