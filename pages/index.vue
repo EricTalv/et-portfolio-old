@@ -116,7 +116,8 @@
               <div class="w-48 mx-auto sm:mx-0">
                 <silent-box class="w-48 h-48 border border-white" :gallery="currentPortfolioItem.images"></silent-box>
 
-                <a href="#" class="mt-2 float-right">view</a>
+                <a v-if="currentPortfolioItem.code" :href="currentPortfolioItem.code " target="_blank" class="mt-2 float-right text-sm">code</a>
+                <a v-if="currentPortfolioItem.link" :href="currentPortfolioItem.link" target="_blank" class="mt-2 mr-2 float-right text-sm">view</a>
               </div>
               <div class="portfolio-item-body mt-10 sm:mt-0 sm:ml-5 text-xs sm:text-sm"
                    v-html="currentPortfolioItem.body">
@@ -153,9 +154,10 @@
 
           <div class="border border-white w-52 h-48 ml-14 flex">
             <div class="m-auto">
-              <div>GitHub</div>
+              <a href="https://github.com/EricTalv" target="_blank">GitHub</a>
               <br>
-              <div>LinkedIn</div>
+              <br>
+              <a href="https://www.linkedin.com/feed/" target="_blank">LinkedIn</a>
             </div>
           </div>
 
@@ -186,10 +188,11 @@ export default {
           slug: "my-portfolio",
           title: "My Portfolio",
           description: "how this portfolio was made",
-          link: "",
+          code: "https://github.com/EricTalv/et-portfolio",
+          live: null,
 
 
-          body: "<h3>Welcome To My Portfolio</h3> <p>I have gone over various different styles and schemes of what my portfolio should look like</p> <p>Previously I've used templates, attempted to write the whole site in pure html,js,css</p> <p>Eventually my perfectionism lead me to this very site you are looking at</p> <p>..for now..</p> <p>As design styles change and knowledge expands, so will my portfolios styles</p> <hr> <h3>What I used</h3> <p>On this site I have used the following technologies:</p> <ul> <li>nuxt.js</li> <li>vue.js</li> <li>three.js</li> <li>tailwind css</li> <li>scss</li> <li>nuxt/content</li> <li>baffle.js</li> <li>silentbox.vue</li> </ul>",
+          body: "<h3>Welcome To My Portfolio</h3> <p>I have gone over various different styles and schemes of what my portfolio should look like</p> <p>Previously I've used templates, attempted to write the whole site in pure html,js,css</p> <p>Eventually my perfectionism lead me to this very site you are looking at which I have curated over time, everything you see, touch and feel, has all been written by me</p> <p>As design styles change and knowledge expands, so will my portfolio styles</p>",
 
           images: [
             {
@@ -256,7 +259,7 @@ export default {
 #silentbox-gallery {
   .silentbox-item {
     &:nth-child(n+2) {
-      display: none ;
+      display: none;
 
     }
   }
