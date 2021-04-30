@@ -89,8 +89,8 @@
 
 
           <div class="portfolio-content py-2 px-10">
-            <ul>
-              <li v-for="portfolioItem of portfolio" :key="portfolioItem.slug">
+            <ul class="portfolio-unordered-list">
+              <li class="portfolio-item" v-for="portfolioItem of portfolio" :key="portfolioItem.slug">
                 <a @click="setCurrentPortfolioItem(portfolioItem)" :href="`#${portfolioItem.slug}`">
 
                   <p class="portfolio-item-title">{{ portfolioItem.title }}</p>
@@ -104,7 +104,7 @@
 
         <div v-if="currentPortfolioItem" :id="currentPortfolioItem.slug"
              class="portfolio-sec-wrapper min-w-full flex flex-wrap content-center ">
-          <div v-if="currentPortfolioItem">
+          <div v-if="currentPortfolioItem" class="min-w-full">
             <div class="portfolio-nav w-full flex">
               <a class="text-gray-800" href="#portfolio-list"><-</a>
               <a class="text-gray-800 mx-5" href="#about">about</a>
@@ -114,8 +114,7 @@
             <hr class="my-2 w-full">
             <div class="portfolio-content  block sm:flex py-2 px-10">
               <div class="w-48 mx-auto sm:mx-0">
-                <img class="w-48 h-48" src="#" alt="">
-                <silent-box :gallery="images"></silent-box>
+                <silent-box class="w-48 h-48 border border-white" :gallery="currentPortfolioItem.images"></silent-box>
 
                 <a href="#" class="mt-2 float-right">view</a>
               </div>
@@ -184,16 +183,19 @@ export default {
 
       portfolio: [
         {
-          slug: "my-project",
-          title: "My Project",
-          description: "This is my project small description",
-          body: "This is the body of my project",
+          slug: "my-portfolio",
+          title: "My Portfolio",
+          description: "how this portfolio was made",
+          link: "",
+
+
+          body: "<h3>Welcome To My Portfolio</h3> <p>I have gone over various different styles and schemes of what my portfolio should look like</p> <p>Previously I've used templates, attempted to write the whole site in pure html,js,css</p> <p>Eventually my perfectionism lead me to this very site you are looking at</p> <p>..for now..</p> <p>As design styles change and knowledge expands, so will my portfolios styles</p> <hr> <h3>What I used</h3> <p>On this site I have used the following technologies:</p> <ul> <li>nuxt.js</li> <li>vue.js</li> <li>three.js</li> <li>tailwind css</li> <li>scss</li> <li>nuxt/content</li> <li>baffle.js</li> <li>silentbox.vue</li> </ul>",
+
           images: [
             {
-              src: '~/assets/images/image001.jpg',
-              description: 'The Earth From Space',
+              src: '/_nuxt/assets/images/image001.jpg',
+              description: 'Fire in hands',
             },
-
           ]
         },
       ]
@@ -233,6 +235,33 @@ export default {
 }
 */
 
+.portfolio-item-body {
+  p {
+    margin: 10px 0;
+  }
+
+  hr {
+    margin: 15px 0;
+  }
+
+  h3 {
+    font-weight: bolder;
+  }
+
+  ul {
+    list-style: circle;
+  }
+}
+
+#silentbox-gallery {
+  .silentbox-item {
+    &:nth-child(n+2) {
+      display: none ;
+
+    }
+  }
+}
+
 .portfolio-section-wrapper, {
   scroll-behavior: smooth;
 }
@@ -254,11 +283,11 @@ export default {
     background-color: #5A5A5A;
   }
 
-  ul {
+  .portfolio-unordered-list {
     list-style: none;
   }
 
-  li {
+  .portfolio-item {
 
     margin-bottom: 25px;
 
