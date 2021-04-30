@@ -158,11 +158,12 @@
               <br>
               <br>
               <a href="https://www.linkedin.com/feed/" target="_blank">LinkedIn</a>
+              <br>
+              <br>
+              <a href="https://www.instagram.com/et_experience/" target="_blank">Design</a>
             </div>
           </div>
-
         </div>
-
       </div>
     </div>
     <!--    Contact Section End -->
@@ -197,7 +198,7 @@ export default {
           images: [
             {
               src: '/_nuxt/assets/images/image001.jpg',
-              description: 'Fire in hands',
+              description: 'The Power In My Hands',
             },
           ]
         },
