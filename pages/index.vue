@@ -6,8 +6,6 @@
       <sphere></sphere>
 
 
-
-
       <div class="flex flex-col items-center">
         <div class="p-7 text-xs sm:text-sm md:text-base">
           <small class="intro-text text-gray-600">
@@ -106,22 +104,24 @@
 
         <div v-if="currentPortfolioItem" :id="currentPortfolioItem.slug"
              class="portfolio-sec-wrapper min-w-full flex flex-wrap content-center ">
-          <div class="portfolio-nav w-full flex">
-            <a class="text-gray-800" href="#portfolio-list"><-</a>
-            <a class="text-gray-800 mx-5" href="#about">about</a>
-            <a class="text-gray-800 " href="#contact">contact</a>
-            <p class="text-right w-full">{{ currentPortfolioItem.title }}</p>
-          </div>
-          <hr class="my-2 w-full">
-          <div class="portfolio-content  block sm:flex py-2 px-10">
-            <div class="w-48 mx-auto sm:mx-0">
-              <img class="w-48 h-48" src="#" alt="">
-              <silent-box :gallery="images"></silent-box>
-
-              <a href="#" class="mt-2 float-right">view</a>
+          <div v-if="currentPortfolioItem">
+            <div class="portfolio-nav w-full flex">
+              <a class="text-gray-800" href="#portfolio-list"><-</a>
+              <a class="text-gray-800 mx-5" href="#about">about</a>
+              <a class="text-gray-800 " href="#contact">contact</a>
+              <p class="text-right w-full">{{ currentPortfolioItem.title }}</p>
             </div>
-            <div class="portfolio-item-body mt-10 sm:mt-0 sm:ml-5 text-xs sm:text-sm"
-                 v-html="currentPortfolioItem.body">
+            <hr class="my-2 w-full">
+            <div class="portfolio-content  block sm:flex py-2 px-10">
+              <div class="w-48 mx-auto sm:mx-0">
+                <img class="w-48 h-48" src="#" alt="">
+                <silent-box :gallery="images"></silent-box>
+
+                <a href="#" class="mt-2 float-right">view</a>
+              </div>
+              <div class="portfolio-item-body mt-10 sm:mt-0 sm:ml-5 text-xs sm:text-sm"
+                   v-html="currentPortfolioItem.body">
+              </div>
             </div>
           </div>
         </div>
@@ -179,19 +179,8 @@ export default {
   data() {
     return {
 
-      images: [
-        {
-          src: 'images/image001.jpg',
-          description: 'Sunken dreams II. by Arbebuk',
-        },
-        {
-          src: 'images/image002.jpg',
-          description: 'Tunnel View Sunrise by Porbital',
-        }
-      ],
 
-
-      currentPortfolioItem: {},
+      currentPortfolioItem: null,
 
       portfolio: [
         {
@@ -201,13 +190,10 @@ export default {
           body: "This is the body of my project",
           images: [
             {
-              src: '~/assets/images/image001.jpeg',
+              src: '~/assets/images/image001.jpg',
               description: 'The Earth From Space',
             },
-            {
-              src: '~/assets/images/image002.jpeg',
-              description: 'Ready, Set, Launch, Lift off!',
-            }
+
           ]
         },
       ]
@@ -219,12 +205,12 @@ export default {
     setCurrentPortfolioItem(portfolioItem) {
 
       this.currentPortfolioItem = portfolioItem;
-      console.log(this.currentPortfolioItem);
     }
 
   },
 
   mounted() {
+
 
     // Baffle Animation
     let introText = baffle('.intro-text');
