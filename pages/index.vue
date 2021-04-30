@@ -4,6 +4,10 @@
     <div class="intro-container grid grid-cols-1 h-full place-content-center ">
 
       <sphere></sphere>
+
+
+
+
       <div class="flex flex-col items-center">
         <div class="p-7 text-xs sm:text-sm md:text-base">
           <small class="intro-text text-gray-600">
@@ -84,12 +88,14 @@
             <p class="text-right w-full">Portfolio</p>
           </div>
           <hr class="my-2 w-full">
+
+
           <div class="portfolio-content py-2 px-10">
             <ul>
               <li v-for="portfolioItem of portfolio" :key="portfolioItem.slug">
                 <a @click="setCurrentPortfolioItem(portfolioItem)" :href="`#${portfolioItem.slug}`">
 
-                  <p class="title">{{ portfolioItem.title }}</p>
+                  <p class="portfolio-item-title">{{ portfolioItem.title }}</p>
                   <p class="portfolio-item-description text-xs">{{ portfolioItem.description }}</p>
 
                 </a>
@@ -110,6 +116,8 @@
           <div class="portfolio-content  block sm:flex py-2 px-10">
             <div class="w-48 mx-auto sm:mx-0">
               <img class="w-48 h-48" src="#" alt="">
+              <silent-box :gallery="images"></silent-box>
+
               <a href="#" class="mt-2 float-right">view</a>
             </div>
             <div class="portfolio-item-body mt-10 sm:mt-0 sm:ml-5 text-xs sm:text-sm"
@@ -165,10 +173,24 @@
 
 import baffle from 'baffle';
 
+
 export default {
 
   data() {
     return {
+
+      images: [
+        {
+          src: 'images/image001.jpg',
+          description: 'Sunken dreams II. by Arbebuk',
+        },
+        {
+          src: 'images/image002.jpg',
+          description: 'Tunnel View Sunrise by Porbital',
+        }
+      ],
+
+
       currentPortfolioItem: {},
 
       portfolio: [
@@ -176,19 +198,17 @@ export default {
           slug: "my-project",
           title: "My Project",
           description: "This is my project small description",
-          body: "This is the body of my project"
-        },
-        {
-          slug: "second-project",
-          title: "Second Project",
-          description: "Second projects dsecription is slightly longer than usual",
-          body: "Body should contain more variety of text so I am not sure what to do here"
-        },
-        {
-          slug: "consectetur-adipisicing-elit",
-          title: "Consectetur adipisicing elit",
-          description: "Lorem ipsum",
-          body: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam blanditiis commodi cupiditate debitis, <br><br> distinctio, dolorem iste labore magni maiores officiis praesentium quam quisquam quod reiciendis rem sed sequi similique ullam veniam voluptates? A ad deserunt doloribus est eum incidunt laboriosam maxime praesentium provident recusandae repellendus, saepe vero. A aliquam aliquid architecto blanditiis consectetur corporis culpa cumque delectus dicta dolorem et eum exercitationem expedita, id illum incidunt iure iusto libero maxime molestias nihil officia optio pariatur perferendis perspiciatis provident quae quis quod ratione rem repellat sed similique tempore temporibus tenetur ut voluptas. Ab accusamus ad adipisci aliquid aperiam aut beatae consequuntur cum cupiditate debitis delectus doloribus ducimus in ipsa magni, maiores molestiae neque nostrum obcaecati placeat, porro quibusdam reiciendis sit! Animi aperiam aspernatur cumque, deserunt distinctio doloribus eius facere hic incidunt ipsam itaque nihil perferendis quae quam quis reprehenderit similique soluta suscipit ut veniam? In, non perspiciatis placeat quasi quod voluptatibus!\n"
+          body: "This is the body of my project",
+          images: [
+            {
+              src: '~/assets/images/image001.jpeg',
+              description: 'The Earth From Space',
+            },
+            {
+              src: '~/assets/images/image002.jpeg',
+              description: 'Ready, Set, Launch, Lift off!',
+            }
+          ]
         },
       ]
     }
@@ -254,7 +274,13 @@ export default {
 
   li {
 
-    margin-bottom: 10px;
+    margin-bottom: 25px;
+
+    transition: all .5s;
+
+    &:hover {
+      margin-left: 10px;
+    }
 
     p:before {
       display: inline-block;
@@ -262,10 +288,19 @@ export default {
       margin-left: -1em;
       content: "○";
       color: white;
+
     }
 
+    p {
+      &:hover {
+        &:before {
+          content: "⦿";
+        }
+      }
+    }
   }
 }
+
 
 .portfolio-item-description {
   position: relative;
@@ -280,7 +315,9 @@ export default {
     width: 100%;
     bottom: 5px;
     margin-left: 5px;
+
   }
+
 }
 
 .about-paragraph-section {
