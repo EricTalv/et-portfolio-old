@@ -44,7 +44,7 @@
 
 
     <!--    About Section Start -->
-    <div id="about" class="about-section my-24 h-screen mx-auto w-3/5 text-xs sm:text-sm md:text-base">
+    <div id="about" class="about-section my-24 h-screen mx-auto w-3/4 text-xs sm:text-sm md:text-base">
       <div class="about-section-wrapper h-full flex flex-wrap content-center">
         <div class="about-nav w-full flex">
           <a class="text-gray-800" href="#portfolio">portfolio</a>
@@ -77,9 +77,6 @@
       <div class="portfolio-section-wrapper h-full w-full flex flex-row flex-nowrap overflow-x-hidden">
         <div id="portfolio-list" class="portfolio-sec-wrapper min-w-full flex flex-wrap content-center">
 
-          <nuxt-content :document="portfolio"></nuxt-content>
-
-
           <div class="portfolio-nav w-full flex">
             <a class="text-gray-800" href="#about">about</a>
             <a class="text-gray-800 mx-5" href="#contact">contact</a>
@@ -88,7 +85,7 @@
           <hr class="my-2 w-full">
 
 
-          <div class="portfolio-content py-2 px-10">
+          <div class="portfolio-content py-2 px-3 sm:px-10">
             <ul class="portfolio-unordered-list">
               <li class="portfolio-item" v-for="portfolioItem of portfolio" :key="portfolioItem.slug">
                 <a @click="setCurrentPortfolioItem(portfolioItem)" :href="`#${portfolioItem.slug}`">
@@ -114,7 +111,7 @@
             <hr class="my-2 w-full">
             <div class="portfolio-content  block sm:flex py-2 px-10">
               <div class="w-48 mx-auto sm:mx-0">
-                <silent-box class="w-48 h-48 border border-white" :gallery="currentPortfolioItem.images"></silent-box>
+                <silent-box class="w-40 h-40 border border-white" :gallery="currentPortfolioItem.images"></silent-box>
 
                 <a v-if="currentPortfolioItem.code" :href="currentPortfolioItem.code " target="_blank" class="mt-2 float-right text-sm">code</a>
                 <a v-if="currentPortfolioItem.link" :href="currentPortfolioItem.link" target="_blank" class="mt-2 mr-2 float-right text-sm">view</a>
