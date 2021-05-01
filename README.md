@@ -1,5 +1,18 @@
 # et-portfolio
 
+My personal portfolio 
+
+## Technologies
+
+```
+nuxt.js
+vue.js
+three.js
+baffle.js
+vue-silentbox
+tailwind.css
+```
+
 ## Build Setup
 
 ```bash
