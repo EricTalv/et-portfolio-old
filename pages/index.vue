@@ -109,15 +109,22 @@
               <p class="text-right w-full">{{ currentPortfolioItem.title }}</p>
             </div>
             <hr class="my-2 w-full">
-            <div class="portfolio-content  block sm:flex py-2 px-10">
+            <div class="portfolio-content w-full block sm:flex py-2 px-10">
               <div class="w-48 mx-auto sm:mx-0">
-                <silent-box class="w-40 h-40 border border-white" :gallery="currentPortfolioItem.images"></silent-box>
+                <silent-box class="mb-3 w-40 h-40 border border-white" :gallery="currentPortfolioItem.images"></silent-box>
 
-                <a v-if="currentPortfolioItem.code" :href="currentPortfolioItem.code " target="_blank" class="mt-2 float-right text-sm">code</a>
-                <a v-if="currentPortfolioItem.link" :href="currentPortfolioItem.link" target="_blank" class="mt-2 mr-2 float-right text-sm">view</a>
+                <a v-if="currentPortfolioItem.code" :href="currentPortfolioItem.code " target="_blank" class="sm:float-right text-sm">code</a>
+                <a v-if="currentPortfolioItem.link" :href="currentPortfolioItem.link" target="_blank" class="mr-2 sm:float-right text-sm">view</a>
+
+                <hr class="w-40 my-3 sm:hidden">
+
               </div>
-              <div class="portfolio-item-body mt-10 sm:mt-0 sm:ml-5 text-xs sm:text-sm"
+
+
+
+              <div class="portfolio-item-body  sm:mt-0 sm:ml-5 text-xs sm:text-sm"
                    v-html="currentPortfolioItem.body">
+
               </div>
             </div>
           </div>
