@@ -120,8 +120,6 @@
 
               </div>
 
-
-
               <div class="portfolio-item-body  sm:mt-0 sm:ml-5 text-xs sm:text-sm"
                    v-html="currentPortfolioItem.body">
 
@@ -134,7 +132,7 @@
     <!--    Portfolio Section End -->
 
     <!--    Contact Section Start -->
-    <div id="contact" class="contact-section my-24 h-screen mx-auto w-3/5 text-xs sm:text-sm md:text-base">
+    <div id="contact" class="contact-section my-24 h-screen mx-auto w-3/5  text-xs sm:text-sm md:text-base">
       <div class="contact-section-wrapper h-full flex flex-wrap content-center">
         <div class="contact-nav w-full flex">
           <a class="text-gray-800" href="#about">about</a>
@@ -156,7 +154,7 @@
             <div class="text-sm ">Estonia, Tallinn</div>
           </div>
 
-          <div class="border border-white w-52 h-48 ml-14 flex">
+          <div class="border border-white w-52 h-48 ml-14  hidden sm:flex">
             <div class="m-auto">
               <a href="https://github.com/EricTalv" target="_blank">GitHub</a>
               <br>
@@ -168,6 +166,17 @@
             </div>
           </div>
         </div>
+
+        <hr class="w-full mb-2 sm:hidden">
+
+        <div class="flex justify-between w-full sm:hidden">
+            <a href="https://github.com/EricTalv" target="_blank">GitHub</a>
+            <br>
+            <a href="https://www.linkedin.com/feed/" target="_blank">LinkedIn</a>
+            <br>
+            <a href="https://www.instagram.com/et_experience/" target="_blank">Design</a>
+        </div>
+
       </div>
     </div>
     <!--    Contact Section End -->
