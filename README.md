@@ -11,6 +11,7 @@ three.js
 baffle.js
 vue-silentbox
 tailwind.css
+google-analytics
 ```
 
 ## Build Setup
