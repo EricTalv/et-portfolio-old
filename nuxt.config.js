@@ -58,8 +58,13 @@ export default {
     '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
-   // 'baffle'
+    '@nuxtjs/google-analytics'
   ],
+
+  // Google Analytics: https://google-analytics.nuxtjs.org/setup
+  googleAnalytics: {
+    id: 'UA-166928853-2'
+  },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
