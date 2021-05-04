@@ -43,7 +43,7 @@
 
 
     <!--    About Section Start -->
-    <div id="about" class="about-section my-24 h-screen mx-auto w-3/4 text-xs sm:text-sm md:text-base">
+    <div id="about" class="about-section my-24 h-screen mx-auto w-3/5 text-xs sm:text-sm md:text-base">
       <div class="about-section-wrapper h-full flex flex-wrap content-center">
         <div class="about-nav w-full flex">
           <a class="text-gray-800" href="#portfolio">portfolio</a>
