@@ -84,7 +84,9 @@
           <hr class="my-2 w-full">
 
           <div class="portfolio-content py-2 px-3 sm:px-10">
+
             <ul class="portfolio-unordered-list">
+
               <li class="portfolio-item" v-for="portfolioItem of portfolio" :key="portfolioItem.slug">
                 <a @click="setCurrentPortfolioItem(portfolioItem)" :href="`#${portfolioItem.slug}`">
 
@@ -93,8 +95,12 @@
 
                 </a>
               </li>
+
             </ul>
+
+
           </div>
+
         </div>
 
         <div v-if="currentPortfolioItem" :id="currentPortfolioItem.slug"
@@ -118,10 +124,13 @@
 
               </div>
 
-              <div class="portfolio-item-body  sm:mt-0 sm:ml-5 text-xs sm:text-sm"
-                   v-html="currentPortfolioItem.body">
 
-              </div>
+
+                <div class="portfolio-item-body  sm:mt-0 sm:ml-5 text-xs sm:text-sm"
+                     v-html="currentPortfolioItem.body"> </div>
+
+
+
             </div>
           </div>
         </div>
@@ -195,6 +204,8 @@ export default {
 
       currentPortfolioItem: null,
 
+
+
       portfolio: [
         {
           slug: "my-portfolio",
@@ -203,7 +214,119 @@ export default {
           code: "https://github.com/EricTalv/et-portfolio",
           live: null,
 
-          body: "<h3>Welcome To My Portfolio</h3> <p>I have gone over various different styles and schemes of what my portfolio should look like</p> <p>Previously I've used templates, attempted to write the whole site in pure html,js,css</p> <p>Eventually my perfectionism lead me to this very site you are looking at which I have curated over time, everything you see, touch and feel, has all been written by me</p> <p>As design styles change and knowledge expands, so will my portfolio styles</p>",
+          body: "<h3>Welcome To My Portfolio</h3> <p>I have gone over various different styles and schemes of what my portfolio should look like</p> <p>Previously I've used templates, attempted to write the whole site in pure html,js,css</p> <p>Eventually my perfectionism lead me to this very site you are looking at which I have curated over time, everything you see, touch and feel, has all been written by me, with the help of frameworks and other widgets</p> <p>As design styles change and knowledge expands, so will my portfolio styles</p>",
+
+          images: [
+            {
+              src: require('~/assets/images/image001.jpg') ,
+              description: 'The Power In My H~ands',
+            },
+          ]
+        },
+        {
+          slug: "my-portfolio",
+          title: "My Portfolio",
+          description: "how this portfolio was made",
+          code: "https://github.com/EricTalv/et-portfolio",
+          live: null,
+
+          body: "<h3>Welcome To My Portfolio</h3> <p>I have gone over various different styles and schemes of what my portfolio should look like</p> <p>Previously I've used templates, attempted to write the whole site in pure html,js,css</p> <p>Eventually my perfectionism lead me to this very site you are looking at which I have curated over time, everything you see, touch and feel, has all been written by me, with the help of frameworks and other widgets</p> <p>As design styles change and knowledge expands, so will my portfolio styles</p>",
+
+          images: [
+            {
+              src: require('~/assets/images/image001.jpg') ,
+              description: 'The Power In My H~ands',
+            },
+          ]
+        },
+        {
+          slug: "my-portfolio",
+          title: "My Portfolio",
+          description: "how this portfolio was made",
+          code: "https://github.com/EricTalv/et-portfolio",
+          live: null,
+
+          body: "<h3>Welcome To My Portfolio</h3> <p>I have gone over various different styles and schemes of what my portfolio should look like</p> <p>Previously I've used templates, attempted to write the whole site in pure html,js,css</p> <p>Eventually my perfectionism lead me to this very site you are looking at which I have curated over time, everything you see, touch and feel, has all been written by me, with the help of frameworks and other widgets</p> <p>As design styles change and knowledge expands, so will my portfolio styles</p>",
+
+          images: [
+            {
+              src: require('~/assets/images/image001.jpg') ,
+              description: 'The Power In My H~ands',
+            },
+          ]
+        },
+        {
+          slug: "my-portfolio",
+          title: "My Portfolio",
+          description: "how this portfolio was made",
+          code: "https://github.com/EricTalv/et-portfolio",
+          live: null,
+
+          body: "<h3>Welcome To My Portfolio</h3> <p>I have gone over various different styles and schemes of what my portfolio should look like</p> <p>Previously I've used templates, attempted to write the whole site in pure html,js,css</p> <p>Eventually my perfectionism lead me to this very site you are looking at which I have curated over time, everything you see, touch and feel, has all been written by me, with the help of frameworks and other widgets</p> <p>As design styles change and knowledge expands, so will my portfolio styles</p>",
+
+          images: [
+            {
+              src: require('~/assets/images/image001.jpg') ,
+              description: 'The Power In My H~ands',
+            },
+          ]
+        },
+        {
+          slug: "my-portfolio",
+          title: "My Portfolio",
+          description: "how this portfolio was made",
+          code: "https://github.com/EricTalv/et-portfolio",
+          live: null,
+
+          body: "<h3>Welcome To My Portfolio</h3> <p>I have gone over various different styles and schemes of what my portfolio should look like</p> <p>Previously I've used templates, attempted to write the whole site in pure html,js,css</p> <p>Eventually my perfectionism lead me to this very site you are looking at which I have curated over time, everything you see, touch and feel, has all been written by me, with the help of frameworks and other widgets</p> <p>As design styles change and knowledge expands, so will my portfolio styles</p>",
+
+          images: [
+            {
+              src: require('~/assets/images/image001.jpg') ,
+              description: 'The Power In My H~ands',
+            },
+          ]
+        },
+        {
+          slug: "my-portfolio",
+          title: "My Portfolio",
+          description: "how this portfolio was made",
+          code: "https://github.com/EricTalv/et-portfolio",
+          live: null,
+
+          body: "<h3>Welcome To My Portfolio</h3> <p>I have gone over various different styles and schemes of what my portfolio should look like</p> <p>Previously I've used templates, attempted to write the whole site in pure html,js,css</p> <p>Eventually my perfectionism lead me to this very site you are looking at which I have curated over time, everything you see, touch and feel, has all been written by me, with the help of frameworks and other widgets</p> <p>As design styles change and knowledge expands, so will my portfolio styles</p>",
+
+          images: [
+            {
+              src: require('~/assets/images/image001.jpg') ,
+              description: 'The Power In My H~ands',
+            },
+          ]
+        },
+        {
+          slug: "my-portfolio",
+          title: "My Portfolio",
+          description: "how this portfolio was made",
+          code: "https://github.com/EricTalv/et-portfolio",
+          live: null,
+
+          body: "<h3>Welcome To My Portfolio</h3> <p>I have gone over various different styles and schemes of what my portfolio should look like</p> <p>Previously I've used templates, attempted to write the whole site in pure html,js,css</p> <p>Eventually my perfectionism lead me to this very site you are looking at which I have curated over time, everything you see, touch and feel, has all been written by me, with the help of frameworks and other widgets</p> <p>As design styles change and knowledge expands, so will my portfolio styles</p>",
+
+          images: [
+            {
+              src: require('~/assets/images/image001.jpg') ,
+              description: 'The Power In My H~ands',
+            },
+          ]
+        },
+        {
+          slug: "my-portfolio",
+          title: "My Portfolio",
+          description: "how this portfolio was made",
+          code: "https://github.com/EricTalv/et-portfolio",
+          live: null,
+
+          body: "<h3>Welcome To My Portfolio</h3> <p>I have gone over various different styles and schemes of what my portfolio should look like</p> <p>Previously I've used templates, attempted to write the whole site in pure html,js,css</p> <p>Eventually my perfectionism lead me to this very site you are looking at which I have curated over time, everything you see, touch and feel, has all been written by me, with the help of frameworks and other widgets</p> <p>As design styles change and knowledge expands, so will my portfolio styles</p>",
 
           images: [
             {
@@ -269,9 +392,16 @@ export default {
 
 #silentbox-gallery {
   .silentbox-item {
+    filter: grayscale(100%);
+
+    transition: filter .5s;
+
     &:nth-child(n+2) {
       display: none;
+    }
 
+    &:hover {
+      filter: none;
     }
   }
 }
@@ -291,11 +421,12 @@ export default {
     width: 20px;
     border: 1px solid white;
   }
-
   &::-webkit-scrollbar-thumb {
     border: 1px solid white;
     background-color: #5A5A5A;
   }
+
+  scrollbar-color: #5A5A5A transparent;
 
   .portfolio-unordered-list {
     list-style: none;
