@@ -5,7 +5,6 @@
 
       <sphere></sphere>
 
-
       <div class="flex flex-col items-center">
         <div class="p-7 text-xs sm:text-sm md:text-base">
           <small class="intro-text text-gray-600">
@@ -83,7 +82,6 @@
             <p class="text-right w-full">Portfolio</p>
           </div>
           <hr class="my-2 w-full">
-
 
           <div class="portfolio-content py-2 px-3 sm:px-10">
             <ul class="portfolio-unordered-list">
@@ -205,13 +203,12 @@ export default {
           code: "https://github.com/EricTalv/et-portfolio",
           live: null,
 
-
           body: "<h3>Welcome To My Portfolio</h3> <p>I have gone over various different styles and schemes of what my portfolio should look like</p> <p>Previously I've used templates, attempted to write the whole site in pure html,js,css</p> <p>Eventually my perfectionism lead me to this very site you are looking at which I have curated over time, everything you see, touch and feel, has all been written by me</p> <p>As design styles change and knowledge expands, so will my portfolio styles</p>",
 
           images: [
             {
-              src: '/_nuxt/assets/images/image001.jpg',
-              description: 'The Power In My Hands',
+              src: require('~/assets/images/image001.jpg') ,
+              description: 'The Power In My H~ands',
             },
           ]
         },
