@@ -179,7 +179,7 @@
         <div class="flex justify-between w-full sm:hidden">
             <a href="https://github.com/EricTalv" target="_blank">GitHub</a>
             <br>
-            <a href="https://www.linkedin.com/feed/" target="_blank">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/erictalviste/" target="_blank">LinkedIn</a>
             <br>
             <a href="https://www.instagram.com/et_experience/" target="_blank">Design</a>
         </div>
