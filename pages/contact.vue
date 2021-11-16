@@ -3,7 +3,7 @@
 
 
   <div class="contact-section flex flex-wrap content-center justify-center">
-    <div class="contact-wrapper w-3/5 c-min-width-contact">
+    <div class="contact-wrapper mt-44 w-3/5 c-min-width-contact">
       <div class="contact-nav w-full flex">
         <a href="#">portfolio</a>
         <a class="mx-3" href="#">about</a>
