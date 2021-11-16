@@ -144,7 +144,9 @@
           <a class="text-gray-800 mx-5" href="#portfolio">portfolio</a>
           <p class="text-right w-full">Contact</p>
         </div>
+
         <hr class="my-2 w-full">
+
         <div class="contact-text pt-10 flex mx-auto">
           <div class="py-5 mr-14">
             <div class="text-base ">Email</div>
