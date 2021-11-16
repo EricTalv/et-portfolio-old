@@ -129,8 +129,6 @@
                 <div class="portfolio-item-body  sm:mt-0 sm:ml-5 text-xs sm:text-sm"
                      v-html="currentPortfolioItem.body"> </div>
 
-
-
             </div>
           </div>
         </div>
@@ -208,13 +206,13 @@ export default {
 
       portfolio: [
         {
-          slug: "my-portfolio",
+          slug: "my-portfolio-old",
           title: "My Portfolio",
-          description: "how this portfolio was made",
+          description: "how this portfolio-old was made",
           code: "https://github.com/EricTalv/et-portfolio",
           live: null,
 
-          body: "<h3>Welcome To My Portfolio</h3> <p>I have gone over various different styles and schemes of what my portfolio should look like</p> <p>Previously I've used templates, attempted to write the whole site in pure html,js,css</p> <p>Eventually my perfectionism lead me to this very site you are looking at which I have curated over time, everything you see, touch and feel, has all been written by me, with the help of frameworks and other widgets</p> <p>As design styles change and knowledge expands, so will my portfolio styles</p> <p><u>Role:</u>Design and Development</p>",
+          body: "<h3>Welcome To My Portfolio</h3> <p>I have gone over various different styles and schemes of what my portfolio-old should look like</p> <p>Previously I've used templates, attempted to write the whole site in pure html,js,css</p> <p>Eventually my perfectionism lead me to this very site you are looking at which I have curated over time, everything you see, touch and feel, has all been written by me, with the help of frameworks and other widgets</p> <p>As design styles change and knowledge expands, so will my portfolio-old styles</p> <p><u>Role:</u>Design and Development</p>",
 
           images: [
             {
