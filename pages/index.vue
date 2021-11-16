@@ -218,7 +218,7 @@ export default {
 
           images: [
             {
-              src: require('~/assets/images/image001.jpg') ,
+              src: require('assets/images/image001.jpg') ,
               description: 'The Power In My H~ands',
             },
           ]
