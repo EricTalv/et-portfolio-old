@@ -3,7 +3,7 @@
 
 
   <div class="contact-section flex flex-wrap content-center justify-center">
-    <div class="contact-wrapper mt-44 w-3/5 c-min-width-contact">
+    <div class="contact-wrapper mt-44 w-3/5 c-min-width">
       <div class="contact-nav w-full flex">
         <a href="#">portfolio</a>
         <a class="mx-3" href="#">about</a>
@@ -57,8 +57,6 @@
 
 <style>
 
-.c-min-width-contact {
-  min-width: 366px;
-}
+
 
 </style>

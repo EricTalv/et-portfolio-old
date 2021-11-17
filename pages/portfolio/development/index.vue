@@ -4,9 +4,18 @@
   <div class="about-section flex flex-wrap  justify-center">
     <div class="about-wrapper mt-44 w-3/5 c-min-width">
       <div class="about-nav w-full flex">
-        <a href="#">portfolio</a>
-        <a class="mx-3" href="#">contact</a>
-        <p class="text-right w-full">About</p>
+
+        <div class="flex items-end">
+          <a href="#">about</a>
+          <a class="mx-3" href="#">contact</a>
+        </div>
+
+
+
+        <div class="w-full text-right flex flex-wrap flex-col">
+          <p class="">Portfolio</p>
+          <p class="">development/Design</p>
+        </div>
       </div>
 
       <hr class="my-2 ">
