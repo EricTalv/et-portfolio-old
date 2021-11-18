@@ -92,10 +92,10 @@ export default {
       portfolio: [
         {
           slug: "panzerprint",
-          title: "Panzerprint",
+          title: "Panzerprint 1",
           description: "Norweigan typist landing page",
           code: "https://github.com/EricTalv/et-portfolio",
-          tags: [ '#wordpress', '#norweige' ],
+          tags: [ '#wordpress' ],
 
           body: "<h3>Welcome To My Portfolio</h3> <p>I have gone over various different styles and schemes of what my portfolio-old should look like</p> <p>Previously I've used templates, attempted to write the whole site in pure html,js,css</p> <p>Eventually my perfectionism lead me to this very site you are looking at which I have curated over time, everything you see, touch and feel, has all been written by me, with the help of frameworks and other widgets</p> <p>As design styles change and knowledge expands, so will my portfolio-old styles</p> <p><u>Role:</u>Design and Development</p>",
 
@@ -108,9 +108,85 @@ export default {
         },
 
         {
-          slug: "lorelius",
-          title: "Lorelius Forelius",
-          description: "how this portfolio-old was made",
+          slug: "this-portfolio",
+          title: "This Portfolio 2",
+          description: "How this portfolio was made",
+          code: "https://github.com/EricTalv/et-portfolio",
+          tags: [ '#vue', '#nuxt' ],
+
+          live: null,
+
+          body: "<h3>Welcome To My Portfolio</h3> <p>I have gone over various different styles and schemes of what my portfolio-old should look like</p> <p>Previously I've used templates, attempted to write the whole site in pure html,js,css</p> <p>Eventually my perfectionism lead me to this very site you are looking at which I have curated over time, everything you see, touch and feel, has all been written by me, with the help of frameworks and other widgets</p> <p>As design styles change and knowledge expands, so will my portfolio-old styles</p> <p><u>Role:</u>Design and Development</p>",
+
+          images: [
+            {
+              src: require('assets/images/image001.jpg'),
+              description: 'The Power In My Hands',
+            },
+          ]
+        },
+
+        {
+          slug: "this-portfolio",
+          title: "This Portfolio 3",
+          description: "How this portfolio was made",
+          code: "https://github.com/EricTalv/et-portfolio",
+          tags: [ '#vue', '#nuxt' ],
+
+          live: null,
+
+          body: "<h3>Welcome To My Portfolio</h3> <p>I have gone over various different styles and schemes of what my portfolio-old should look like</p> <p>Previously I've used templates, attempted to write the whole site in pure html,js,css</p> <p>Eventually my perfectionism lead me to this very site you are looking at which I have curated over time, everything you see, touch and feel, has all been written by me, with the help of frameworks and other widgets</p> <p>As design styles change and knowledge expands, so will my portfolio-old styles</p> <p><u>Role:</u>Design and Development</p>",
+
+          images: [
+            {
+              src: require('assets/images/image001.jpg'),
+              description: 'The Power In My Hands',
+            },
+          ]
+        },
+
+        {
+          slug: "this-portfolio",
+          title: "This Portfolio 4",
+          description: "How this portfolio was made",
+          code: "https://github.com/EricTalv/et-portfolio",
+          tags: [ '#vue', '#nuxt' ],
+
+          live: null,
+
+          body: "<h3>Welcome To My Portfolio</h3> <p>I have gone over various different styles and schemes of what my portfolio-old should look like</p> <p>Previously I've used templates, attempted to write the whole site in pure html,js,css</p> <p>Eventually my perfectionism lead me to this very site you are looking at which I have curated over time, everything you see, touch and feel, has all been written by me, with the help of frameworks and other widgets</p> <p>As design styles change and knowledge expands, so will my portfolio-old styles</p> <p><u>Role:</u>Design and Development</p>",
+
+          images: [
+            {
+              src: require('assets/images/image001.jpg'),
+              description: 'The Power In My Hands',
+            },
+          ]
+        },
+
+        {
+          slug: "this-portfolio",
+          title: "This Portfolio 5",
+          description: "How this portfolio was made",
+          code: "https://github.com/EricTalv/et-portfolio",
+          tags: [ '#vue', '#nuxt' ],
+
+          live: null,
+
+          body: "<h3>Welcome To My Portfolio</h3> <p>I have gone over various different styles and schemes of what my portfolio-old should look like</p> <p>Previously I've used templates, attempted to write the whole site in pure html,js,css</p> <p>Eventually my perfectionism lead me to this very site you are looking at which I have curated over time, everything you see, touch and feel, has all been written by me, with the help of frameworks and other widgets</p> <p>As design styles change and knowledge expands, so will my portfolio-old styles</p> <p><u>Role:</u>Design and Development</p>",
+
+          images: [
+            {
+              src: require('assets/images/image001.jpg'),
+              description: 'The Power In My Hands',
+            },
+          ]
+        },
+
+        {
+          slug: "this-portfolio",
+          title: "This Portfolio 6",
+          description: "How this portfolio was made",
           code: "https://github.com/EricTalv/et-portfolio",
           tags: [ '#vue', '#nuxt' ],
 
@@ -173,7 +249,7 @@ export default {
   scroll-behavior: smooth;
 }
 
-.portfolio-container {
+.portfolio-list-body {
 
   max-height: 260px;
   overflow-y: auto;
@@ -198,7 +274,7 @@ export default {
 
   .portfolio-item {
 
-    padding-left: 15px;
+    padding-left: 17px;
 
     margin-bottom: 25px;
 
@@ -214,14 +290,23 @@ export default {
     }
 
     &:hover {
+      margin-left: 10px;
+
+
+      .portfolio-item-tag {
+        color: white;
+        transition: all .5s;
+
+      }
+
       &:before {
         content: "⦿";
       }
     }
 
-    &:hover {
-      margin-left: 10px;
-    }
+
+
+
 
   }
 }
@@ -233,7 +318,6 @@ export default {
 
 .portfolio-item-description {
   position: relative;
-
   &:after {
 
     content: "";
