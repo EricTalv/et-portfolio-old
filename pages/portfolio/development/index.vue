@@ -8,7 +8,10 @@
 
         <div class="flex items-end">
 
-          <a class="mr-3" style="font-size: 20px" href="#portfolio-list"><-</a>
+          <a class="mr-3" style="font-size: 20px"
+             v-if="currentPortfolioViewItem"
+             @click="removeCurrentPortfolioViewItem()"
+             href="#portfolio-list"><-</a>
 
 
           <a href="#">about</a>
@@ -32,11 +35,11 @@
         <div class="portfolio-wrapper h-full w-full flex flex-row flex-nowrap overflow-x-hidden">
 
           <!--   Portfolio List Start     -->
-          <div id="portfolio-list" class=" min-w-full">
+          <div class="portfolio-list-wrapper min-w-full">
             <div class="portfolio-list-body ">
               <ul class="portfolio-unordered-list">
                 <li class="portfolio-item" v-for="portfolioItem of portfolio" :key="portfolioItem.slug">
-                  <a @click="setCurrentPortfolioItem(portfolioItem)" :href="`#${portfolioItem.slug}`">
+                  <a @click="setCurrentPortfolioViewItem(portfolioItem)" :href="`#${portfolioItem.slug}`">
                     <p class="portfolio-item-title">{{ portfolioItem.title }}</p>
                     <p class="portfolio-item-description text-xs">{{ portfolioItem.description }}</p>
                     <small class="portfolio-item-tag" v-for="tag in portfolioItem.tags">
@@ -51,18 +54,19 @@
 
 
           <!--   Portfolio Item View Start     -->
-          <div v-if="currentPortfolioItem" :id="currentPortfolioItem.slug"
+          <div v-if="currentPortfolioViewItem" :id="currentPortfolioViewItem.slug"
                class="portfolio-sec-wrapper min-w-full flex flex-wrap content-center ">
-            <div v-if="currentPortfolioItem" class="min-w-full">
+            <div v-if="currentPortfolioViewItem" class="min-w-full">
 
               <div class="portfolio-content w-full block sm:flex py-2 px-10">
                 <div class="w-48 mx-auto sm:mx-0">
                   <silent-box class="mb-3 w-40 h-40 border border-white"
-                              :gallery="currentPortfolioItem.images"></silent-box>
+                              :gallery="currentPortfolioViewItem.images"
+                              :preview-count="1"></silent-box>
 
-                  <a v-if="currentPortfolioItem.code" :href="currentPortfolioItem.code " target="_blank"
+                  <a v-if="currentPortfolioViewItem.code" :href="currentPortfolioViewItem.code " target="_blank"
                      class="sm:float-right text-sm">code</a>
-                  <a v-if="currentPortfolioItem.link" :href="currentPortfolioItem.link" target="_blank"
+                  <a v-if="currentPortfolioViewItem.link" :href="currentPortfolioViewItem.link" target="_blank"
                      class="mr-2 sm:float-right text-sm">view</a>
 
                   <hr class="w-40 my-3 sm:hidden">
@@ -70,7 +74,7 @@
                 </div>
 
                 <div class="portfolio-item-body  sm:mt-0 sm:ml-5 text-xs sm:text-sm"
-                     v-html="currentPortfolioItem.body"></div>
+                     v-html="currentPortfolioViewItem.body"></div>
               </div>
             </div>
           </div>
@@ -96,7 +100,7 @@ export default {
     return {
 
 
-      currentPortfolioItem: null,
+      currentPortfolioViewItem: null,
 
       portfolio: [
         {
@@ -216,9 +220,13 @@ export default {
 
   methods: {
 
-    setCurrentPortfolioItem(portfolioItem) {
+    setCurrentPortfolioViewItem(portfolioItem) {
+      this.currentPortfolioViewItem = portfolioItem;
+    },
 
-      this.currentPortfolioItem = portfolioItem;
+    removeCurrentPortfolioViewItem() {
+      this.currentPortfolioViewItem = null;
+
     }
 
   },
@@ -233,6 +241,11 @@ export default {
 @apply min-h-screen flex justify-center items-center text-center mx-auto;
 }
 */
+
+.portfolio-list-wrapper {
+  display: flex;
+  justify-content: center;
+}
 
 .portfolio-wrapper, {
   scroll-behavior: smooth;
