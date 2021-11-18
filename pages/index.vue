@@ -95,12 +95,8 @@
 
                 </a>
               </li>
-
             </ul>
-
-
           </div>
-
         </div>
 
         <div v-if="currentPortfolioItem" :id="currentPortfolioItem.slug"
