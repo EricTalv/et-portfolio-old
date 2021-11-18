@@ -23,8 +23,10 @@
 
       <hr class="my-2 ">
 
-      <div id="dev-portfolio-list" class="portfolio-container flex mx-auto justify-center flex-col">
-        <div id="portfolio-list" >
+      <div id="dev-portfolio-container" class="portfolio-container flex mx-auto justify-center flex-col">
+
+        <!--   Portfolio List Start     -->
+        <div id="portfolio-list" class="flex justify-center">
           <div class="portfolio-list-body ">
             <ul class="portfolio-unordered-list">
               <li class="portfolio-item" v-for="portfolioItem of portfolio" :key="portfolioItem.slug">
@@ -39,7 +41,10 @@
             </ul>
           </div>
         </div>
+        <!--   Portfolio List End     -->
 
+
+        <!--   Portfolio Item View Start     -->
         <div v-if="currentPortfolioItem" :id="currentPortfolioItem.slug"
              class="portfolio-sec-wrapper min-w-full flex flex-wrap content-center ">
           <div v-if="currentPortfolioItem" class="min-w-full">
@@ -70,6 +75,8 @@
           </div>
         </div>
       </div>
+      <!--   Portfolio Item View End    -->
+
 
     </div>
   </div>
@@ -225,26 +232,6 @@ export default {
 }
 */
 
-.portfolio-item-body {
-  p {
-    margin: 10px 0;
-  }
-
-  hr {
-    margin: 15px 0;
-  }
-
-  h3 {
-    font-weight: bolder;
-  }
-
-  ul {
-    list-style: circle;
-  }
-}
-
-
-
 .portfolio-section-wrapper, {
   scroll-behavior: smooth;
 }
@@ -253,7 +240,7 @@ export default {
 
   max-height: 260px;
   overflow-y: auto;
-  width: 100%;
+  width: 90%;
   margin-top: 15px;
 
   &::-webkit-scrollbar {
@@ -274,17 +261,18 @@ export default {
 
   .portfolio-item {
 
-    padding-left: 17px;
-
     margin-bottom: 25px;
 
     transition: all .5s;
 
     display: flex;
 
+    a {
+      width: 90%;
+    }
+
     &:before {
       width: 1em;
-      margin-left: -1em;
       content: "○";
       color: white;
     }
@@ -298,16 +286,10 @@ export default {
         transition: all .5s;
 
       }
-
       &:before {
         content: "⦿";
       }
     }
-
-
-
-
-
   }
 }
 
@@ -318,6 +300,8 @@ export default {
 
 .portfolio-item-description {
   position: relative;
+
+  overflow: hidden;
   &:after {
 
     content: "";
