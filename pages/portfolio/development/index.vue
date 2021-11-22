@@ -10,7 +10,6 @@
 
           <a class="mr-3" style="font-size: 20px"
              v-if="currentPortfolioViewItem"
-             @click="removeCurrentPortfolioViewItem()"
              href="#portfolio-list"><-</a>
 
 
@@ -37,7 +36,7 @@
           <!--   Portfolio List Start     -->
           <div class="portfolio-list-wrapper min-w-full">
             <div class="portfolio-list-body ">
-              <ul class="portfolio-unordered-list">
+              <ul id="portfolio-list" class="portfolio-unordered-list">
                 <li class="portfolio-item" v-for="portfolioItem of portfolio" :key="portfolioItem.slug">
                   <a @click="setCurrentPortfolioViewItem(portfolioItem)" :href="`#${portfolioItem.slug}`">
                     <p class="portfolio-item-title">{{ portfolioItem.title }}</p>
