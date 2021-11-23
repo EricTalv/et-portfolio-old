@@ -6,9 +6,9 @@
       <div class="about-nav-container w-full flex">
 
 
-        <div class="about-nav-left flex items-center">
+        <div class="about-nav-left flex items-end">
 
-          <a class="mr-3" style="font-size: 20px"
+          <a class="mr-3 self-center" style="font-size: 20px"
              v-if="currentPortfolioViewItem"
              @click="removeCurrentPortfolioViewItem"
              href="#portfolio-list">
@@ -29,10 +29,11 @@
           <p class="text-sm" v-bind:class="{ hidden: currentPortfolioViewItem }">Portfolio</p>
 
           <div class="flex justify-end self-end">
-            <p>development</p>
+            <p class="portfolio-development-link" :class=" { 'text-gray-500': currentPortfolioViewItem }">development</p>
 
-            <p v-if="currentPortfolioViewItem">/{{ currentPortfolioViewItem.title }}</p>
-            <p v-else>/design</p>
+            <p v-if="currentPortfolioViewItem" >/{{ currentPortfolioViewItem.title }}</p>
+            <a v-else class="portfolio-design-link text-gray-500 " href="#">/design</a>
+
           </div>
         </div>
 
@@ -252,6 +253,15 @@ export default {
 }
 */
 
+.portfolio-design-link {
+
+  transition: all .5s;
+  &:hover {
+    color: white;
+    text-decoration: underline;
+
+  }
+}
 
 .back-arrow {
   fill: #6b7280;
@@ -262,7 +272,7 @@ export default {
 }
 .about-nav-left > a {
   color: #6b7280;
-  transition: all .5s;
+  transition: color .5s;
 
   &:hover {
     color: white;
