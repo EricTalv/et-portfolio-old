@@ -26,7 +26,8 @@
 
         <div class="about-nav-right w-full text-right flex flex-col">
 
-          <p class="text-sm" v-bind:class="{ hidden: currentPortfolioViewItem }">Portfolio</p>
+<!--          <p class="text-sm" v-bind:class="{ hidden: currentPortfolioViewItem }">Portfolio</p>-->
+          <p class="text-sm">Portfolio</p>
 
           <div class="flex justify-end self-end">
             <p class="portfolio-development-link" :class=" { 'text-gray-500': currentPortfolioViewItem }">development</p>
@@ -69,7 +70,7 @@
                class="portfolio-sec-wrapper min-w-full flex flex-wrap content-center ">
             <div v-if="currentPortfolioViewItem" class="min-w-full">
 
-              <div class="portfolio-content w-full block sm:flex py-2 px-10">
+              <div class="portfolio-content w-full block sm:flex pt-2 px-10">
                 <div class="w-48 mx-auto sm:mx-0">
                   <silent-box class="mb-3 w-40 h-40 border border-white"
                               :gallery="currentPortfolioViewItem.images"
@@ -78,7 +79,10 @@
                   <a v-if="currentPortfolioViewItem.code" :href="currentPortfolioViewItem.code " target="_blank"
                      class="sm:float-right text-sm">code</a>
                   <a v-if="currentPortfolioViewItem.link" :href="currentPortfolioViewItem.link" target="_blank"
-                     class="mr-2 sm:float-right text-sm">view</a>
+                     class="mr-2 sm:float-right text-sm">live</a>
+
+                  <a>Role: Research & Development </a>
+                  <a>Tags: #wordpress #css </a>
 
                   <hr class="w-40 my-3 sm:hidden">
 
@@ -120,8 +124,16 @@ export default {
           description: "Norweigan typist landing page",
           code: "https://github.com/EricTalv/et-portfolio",
           tags: ['#wordpress'],
+          link: '#',
 
-          body: "<h3>Welcome To My Portfolio</h3> <p>I have gone over various different styles and schemes of what my portfolio-old should look like</p> <p>Previously I've used templates, attempted to write the whole site in pure html,js,css</p> <p>Eventually my perfectionism lead me to this very site you are looking at which I have curated over time, everything you see, touch and feel, has all been written by me, with the help of frameworks and other widgets</p> <p>As design styles change and knowledge expands, so will my portfolio-old styles</p> <p><u>Role:</u>Design and Development</p>",
+          body: "" +
+            "<h2>Objective</h2> " +
+            "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias blanditiis error expedita hic in quisquam saepe ullam velit veniam voluptate.</p> " +
+            "<h2>Challenges</h2> " +
+            "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aspernatur ipsam perferendis quae similique voluptas?</p> " +
+            "<h2>Outcome</h2> " +
+            "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, porro.</p> " +
+            "",
 
           images: [
             {
@@ -253,6 +265,7 @@ export default {
 }
 */
 
+
 .portfolio-design-link {
 
   transition: all .5s;
@@ -350,6 +363,17 @@ export default {
 .portfolio-item-tag {
   font-size: .7em;
   color: #5A5A5A;
+}
+
+.portfolio-item-body  {
+  h2 {
+    font-weight: bolder;
+    text-decoration: underline;
+  }
+
+  p {
+    margin-bottom: 15px;
+  }
 }
 
 .portfolio-item-description {
