@@ -3,25 +3,36 @@
 
   <div class="about-section flex flex-wrap  justify-center">
     <div class="about-wrapper mt-44 w-3/5 c-min-width">
-      <div class="about-nav w-full flex">
+      <div class="about-nav-container w-full flex">
 
 
-        <div class="flex items-end">
+        <div class="about-nav-left flex items-center">
 
           <a class="mr-3" style="font-size: 20px"
              v-if="currentPortfolioViewItem"
-             href="#portfolio-list"><-</a>
-
+             @click="removeCurrentPortfolioViewItem"
+             href="#portfolio-list">
+            <svg class="back-arrow" width="19" height="8" viewBox="0 0 19 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M0.646447 3.64644C0.451184 3.84171 0.451184 4.15829 0.646447 4.35355L3.82843 7.53553C4.02369 7.73079 4.34027 7.73079 4.53553 7.53553C4.7308 7.34027 4.7308 7.02369 4.53553 6.82842L1.70711 4L4.53553 1.17157C4.7308 0.976309 4.7308 0.659726 4.53553 0.464464C4.34027 0.269202 4.02369 0.269202 3.82843 0.464464L0.646447 3.64644ZM19 3.5L1 3.5L1 4.5L19 4.5L19 3.5Z"
+                />
+            </svg>
+          </a>
 
           <a href="#">about</a>
           <a class="mx-3" href="#">contact</a>
+
         </div>
 
-        <div class="w-full text-right flex flex-col">
-          <p class="">Portfolio</p>
-          <div class="flex justify-end">
+        <div class="about-nav-right w-full text-right flex flex-col">
+
+          <p class="text-sm" v-bind:class="{ hidden: currentPortfolioViewItem }">Portfolio</p>
+
+          <div class="flex justify-end self-end">
             <p>development</p>
-            <p>/Design</p>
+
+            <p v-if="currentPortfolioViewItem">/{{ currentPortfolioViewItem.title }}</p>
+            <p v-else>/design</p>
           </div>
         </div>
 
@@ -240,6 +251,23 @@ export default {
 @apply min-h-screen flex justify-center items-center text-center mx-auto;
 }
 */
+
+
+.back-arrow {
+  fill: #6b7280;
+
+  &:hover {
+    fill: white;
+  }
+}
+.about-nav-left > a {
+  color: #6b7280;
+  transition: all .5s;
+
+  &:hover {
+    color: white;
+  }
+}
 
 .portfolio-list-wrapper {
   display: flex;
