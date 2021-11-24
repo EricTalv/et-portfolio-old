@@ -70,15 +70,16 @@
                class="portfolio-sec-wrapper min-w-full flex flex-wrap content-center ">
             <div v-if="currentPortfolioViewItem" class="min-w-full">
 
-              <div class=" w-full block sm:flex pt-2 px-10">
-                <div class="portfolio-view-item-body w-40 mx-auto sm:mx-0">
+              <div class="portfolio-item-content w-full block sm:flex px-10">
+
+                <div class="portfolio-view-item-sidebar-container w-40 mt-3 mb-5 mx-auto sm:mx-0">
                   <silent-box class="mb-3 w-40 h-40 border border-white"
                               :gallery="currentPortfolioViewItem.images"
                               :preview-count="1"></silent-box>
 
-                  <p class="portfolio-body-role">Research & Development</p>
+                  <p class="portfolio-sidebar-role">Research & Development</p>
 
-                  <div class="portfolio-body-links">
+                  <div class="portfolio-sidebar-links">
                     <a v-if="currentPortfolioViewItem.code" :href="currentPortfolioViewItem.code " target="_blank"
                        class=" text-sm">code</a>
                     <a v-if="currentPortfolioViewItem.link" :href="currentPortfolioViewItem.link" target="_blank"
@@ -86,7 +87,7 @@
                   </div>
 
 
-                  <ul class="portfolio-body-tags">
+                  <ul class="portfolio-sidebar-tags">
                     <li>#vue</li>
                     <li>#js</li>
                     <li>#node</li>
@@ -275,22 +276,34 @@ export default {
 }
 */
 
-.portfolio-view-item-body {
+.portfolio-view-item-sidebar-container {
 
-    .portfolio-body-links {
+
+    .portfolio-sidebar-links {
       float: right;
 
       display: flex;
       flex-direction: column;
 
-      margin-top: 10px;
+      margin-top: 20px;
+
+      a {
+        margin: 2px 0 2px 0;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
 
-    .portfolio-body-role {
+    .portfolio-sidebar-role {
       font-size: .74em;
     }
 
-    .portfolio-body-tags {
+    .portfolio-sidebar-tags {
+
+      margin-top: 5px;
+
       li {
         font-size: .74em;
         color: #6b7280;
