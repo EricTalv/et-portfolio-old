@@ -70,19 +70,29 @@
                class="portfolio-sec-wrapper min-w-full flex flex-wrap content-center ">
             <div v-if="currentPortfolioViewItem" class="min-w-full">
 
-              <div class="portfolio-content w-full block sm:flex pt-2 px-10">
-                <div class="w-48 mx-auto sm:mx-0">
+              <div class=" w-full block sm:flex pt-2 px-10">
+                <div class="portfolio-view-item-body w-40 mx-auto sm:mx-0">
                   <silent-box class="mb-3 w-40 h-40 border border-white"
                               :gallery="currentPortfolioViewItem.images"
                               :preview-count="1"></silent-box>
 
-                  <a v-if="currentPortfolioViewItem.code" :href="currentPortfolioViewItem.code " target="_blank"
-                     class="sm:float-right text-sm">code</a>
-                  <a v-if="currentPortfolioViewItem.link" :href="currentPortfolioViewItem.link" target="_blank"
-                     class="mr-2 sm:float-right text-sm">live</a>
+                  <p class="portfolio-body-role">Research & Development</p>
 
-                  <a>Role: Research & Development </a>
-                  <a>Tags: #wordpress #css </a>
+                  <div class="portfolio-body-links">
+                    <a v-if="currentPortfolioViewItem.code" :href="currentPortfolioViewItem.code " target="_blank"
+                       class=" text-sm">code</a>
+                    <a v-if="currentPortfolioViewItem.link" :href="currentPortfolioViewItem.link" target="_blank"
+                       class="mr-2 text-sm">live</a>
+                  </div>
+
+
+                  <ul class="portfolio-body-tags">
+                    <li>#vue</li>
+                    <li>#js</li>
+                    <li>#node</li>
+                    <li>#nuxt</li>
+                    <li>#wordpress</li>
+                  </ul>
 
                   <hr class="w-40 my-3 sm:hidden">
 
@@ -265,6 +275,33 @@ export default {
 }
 */
 
+.portfolio-view-item-body {
+
+    .portfolio-body-links {
+      float: right;
+
+      display: flex;
+      flex-direction: column;
+
+      margin-top: 10px;
+    }
+
+    .portfolio-body-role {
+      font-size: .74em;
+    }
+
+    .portfolio-body-tags {
+      li {
+        font-size: .74em;
+        color: #6b7280;
+        transition: color .5s;
+
+        &:hover {
+          color: white;
+        }
+      }
+    }
+}
 
 .portfolio-design-link {
 
