@@ -87,11 +87,7 @@
 
 
                   <ul class="portfolio-sidebar-tags">
-                    <li>#vue</li>
-                    <li>#js</li>
-                    <li>#node</li>
-                    <li>#nuxt</li>
-                    <li>#wordpress</li>
+                    <li v-for="tag in currentPortfolioViewItem.tags">{{ tag }}</li>
                   </ul>
 
                   <hr class="w-40 my-3 sm:hidden">
@@ -155,14 +151,21 @@ export default {
 
         {
           slug: "this-portfolio",
-          title: "This Portfolio 2",
+          title: "This Portfolio",
           description: "How this portfolio was made",
           code: "https://github.com/EricTalv/et-portfolio",
           tags: ['#vue', '#nuxt'],
 
           live: null,
 
-          body: "<h3>Welcome To My Portfolio</h3> <p>I have gone over various different styles and schemes of what my portfolio-old should look like</p> <p>Previously I've used templates, attempted to write the whole site in pure html,js,css</p> <p>Eventually my perfectionism lead me to this very site you are looking at which I have curated over time, everything you see, touch and feel, has all been written by me, with the help of frameworks and other widgets</p> <p>As design styles change and knowledge expands, so will my portfolio-old styles</p> <p><u>Role:</u>Design and Development</p>",
+          body: "" +
+            "<h2>Objective</h2> " +
+            "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias blanditiis error expedita hic in quisquam saepe ullam velit veniam voluptate.</p> " +
+            "<h2>Challenges</h2> " +
+            "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aspernatur ipsam perferendis quae similique voluptas?</p> " +
+            "<h2>Outcome</h2> " +
+            "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, porro.</p> " +
+            "",
 
           images: [
             {
@@ -172,81 +175,8 @@ export default {
           ]
         },
 
-        {
-          slug: "this-portfolio",
-          title: "This Portfolio 3",
-          description: "How this portfolio was made",
-          code: "https://github.com/EricTalv/et-portfolio",
-          tags: ['#vue', '#nuxt'],
 
-          live: null,
 
-          body: "<h3>Welcome To My Portfolio</h3> <p>I have gone over various different styles and schemes of what my portfolio-old should look like</p> <p>Previously I've used templates, attempted to write the whole site in pure html,js,css</p> <p>Eventually my perfectionism lead me to this very site you are looking at which I have curated over time, everything you see, touch and feel, has all been written by me, with the help of frameworks and other widgets</p> <p>As design styles change and knowledge expands, so will my portfolio-old styles</p> <p><u>Role:</u>Design and Development</p>",
-
-          images: [
-            {
-              src: require('assets/images/image001.jpg'),
-              description: 'The Power In My Hands',
-            },
-          ]
-        },
-
-        {
-          slug: "this-portfolio",
-          title: "This Portfolio 4",
-          description: "How this portfolio was made",
-          code: "https://github.com/EricTalv/et-portfolio",
-          tags: ['#vue', '#nuxt'],
-
-          live: null,
-
-          body: "<h3>Welcome To My Portfolio</h3> <p>I have gone over various different styles and schemes of what my portfolio-old should look like</p> <p>Previously I've used templates, attempted to write the whole site in pure html,js,css</p> <p>Eventually my perfectionism lead me to this very site you are looking at which I have curated over time, everything you see, touch and feel, has all been written by me, with the help of frameworks and other widgets</p> <p>As design styles change and knowledge expands, so will my portfolio-old styles</p> <p><u>Role:</u>Design and Development</p>",
-
-          images: [
-            {
-              src: require('assets/images/image001.jpg'),
-              description: 'The Power In My Hands',
-            },
-          ]
-        },
-
-        {
-          slug: "this-portfolio",
-          title: "This Portfolio 5",
-          description: "How this portfolio was made",
-          code: "https://github.com/EricTalv/et-portfolio",
-          tags: ['#vue', '#nuxt'],
-
-          live: null,
-
-          body: "<h3>Welcome To My Portfolio</h3> <p>I have gone over various different styles and schemes of what my portfolio-old should look like</p> <p>Previously I've used templates, attempted to write the whole site in pure html,js,css</p> <p>Eventually my perfectionism lead me to this very site you are looking at which I have curated over time, everything you see, touch and feel, has all been written by me, with the help of frameworks and other widgets</p> <p>As design styles change and knowledge expands, so will my portfolio-old styles</p> <p><u>Role:</u>Design and Development</p>",
-
-          images: [
-            {
-              src: require('assets/images/image001.jpg'),
-              description: 'The Power In My Hands',
-            },
-          ]
-        },
-
-        {
-          slug: "this-portfolio",
-          title: "This Portfolio 6",
-          description: "How this portfolio was made",
-          code: "https://github.com/EricTalv/et-portfolio",
-          tags: ['#vue', '#nuxt'],
-
-          live: null,
-
-          body: "<h3>Welcome To My Portfolio</h3> <p>I have gone over various different styles and schemes of what my portfolio-old should look like</p> <p>Previously I've used templates, attempted to write the whole site in pure html,js,css</p> <p>Eventually my perfectionism lead me to this very site you are looking at which I have curated over time, everything you see, touch and feel, has all been written by me, with the help of frameworks and other widgets</p> <p>As design styles change and knowledge expands, so will my portfolio-old styles</p> <p><u>Role:</u>Design and Development</p>",
-
-          images: [
-            {
-              src: require('assets/images/image001.jpg'),
-              description: 'The Power In My Hands',
-            },
-          ]
-        },
       ]
     }
   },
@@ -284,7 +214,8 @@ export default {
       display: flex;
       flex-direction: column;
 
-      margin-top: 20px;
+      margin-top: 5px;
+      margin-bottom: 7px;
 
       a {
         margin: 2px 0 2px 0;
