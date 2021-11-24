@@ -66,7 +66,7 @@
 
           <!--   Portfolio Item View Start     -->
           <div v-if="currentPortfolioViewItem" :id="currentPortfolioViewItem.slug"
-               class="portfolio-sec-wrapper min-w-full flex flex-wrap content-center ">
+               class="portfolio-view-container min-w-full flex flex-wrap content-center ">
             <div v-if="currentPortfolioViewItem" class="min-w-full">
 
               <div class="portfolio-item-content w-full block sm:flex px-10">
@@ -164,9 +164,32 @@ export default {
             "<h2>Challenges</h2> " +
             "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aspernatur ipsam perferendis quae similique voluptas?</p> " +
             "<h2>Outcome</h2> " +
-            "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, porro.</p> " +
+            "<p>Lorem  lorem 100 ipsum dolor sit amet, consectetur adipisicing elit. Beatae, porro.</p> " +
+            "" +
+            "<h2>Outcome</h2> " +
+            "<p>Lorem  lorem 100 ipsum dolor sit amet, consectetur adipisicing elit. Beatae, porro.</p> " +
+            "" +
+            "<h2>Outcome</h2> " +
+            "<p>Lorem  lorem 100 ipsum dolor sit amet, consectetur adipisicing elit. Beatae, porro.</p> " +
+            "" +
+            "<h2>Outcome</h2> " +
+            "<p>Lorem  lorem 100 ipsum dolor sit amet, consectetur adipisicing elit. Beatae, porro.</p> " +
+            "" +
+            "<h2>Outcome</h2> " +
+            "<p>Lorem  lorem 100 ipsum dolor sit amet, consectetur adipisicing elit. Beatae, porro.</p> " +
+            "" +
+            "<h2>Outcome</h2> " +
+            "<p>Lorem  lorem 100 ipsum dolor sit amet, consectetur adipisicing elit. Beatae, porro.</p> " +
+            "" +
+            "<h2>Outcome</h2> " +
+            "<p>Lorem  lorem 100 ipsum dolor sit amet, consectetur adipisicing elit. Beatae, porro.</p> " +
+            "" +
+            "<h2>Outcome</h2> " +
+            "<p>Lorem  lorem 100 ipsum dolor sit amet, consectetur adipisicing elit. Beatae, porro.</p> " +
+            "" +
+            "<h2>Outcome</h2> " +
+            "<p>Lorem  lorem 100 ipsum dolor sit amet, consectetur adipisicing elit. Beatae, porro.</p> " +
             "",
-
           images: [
             {
               src: require('assets/images/image001.jpg'),
@@ -205,9 +228,29 @@ export default {
 }
 */
 
+.portfolio-view-container {
+  &::-webkit-scrollbar {
+    width: 20px;
+    border: 1px solid white;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border: 1px solid white;
+    background-color: #5A5A5A;
+  }
+
+  scrollbar-color: #5A5A5A transparent;
+}
+
+
+.portfolio-item-body {
+  margin-top: 5px;
+  max-height: 260px;
+
+
+}
+
 .portfolio-view-item-sidebar-container {
-
-
     .portfolio-sidebar-links {
       float: right;
 
