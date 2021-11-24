@@ -26,13 +26,12 @@
 
         <div class="about-nav-right w-full text-right flex flex-col">
 
-<!--          <p class="text-sm" v-bind:class="{ hidden: currentPortfolioViewItem }">Portfolio</p>-->
           <p class="text-sm">Portfolio</p>
 
           <div class="flex justify-end self-end">
-            <p class="portfolio-development-link" :class=" { 'text-gray-500': currentPortfolioViewItem }">development</p>
+            <p class="portfolio-development-link " :class=" { 'text-gray-500': currentPortfolioViewItem }">development</p>
 
-            <p v-if="currentPortfolioViewItem" >/{{ currentPortfolioViewItem.title }}</p>
+            <p  v-if="currentPortfolioViewItem" >/{{ currentPortfolioViewItem.title }}</p>
             <a v-else class="portfolio-design-link text-gray-500 " href="#">/design</a>
 
           </div>
@@ -131,7 +130,7 @@ export default {
       portfolio: [
         {
           slug: "panzerprint",
-          title: "Panzerprint 1",
+          title: "Panzerprint",
           description: "Norweigan typist landing page",
           code: "https://github.com/EricTalv/et-portfolio",
           tags: ['#wordpress'],
