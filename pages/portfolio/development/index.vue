@@ -8,7 +8,7 @@
 
         <div class="about-nav-left flex items-end">
 
-          <a class="mr-3 self-center" style="font-size: 20px"
+          <a class="mr-3 " style="font-size: 20px; height: 15px"
              v-if="currentPortfolioViewItem"
              @click="removeCurrentPortfolioViewItem"
              href="#portfolio-list">
@@ -29,10 +29,10 @@
           <p class="text-sm">Portfolio</p>
 
           <div class="flex justify-end self-end">
-            <p class="portfolio-development-link " :class=" { 'text-gray-500': currentPortfolioViewItem }">development</p>
+            <p class="portfolio-development-link " v-if="!currentPortfolioViewItem" :class=" { 'text-gray-500': currentPortfolioViewItem }">development</p>
 
-            <p  v-if="currentPortfolioViewItem" >/{{ currentPortfolioViewItem.title }}</p>
-            <a v-else class="portfolio-design-link text-gray-500 " href="#">/design</a>
+            <p  v-if="currentPortfolioViewItem" >{{ currentPortfolioViewItem.title }}</p>
+            <a  v-else class="portfolio-design-link text-gray-500 " href="#">/design</a>
 
           </div>
         </div>
@@ -69,7 +69,7 @@
                class="portfolio-view-container min-w-full flex flex-wrap content-center ">
             <div v-if="currentPortfolioViewItem" class="min-w-full">
 
-              <div class="portfolio-item-content w-full block sm:flex px-10">
+              <div class="portfolio-item-content block sm:flex">
 
                 <div class="portfolio-view-item-sidebar-container w-40 mt-3 mb-5 mx-auto sm:mx-0">
                   <silent-box class="mb-3 w-40 h-40 border border-white"
@@ -199,6 +199,156 @@ export default {
         },
 
 
+        {
+          slug: "this-portfolio",
+          title: "This Portfolio",
+          description: "How this portfolio was made",
+          code: "https://github.com/EricTalv/et-portfolio",
+          tags: ['#vue', '#nuxt'],
+
+          live: null,
+
+          body: "" +
+            "<h2>Objective</h2> " +
+            "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias blanditiis error expedita hic in quisquam saepe ullam velit veniam voluptate.</p> " +
+            "<h2>Challenges</h2> " +
+            "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aspernatur ipsam perferendis quae similique voluptas?</p> " +
+            "<h2>Outcome</h2> " +
+            "<p>Lorem  lorem 100 ipsum dolor sit amet, consectetur adipisicing elit. Beatae, porro.</p> " +
+            "" +
+            "<h2>Outcome</h2> " +
+            "<p>Lorem  lorem 100 ipsum dolor sit amet, consectetur adipisicing elit. Beatae, porro.</p> " +
+            "" +
+            "<h2>Outcome</h2> " +
+            "<p>Lorem  lorem 100 ipsum dolor sit amet, consectetur adipisicing elit. Beatae, porro.</p> " +
+            "" +
+            "<h2>Outcome</h2> " +
+            "<p>Lorem  lorem 100 ipsum dolor sit amet, consectetur adipisicing elit. Beatae, porro.</p> " +
+            "" +
+            "<h2>Outcome</h2> " +
+            "<p>Lorem  lorem 100 ipsum dolor sit amet, consectetur adipisicing elit. Beatae, porro.</p> " +
+            "" +
+            "<h2>Outcome</h2> " +
+            "<p>Lorem  lorem 100 ipsum dolor sit amet, consectetur adipisicing elit. Beatae, porro.</p> " +
+            "" +
+            "<h2>Outcome</h2> " +
+            "<p>Lorem  lorem 100 ipsum dolor sit amet, consectetur adipisicing elit. Beatae, porro.</p> " +
+            "" +
+            "<h2>Outcome</h2> " +
+            "<p>Lorem  lorem 100 ipsum dolor sit amet, consectetur adipisicing elit. Beatae, porro.</p> " +
+            "" +
+            "<h2>Outcome</h2> " +
+            "<p>Lorem  lorem 100 ipsum dolor sit amet, consectetur adipisicing elit. Beatae, porro.</p> " +
+            "",
+          images: [
+            {
+              src: require('assets/images/image001.jpg'),
+              description: 'The Power In My Hands',
+            },
+          ]
+        },
+
+
+        {
+          slug: "this-portfolio",
+          title: "This Portfolio",
+          description: "How this portfolio was made",
+          code: "https://github.com/EricTalv/et-portfolio",
+          tags: ['#vue', '#nuxt'],
+
+          live: null,
+
+          body: "" +
+            "<h2>Objective</h2> " +
+            "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias blanditiis error expedita hic in quisquam saepe ullam velit veniam voluptate.</p> " +
+            "<h2>Challenges</h2> " +
+            "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aspernatur ipsam perferendis quae similique voluptas?</p> " +
+            "<h2>Outcome</h2> " +
+            "<p>Lorem  lorem 100 ipsum dolor sit amet, consectetur adipisicing elit. Beatae, porro.</p> " +
+            "" +
+            "<h2>Outcome</h2> " +
+            "<p>Lorem  lorem 100 ipsum dolor sit amet, consectetur adipisicing elit. Beatae, porro.</p> " +
+            "" +
+            "<h2>Outcome</h2> " +
+            "<p>Lorem  lorem 100 ipsum dolor sit amet, consectetur adipisicing elit. Beatae, porro.</p> " +
+            "" +
+            "<h2>Outcome</h2> " +
+            "<p>Lorem  lorem 100 ipsum dolor sit amet, consectetur adipisicing elit. Beatae, porro.</p> " +
+            "" +
+            "<h2>Outcome</h2> " +
+            "<p>Lorem  lorem 100 ipsum dolor sit amet, consectetur adipisicing elit. Beatae, porro.</p> " +
+            "" +
+            "<h2>Outcome</h2> " +
+            "<p>Lorem  lorem 100 ipsum dolor sit amet, consectetur adipisicing elit. Beatae, porro.</p> " +
+            "" +
+            "<h2>Outcome</h2> " +
+            "<p>Lorem  lorem 100 ipsum dolor sit amet, consectetur adipisicing elit. Beatae, porro.</p> " +
+            "" +
+            "<h2>Outcome</h2> " +
+            "<p>Lorem  lorem 100 ipsum dolor sit amet, consectetur adipisicing elit. Beatae, porro.</p> " +
+            "" +
+            "<h2>Outcome</h2> " +
+            "<p>Lorem  lorem 100 ipsum dolor sit amet, consectetur adipisicing elit. Beatae, porro.</p> " +
+            "",
+          images: [
+            {
+              src: require('assets/images/image001.jpg'),
+              description: 'The Power In My Hands',
+            },
+          ]
+        },
+
+
+        {
+          slug: "this-portfolio",
+          title: "This Portfolio",
+          description: "How this portfolio was made",
+          code: "https://github.com/EricTalv/et-portfolio",
+          tags: ['#vue', '#nuxt'],
+
+          live: null,
+
+          body: "" +
+            "<h2>Objective</h2> " +
+            "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias blanditiis error expedita hic in quisquam saepe ullam velit veniam voluptate.</p> " +
+            "<h2>Challenges</h2> " +
+            "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aspernatur ipsam perferendis quae similique voluptas?</p> " +
+            "<h2>Outcome</h2> " +
+            "<p>Lorem  lorem 100 ipsum dolor sit amet, consectetur adipisicing elit. Beatae, porro.</p> " +
+            "" +
+            "<h2>Outcome</h2> " +
+            "<p>Lorem  lorem 100 ipsum dolor sit amet, consectetur adipisicing elit. Beatae, porro.</p> " +
+            "" +
+            "<h2>Outcome</h2> " +
+            "<p>Lorem  lorem 100 ipsum dolor sit amet, consectetur adipisicing elit. Beatae, porro.</p> " +
+            "" +
+            "<h2>Outcome</h2> " +
+            "<p>Lorem  lorem 100 ipsum dolor sit amet, consectetur adipisicing elit. Beatae, porro.</p> " +
+            "" +
+            "<h2>Outcome</h2> " +
+            "<p>Lorem  lorem 100 ipsum dolor sit amet, consectetur adipisicing elit. Beatae, porro.</p> " +
+            "" +
+            "<h2>Outcome</h2> " +
+            "<p>Lorem  lorem 100 ipsum dolor sit amet, consectetur adipisicing elit. Beatae, porro.</p> " +
+            "" +
+            "<h2>Outcome</h2> " +
+            "<p>Lorem  lorem 100 ipsum dolor sit amet, consectetur adipisicing elit. Beatae, porro.</p> " +
+            "" +
+            "<h2>Outcome</h2> " +
+            "<p>Lorem  lorem 100 ipsum dolor sit amet, consectetur adipisicing elit. Beatae, porro.</p> " +
+            "" +
+            "<h2>Outcome</h2> " +
+            "<p>Lorem  lorem 100 ipsum dolor sit amet, consectetur adipisicing elit. Beatae, porro.</p> " +
+            "",
+          images: [
+            {
+              src: require('assets/images/image001.jpg'),
+              description: 'The Power In My Hands',
+            },
+          ]
+        },
+
+
 
       ]
     }
@@ -228,7 +378,7 @@ export default {
 }
 */
 
-.portfolio-view-container {
+.portfolio-wrapper {
   &::-webkit-scrollbar {
     width: 20px;
     border: 1px solid white;
@@ -242,11 +392,14 @@ export default {
   scrollbar-color: #5A5A5A transparent;
 }
 
+.portfolio-item-content {
+  justify-content: center;
+}
 
 .portfolio-item-body {
   margin-top: 5px;
   max-height: 260px;
-
+  padding-right: 50px;
 
 }
 
@@ -357,7 +510,7 @@ export default {
     display: flex;
 
     a {
-      width: 90%;
+      width: 95%;
     }
 
     &:before {
@@ -389,6 +542,9 @@ export default {
 }
 
 .portfolio-item-body  {
+  text-align: justify;
+  width: 45%;
+
   h2 {
     font-weight: bolder;
     text-decoration: underline;
@@ -396,6 +552,10 @@ export default {
 
   p {
     margin-bottom: 15px;
+  }
+
+  @media only screen and (max-width: 768px) {
+     width: 60%;
   }
 }
 
