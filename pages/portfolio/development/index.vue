@@ -26,7 +26,7 @@
 
         <div class="about-nav-right w-full text-right flex flex-col">
 
-          <p class="text-sm">Portfolio</p>
+          <p class="text-sm" v-if="!currentPortfolioViewItem">Portfolio</p>
 
           <div class="flex justify-end self-end">
             <p class="portfolio-development-link " v-if="!currentPortfolioViewItem" :class=" { 'text-gray-500': currentPortfolioViewItem }">development</p>
@@ -479,7 +479,7 @@ export default {
 
 .portfolio-list-body {
 
-  max-height: 260px;
+  max-height: 340px;
   overflow-y: auto;
   width: 90%;
   margin-top: 15px;
@@ -555,7 +555,7 @@ export default {
   }
 
   @media only screen and (max-width: 768px) {
-     width: 60%;
+     width: 100%;
   }
 }
 
@@ -575,7 +575,6 @@ export default {
     margin-left: 5px;
 
   }
-
 }
 
 
