@@ -2,8 +2,8 @@
   <main class="index">
     <div class="wrapper">
       <div class="title">
-        <span class="title--eric">eric</span>
-        <span class="title--talv">talviste</span>
+        <span class="title--eric">ERIC</span>
+        <span class="title--talv">TALVISTE</span>
       </div>
       <div class="nav">
         <a href="" class="nav__item nav__item--about">about</a>
@@ -37,6 +37,7 @@ export default {
 
   }
 
+
   .wrapper {
 
     height: 100%;
@@ -47,17 +48,20 @@ export default {
     flex-flow: column;
   }
 
+  // ==== Index Text Styles
+  .title, .nav {
+    text-shadow: 0px 8px 6px rgba(0,0,0,0.3);
+  }
+
   // ====  Index Title
   .title {
+
     color: white;
 
     display: flex;
     flex-flow: column;
     align-items: center;
 
-    .title--eric, .title--talv {
-      text-transform: uppercase;
-    }
 
     .title--eric {
       font-size: 9em;
@@ -81,17 +85,24 @@ export default {
     text-align: center;
 
 
-    a {
+    .nav__item {
       font-size: 2.5em;
       margin-bottom: 10px;
+
+      transition: .5s all;
+      // ==== Index Nav item hovers
+      &:hover {
+        font-family: Consolas;
+      }
     }
   }
 
   /* BreakPoints */
+  $breakpoint-desktop: 1000px;
   $breakpoint-tablet: 768px;
   $breakpoint-mobile: 501px;
 
-  // ====  Index media queries - ON DESKTOP
+  // ====  Index media queries - ON TABLET
   @media  (min-width: $breakpoint-mobile) {
     .index {
       background-image: url("./assets/images/index-bg.png");
@@ -110,9 +121,14 @@ export default {
       width: 50%;
     }
 
+
+    // ====  Index Title
+
     .title {
 
       align-items: end;
+
+      margin-right: 10px;
 
       .title--eric, .title--talv {
         font-size: 3.3em;
@@ -124,10 +140,47 @@ export default {
 
     }
 
+    // ====  Index Nav
     .nav {
       align-items: start;
+
+      margin-left: 10px;
+
+      .nav__item {
+        font-size: 2em;
+      }
     }
 
+    // ====  Index media queries - ON DESKTOP
+    @media  (min-width: $breakpoint-tablet) {
+      // ====  Index Title
+      .title {
+
+        margin-right: 25px;
+
+        .title--eric, .title--talv {
+          font-size: 7vw;
+        }
+
+        .title--eric {
+          height: 6.5vw;
+
+        }
+      }
+
+      // ====  Index Nav
+      .nav {
+
+        margin-left: 25px;
+
+
+        .nav__item {
+          font-size: 3vw;
+        }
+      }
+
+
+    }
 
 
   }
