@@ -4,15 +4,14 @@
 
 @font-face {
   font-family: 'Blue Screen Personal Use';
-  src: url('/assets/fonts/bluescreen-font/BlueScreen-Regular.eot'); /* IE9 Compat Modes */
-  src: url('/assets/fonts/bluescreen-font/BlueScreen-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('/assets/fonts/bluescreen-font/BlueScreen-Regular.woff') format('woff'), /* Modern Browsers */
-  url('/assets/fonts/bluescreen-font/BlueScreen-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
-  url('/assets/fonts/bluescreen-font/BlueScreen-Regular.svg#svgFontName') format('svg'); /* Legacy iOS */
+  src: url('~/assets/fonts/bluescreen-font/BlueScreen-Regular.eot'); /* IE9 Compat Modes */
+  src: url('~/assets/fonts/bluescreen-font/BlueScreen-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('~/assets/fonts/bluescreen-font/BlueScreen-Regular.woff') format('woff'), /* Modern Browsers */
+  url('~/assets/fonts/bluescreen-font/BlueScreen-Regular.woff2') format('woff2'),
+  url('~/assets/fonts/bluescreen-font/BlueScreen-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+  url('~/assets/fonts/bluescreen-font/BlueScreen-Regular.svg#svgFontName') format('svg'); /* Legacy iOS */
+  font-weight: normal;
+  font-style: normal;
 }
 
 // GLOBAL
-
-* {
-  font-family: "Blue Screen Personal Use", sans-serif;
-}

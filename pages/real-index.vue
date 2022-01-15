@@ -51,6 +51,7 @@ export default {
   // ==== Index Text Styles
   .title, .nav {
     text-shadow: 0px 8px 6px rgba(0,0,0,0.3);
+    font-family: "Blue Screen Personal Use", "Consolas", Courier, monospace;
   }
 
   // ====  Index Title
@@ -74,7 +75,6 @@ export default {
   }
 
   // ====  Index Nav
-
   .nav {
 
     color: white;
@@ -92,13 +92,12 @@ export default {
       transition: .5s all;
       // ==== Index Nav item hovers
       &:hover {
-        font-family: Consolas;
+        letter-spacing: 5px;
       }
     }
   }
 
   /* BreakPoints */
-  $breakpoint-desktop: 1000px;
   $breakpoint-tablet: 768px;
   $breakpoint-mobile: 501px;
 
@@ -121,13 +120,9 @@ export default {
       width: 50%;
     }
 
-
     // ====  Index Title
-
     .title {
-
       align-items: end;
-
       margin-right: 10px;
 
       .title--eric, .title--talv {
@@ -164,29 +159,19 @@ export default {
 
         .title--eric {
           height: 6.5vw;
-
         }
       }
 
       // ====  Index Nav
       .nav {
-
         margin-left: 25px;
-
 
         .nav__item {
           font-size: 3vw;
         }
       }
-
-
     }
 
-
   }
-
-
-
-
 
 </style>
