@@ -1,5 +1,5 @@
 <template>
-  <main class="index">
+  <main class="index-container">
     <div class="wrapper">
       <div class="title">
         <span class="title--eric">ERIC</span>
@@ -22,21 +22,25 @@ export default {
 
 <style lang="scss" scoped>
 
+
+  /* BreakPoints */
+  $breakpoint-tablet: 768px;
+  $breakpoint-mobile: 501px;
+
   // ====  Index Background
   // ====  ON MOBILE
-  .index {
+  .index-container {
 
     width: 100%;
 
     background-color: black;
-    background-image: url("./assets/images/index-mobile-bg.png");
+    background-image: url("../assets/images/mobile-bg.png");
     background-repeat: no-repeat;
     background-position: center;
 
     background-size: 100% 1500px;
 
   }
-
 
   .wrapper {
 
@@ -97,14 +101,10 @@ export default {
     }
   }
 
-  /* BreakPoints */
-  $breakpoint-tablet: 768px;
-  $breakpoint-mobile: 501px;
-
   // ====  Index media queries - ON TABLET
   @media  (min-width: $breakpoint-mobile) {
     .index {
-      background-image: url("./assets/images/index-bg.png");
+      background-image: url("../assets/images/big-bg.png");
       background-size: cover;
     }
 
