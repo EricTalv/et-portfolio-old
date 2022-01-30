@@ -4,15 +4,9 @@
         DEVELOPMENT
       </div>
       <div class="dev-list-container">
-        <div class="dev-item">
-          <div class="dev-item__title">This Portfolio</div>
-        </div>
-        <div class="dev-item">
-          <div class="dev-item__title">This Portfolio</div>
-        </div>
-        <div class="dev-item">
-          <div class="dev-item__title">This Portfolio</div>
-        </div>
+        <a href="#" class="dev-item">
+          <span class="dev-item__title">This Portfolio</span>
+        </a>
       </div>
   </main>
 </template>
@@ -53,18 +47,19 @@ name: "development"
     text-align: center;
   }
 
+  .dev-list-container {
+    width: 100%;
+  }
+
   .dev-item {
     background-image: url("../assets/images/dev-item-mobile-bg.png");
     background-repeat: no-repeat;
     background-size: cover;
 
 
-    margin: 0 0 20px;
 
-    padding: 50px;
 
     .dev-item__title {
-      width: 100%;
       text-align: center;
       font-size: 2em;
 
