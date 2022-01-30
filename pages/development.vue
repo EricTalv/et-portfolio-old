@@ -16,11 +16,12 @@
         <a href="#" class="dev-item">This Portfolio</a>
 
       </div>
+    <div class="dev-nav">
+      <a href="" class="dev-nav__item">about</a>
+      <a href="" class="dev-nav__item">design</a>
+    </div>
 
-      <div class="dev-nav">
-        <a href="" class="dev-nav__item">about</a>
-        <a href="" class="dev-nav__item">design</a>
-      </div>
+
   </main>
 </template>
 
@@ -44,6 +45,10 @@ name: "development"
     background-position: center;
 
     background-size: 100% 1500px;
+
+    display: flex;
+    flex-flow: column;
+    padding-top: 5vh;
   }
 
   // =  Dev Text Defaults
@@ -54,7 +59,7 @@ name: "development"
   }
 
   .dev-title {
-    font-size: 4em;
+    font-size: 3em;
     padding: 20px 0 20px 0;
     width: 100%;
     text-align: center;
@@ -63,7 +68,7 @@ name: "development"
   // =  Dev List
   .dev-list {
     width: 100%;
-    height: 70vh;
+    height: 56vh;
 
     overflow-y: auto;
 
@@ -96,16 +101,9 @@ name: "development"
   .dev-nav {
     display: flex;
     justify-content: space-around;
-    align-items: center;
-
-    bottom: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    position: fixed;
-
+    padding-top: 10px;
     .dev-nav__item {
-      font-size: 2.5em;
-      margin: 0 60px 0 60px;
+      font-size: 2em;
     }
   }
 
