@@ -23,9 +23,7 @@ export default {
 <style lang="scss" scoped>
 
 
-  /* BreakPoints */
-  $breakpoint-tablet: 768px;
-  $breakpoint-mobile: 501px;
+
 
   // ====  Index Background
   // ====  ON MOBILE
@@ -35,6 +33,7 @@ export default {
 
     background-color: black;
     background-image: url("../assets/images/mobile-bg.png");
+
     background-repeat: no-repeat;
     background-position: center;
 
@@ -101,9 +100,13 @@ export default {
     }
   }
 
+  /* BreakPoints */
+  $breakpoint-tablet: 768px;
+  $breakpoint-mobile: 501px;
+
   // ====  Index media queries - ON TABLET
   @media  (min-width: $breakpoint-mobile) {
-    .index {
+    .index-container {
       background-image: url("../assets/images/big-bg.png");
       background-size: cover;
     }
