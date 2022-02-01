@@ -5,9 +5,9 @@
     </div>
     <div class="dev-list">
 
-      <button @click="showModal(projectList.project_one)" class="dev-item">This Portfolio</button>
-      <button @click="showModal(projectList.project_two)" class="dev-item">This Portfolio 2</button>
-      <button @click="showModal(projectList.project_three)" class="dev-item">This Portfolio 3</button>
+      <button @click="showModal(projectList.project_one)" class="dev-item">This Portfolio ONE</button>
+      <button @click="showModal(projectList.project_two)" class="dev-item">This Portfolio TWO</button>
+      <button @click="showModal(projectList.project_three)" class="dev-item">This Portfolio THREE</button>
 
     </div>
     <div class="dev-nav">
@@ -21,6 +21,9 @@
       <button @click="closeModal()" class="dev-modal__close">X</button>
       <div class="dev-modal__body">
         <h1 class="dev-modal__title">{{ this.currentModalProject.title}}</h1>
+        <a href="#" >
+          <img src="../assets/images/github.svg" class="dev-modal__github" alt="">
+        </a>
       </div>
     </div>
 
@@ -39,17 +42,17 @@ export default {
 
       projectList: {
         project_one: {
-          title: "This Portfolio 1",
+          title: "This Portfolio ONE",
           description: "this is the description of project ONE "
 
         },
         project_two: {
-          title: "This Portfolio 2",
+          title: "This Portfolio TWO",
           description: "this is the description of project TWOO"
 
         },
         project_three: {
-          title: "This Portfolio 3",
+          title: "This Portfolio THREE",
           description: "this is the description of project THREE"
 
         }
@@ -146,7 +149,6 @@ export default {
   font-size: 2em;
 }
 
-
 // =  Dev Modal
 .dev-modal {
 
@@ -163,13 +165,26 @@ export default {
   .dev-modal__close {
     background-color: white;
     color: black;
-    width: 20px;
+    width: 27px;
     float: right;
     margin: 20px;
   }
 
   .dev-modal__body {
     padding: 20px;
+
+    .dev-modal__title {
+      transform: rotate(90deg);
+      position: absolute;
+      top: 113px;
+      right: -37px;
+    }
+
+    .dev-modal__github {
+      position: absolute;
+      top: 210px;
+      left: 273px;
+    }
   }
 }
 
