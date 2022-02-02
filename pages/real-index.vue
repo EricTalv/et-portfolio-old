@@ -1,5 +1,9 @@
 <template>
   <main class="index-container">
+
+    <silent-box :gallery="images"></silent-box>
+
+
     <div class="wrapper">
       <div class="title">
         <span class="title--eric">ERIC</span>
@@ -16,11 +20,33 @@
 
 <script>
 export default {
-  name: "real-index"
+  name: "real-index",
+
+  data () {
+    return {
+      images: [
+        {
+          src: require('assets/images/placeholder.png'),
+          srcSet: require('assets/images/placeholder.png'),
+          description: 'Sunken dreams II. by Arbebuk',
+          thumbnailWidth: '150px',
+        }
+      ]
+    }
+  }
+
+
 }
 </script>
 
 <style lang="scss" scoped>
+
+
+#silentbox-gallery {
+  .silentbox-item {
+    border: 6px solid red;
+  }
+}
 
 
 
