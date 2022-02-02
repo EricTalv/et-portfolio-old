@@ -19,12 +19,19 @@
 
     <div class="dev-modal" v-if="isModalVisible">
       <button @click="closeModal()" class="dev-modal__close">X</button>
+
+      <h1 class="dev-modal__title">{{ this.currentModalProject.title}}</h1>
+
       <div class="dev-modal__body">
-        <h1 class="dev-modal__title">{{ this.currentModalProject.title}}</h1>
-        <a href="#" >
-          <img src="../assets/images/github.svg" class="dev-modal__github" alt="">
-        </a>
+        <p v-for="paragraph in this.currentModalProject.description">{{ paragraph }}</p>
       </div>
+
+      <silent-box :gallery="this.currentModalProject.images"></silent-box>
+
+      <a href="#" >
+        <img src="../assets/images/github.svg" class="dev-modal__github" alt="">
+      </a>
+
     </div>
 
 
@@ -43,17 +50,48 @@ export default {
       projectList: {
         project_one: {
           title: "This Portfolio ONE",
-          description: "this is the description of project ONE "
+          description: [
+            "This is some text one",
+            "This is some text Three",
+            "This is some text Two"
+          ],
+          images: [
+            {
+              src: require('assets/images/placeholder.png'),
+              srcSet: require('assets/images/placeholder.png'),
+              description: 'Sunken dreams II. by Arbebuk',
+              thumbnailWidth: '150px',
+            },
+            {
+              src: require('assets/images/big-bg.png'),
+              srcSet: require('assets/images/big-bg.png'),
+              description: 'Sunken dreams II. by Arbebuk',
+              thumbnailWidth: '150px',
+            },
+            {
+              src: require('assets/images/mobile-bg.png'),
+              srcSet: require('assets/images/mobile-bg.png'),
+              description: 'Sunken dreams II. by Arbebuk',
+              thumbnailWidth: '150px',
+            }
+          ]
 
         },
         project_two: {
           title: "This Portfolio TWO",
-          description: "this is the description of project TWOO"
-
+          description: [
+            "This is some text one",
+            "This is some text Three",
+            "This is some text Two"
+          ]
         },
         project_three: {
           title: "This Portfolio THREE",
-          description: "this is the description of project THREE"
+          description: [
+            "This is some text one",
+            "This is some text Three",
+            "This is some text Two"
+          ]
 
         }
       }
@@ -74,6 +112,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 
 // ====  ON MOBILE
 // =  Dev Background
@@ -152,6 +191,8 @@ export default {
 // =  Dev Modal
 .dev-modal {
 
+  padding: 20px;
+
   position: absolute;
   width: 100%;
   height: 100%;
@@ -167,26 +208,52 @@ export default {
     color: black;
     width: 27px;
     float: right;
-    margin: 20px;
+  }
+
+  .dev-modal__title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-style: italic;
+    text-decoration: underline;
+  }
+
+  .dev-modal__github {
+    position: absolute;
+    width: 23px;
+    top:72px;
+    right:22px;
   }
 
   .dev-modal__body {
-    padding: 20px;
 
-    .dev-modal__title {
-      transform: rotate(90deg);
-      position: absolute;
-      top: 113px;
-      right: -37px;
-    }
+    padding-top: 10px;
+    padding-right: 30px;
 
-    .dev-modal__github {
-      position: absolute;
-      top: 210px;
-      left: 273px;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 300;
+    font-size: .8em;
+
+    p {
+      margin-bottom: 15px;
     }
   }
+
 }
+
+
+
+#silentbox-gallery {
+  position: absolute;
+  display: flex;
+  bottom: 124px;
+  left: 0;
+
+  .silentbox-item {
+    border: 5px solid red !important;
+  }
+
+
+}
+
 
 
 /* BreakPoints */
