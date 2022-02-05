@@ -16,8 +16,8 @@
 
     </div>
     <div class="dev-nav">
-      <a  href="" class="dev-nav__item">about</a>
-      <a  href="" class="dev-nav__item">design</a>
+      <a href="" class="dev-nav__item">about</a>
+      <a href="" class="dev-nav__item">design</a>
 
     </div>
 
@@ -25,7 +25,7 @@
     <div class="dev-modal" v-if="isModalVisible">
       <button @click="closeModal()" class="dev-modal__close">X</button>
 
-      <h1 class="dev-modal__title">{{ this.currentModalProject.title}}</h1>
+      <h1 class="dev-modal__title">{{ this.currentModalProject.title }}</h1>
 
       <div class="dev-modal__body">
         <p v-for="paragraph in this.currentModalProject.description">{{ paragraph }}</p>
@@ -33,7 +33,7 @@
 
       <silent-box :preview-count="3" :gallery="this.currentModalProject.images"></silent-box>
 
-      <a href="#" >
+      <a href="#">
         <img src="../assets/images/github.svg" class="dev-modal__github" alt="">
       </a>
 
@@ -47,7 +47,7 @@
 export default {
   name: "development",
 
-  data () {
+  data() {
     return {
       isModalVisible: false,
       currentModalProject: null,
@@ -137,33 +137,6 @@ export default {
 }
 </script>
 
-
-<style>
-
-
-#silentbox-gallery {
-  display: flex;
-  justify-content: space-around;
-  max-width: 100%;
-  overflow: hidden;
-  padding-left: 20px;
-}
-
-.silentbox-item {
-  margin-right: 20px;
-
-}
-
-.silentbox-item:nth-child(2) {
-}
-
-.silentbox-item > img {
-  height: 211px;
-  max-width: 145px;
-  object-fit: cover;
-}
-
-</style>
 
 <style lang="scss" scoped>
 
@@ -271,8 +244,8 @@ export default {
   .dev-modal__github {
     position: absolute;
     width: 23px;
-    top:72px;
-    right:22px;
+    top: 72px;
+    right: 22px;
   }
 
   .dev-modal__body {
@@ -296,9 +269,190 @@ export default {
 
 }
 
-
-
 /* BreakPoints */
 $breakpoint-tablet: 768px;
 $breakpoint-mobile: 501px;
+
+// ====  Dev media queries - ON TABLET
+@media (min-width: $breakpoint-mobile) {
+
+  // =  Dev Background
+  .dev-container {
+
+  }
+
+  // =  Dev Text Defaults
+  .dev-container, .dev-item {
+
+  }
+
+  .dev-title {
+
+  }
+
+  // =  Dev List
+  .dev-list {
+    text-align: right;
+    direction: rtl;
+  }
+
+  // =  Dev List Item
+  .dev-item {
+    padding: 100px;
+    width: 85%;
+
+    &:last-child {
+
+    }
+  }
+
+  // =  Dev Nav
+  .dev-nav {
+
+  }
+
+  .dev-nav__item {
+
+  }
+
+  // =  Dev Modal
+  .dev-modal {
+
+
+    .dev-modal__close {
+
+    }
+
+    .dev-modal__title {
+
+    }
+
+    .dev-modal__github {
+
+    }
+
+    .dev-modal__body {
+
+
+    }
+  }
+
+  // = Scrollbar styles
+  /* width */
+  ::-webkit-scrollbar {
+    width: 50px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background-image: url("../assets/images/scroll-bg.png");
+    background-size: contain;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: white;
+    mix-blend-mode: exclusion;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: lime;
+  }
+}
+
+// ====  Dev media queries - ON DESKTOP
+@media (min-width: $breakpoint-tablet) {
+
+  // ====  ON MOBILE
+  // =  Dev Background
+  .dev-container {
+
+  }
+
+  // =  Dev Text Defaults
+  .dev-container, .dev-item {
+
+  }
+
+  .dev-title {
+
+  }
+
+  // =  Dev List
+  .dev-list {
+
+  }
+
+  // =  Dev List Item
+  .dev-item {
+
+
+    &:last-child {
+
+    }
+  }
+
+  // =  Dev Nav
+  .dev-nav {
+
+  }
+
+  .dev-nav__item {
+
+  }
+
+  // =  Dev Modal
+  .dev-modal {
+
+
+    .dev-modal__close {
+
+    }
+
+    .dev-modal__title {
+
+    }
+
+    .dev-modal__github {
+
+    }
+
+    .dev-modal__body {
+
+
+    }
+
+  }
+
+}
+
+
+</style>
+
+
+<style>
+
+#silentbox-gallery {
+  display: flex;
+  justify-content: space-around;
+  max-width: 100%;
+  overflow: hidden;
+  padding-left: 20px;
+}
+
+.silentbox-item {
+  margin-right: 20px;
+
+}
+
+.silentbox-item:nth-child(2) {
+}
+
+.silentbox-item > img {
+  height: 211px;
+  max-width: 145px;
+  object-fit: cover;
+}
+
 </style>
