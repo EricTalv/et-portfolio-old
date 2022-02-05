@@ -6,8 +6,13 @@
     <div class="dev-list">
 
       <button @click="showModal(projectList.project_one)" class="dev-item">This Portfolio ONE</button>
-      <button @click="showModal(projectList.project_two)" class="dev-item">This Portfolio TWO</button>
-      <button @click="showModal(projectList.project_three)" class="dev-item">This Portfolio THREE</button>
+      <button @click="showModal(projectList.project_one)" class="dev-item">This Portfolio ONE</button>
+      <button @click="showModal(projectList.project_one)" class="dev-item">This Portfolio ONE</button>
+      <button @click="showModal(projectList.project_one)" class="dev-item">This Portfolio ONE</button>
+      <button @click="showModal(projectList.project_one)" class="dev-item">This Portfolio ONE</button>
+      <button @click="showModal(projectList.project_one)" class="dev-item">This Portfolio ONE</button>
+      <button @click="showModal(projectList.project_one)" class="dev-item">This Portfolio ONE</button>
+
 
     </div>
     <div class="dev-nav">
@@ -26,7 +31,7 @@
         <p v-for="paragraph in this.currentModalProject.description">{{ paragraph }}</p>
       </div>
 
-      <silent-box :gallery="this.currentModalProject.images"></silent-box>
+      <silent-box :preview-count="3" :gallery="this.currentModalProject.images"></silent-box>
 
       <a href="#" >
         <img src="../assets/images/github.svg" class="dev-modal__github" alt="">
@@ -51,29 +56,50 @@ export default {
         project_one: {
           title: "This Portfolio ONE",
           description: [
-            "This is some text one",
-            "This is some text Three",
-            "This is some text Two"
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab odio provident quo voluptate. Doloribus et fugit officiis quaerat reprehenderit sunt?\n",
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis eaque enim est excepturi facilis illum repellat veniam? Alias blanditiis cum dolore, quae qui quibusdam sequi. Architecto debitis dolor ipsa molestiae nobis repellat repudiandae, sequi ut!\n",
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, eum exercitationem impedit laudantium officiis voluptatum?\n",
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, eum exercitationem impedit laudantium officiis voluptatum?\n",
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, eum exercitationem impedit laudantium officiis voluptatum?\n",
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, eum exercitationem impedit laudantium officiis voluptatum?\n"
           ],
           images: [
             {
               src: require('assets/images/placeholder.png'),
               srcSet: require('assets/images/placeholder.png'),
               description: 'Sunken dreams II. by Arbebuk',
-              thumbnailWidth: '150px',
+              thumbnailWidth: '1600px',
             },
             {
-              src: require('assets/images/big-bg.png'),
-              srcSet: require('assets/images/big-bg.png'),
+              src: require('assets/images/placeholder.png'),
+              srcSet: require('assets/images/placeholder.png'),
               description: 'Sunken dreams II. by Arbebuk',
-              thumbnailWidth: '150px',
+              thumbnailWidth: '1600px',
             },
             {
-              src: require('assets/images/mobile-bg.png'),
-              srcSet: require('assets/images/mobile-bg.png'),
+              src: require('assets/images/placeholder.png'),
+              srcSet: require('assets/images/placeholder.png'),
               description: 'Sunken dreams II. by Arbebuk',
-              thumbnailWidth: '150px',
-            }
+              thumbnailWidth: '1600px',
+            },
+            {
+              src: require('assets/images/tester1.png'),
+              srcSet: require('assets/images/tester1.png'),
+              description: 'Sunken dreams II. by Arbebuk',
+              thumbnailWidth: '1600px',
+            },
+            {
+              src: require('assets/images/tester2.png'),
+              srcSet: require('assets/images/tester2.png'),
+              description: 'Sunken dreams II. by Arbebuk',
+              thumbnailWidth: '1600px',
+            },
+            {
+              src: require('assets/images/tester3.png'),
+              srcSet: require('assets/images/tester3.png'),
+              description: 'Sunken dreams II. by Arbebuk',
+              thumbnailWidth: '1600px',
+            },
           ]
 
         },
@@ -111,6 +137,34 @@ export default {
 }
 </script>
 
+
+<style>
+
+
+#silentbox-gallery {
+  display: flex;
+  justify-content: space-around;
+  max-width: 100%;
+  overflow: hidden;
+  padding-left: 20px;
+}
+
+.silentbox-item {
+  margin-right: 20px;
+
+}
+
+.silentbox-item:nth-child(2) {
+}
+
+.silentbox-item > img {
+  height: 211px;
+  max-width: 145px;
+  object-fit: cover;
+}
+
+</style>
+
 <style lang="scss" scoped>
 
 
@@ -128,7 +182,6 @@ export default {
 
   display: flex;
   flex-flow: column;
-  padding-top: 5vh;
 }
 
 // =  Dev Text Defaults
@@ -148,11 +201,9 @@ export default {
 // =  Dev List
 .dev-list {
   width: 100%;
-  height: 56vh;
+  height: 70vh;
 
   overflow-y: auto;
-
-
 }
 
 // =  Dev List Item
@@ -197,6 +248,7 @@ export default {
   width: 100%;
   height: 100%;
 
+
   top: 0;
 
   background-color: black;
@@ -226,31 +278,21 @@ export default {
   .dev-modal__body {
 
     padding-top: 10px;
-    padding-right: 30px;
+
+    width: 70vw;
 
     font-family: "IBM Plex Mono", monospace;
     font-weight: 300;
     font-size: .8em;
 
+    max-height: 65%;
+    overflow: auto;
+    margin-bottom: 20px;
+
     p {
       margin-bottom: 15px;
     }
   }
-
-}
-
-
-
-#silentbox-gallery {
-  position: absolute;
-  display: flex;
-  bottom: 124px;
-  left: 0;
-
-  .silentbox-item {
-    border: 5px solid red !important;
-  }
-
 
 }
 
