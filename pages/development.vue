@@ -1,17 +1,33 @@
 <template>
   <main class="dev-container">
+
+    <div class="dev-nav-tablet">
+      <a href="" class="dev-nav-tablet__item">about</a>
+      <a href="" class="dev-nav-tablet__item">design</a>
+    </div>
+
     <div class="dev-title">
       DEVELOPMENT
     </div>
+
+
     <div class="dev-list">
 
-      <button @click="showModal(projectList.project_one)" class="dev-item">This Portfolio ONE</button>
-      <button @click="showModal(projectList.project_one)" class="dev-item">This Portfolio ONE</button>
-      <button @click="showModal(projectList.project_one)" class="dev-item">This Portfolio ONE</button>
-      <button @click="showModal(projectList.project_one)" class="dev-item">This Portfolio ONE</button>
-      <button @click="showModal(projectList.project_one)" class="dev-item">This Portfolio ONE</button>
-      <button @click="showModal(projectList.project_one)" class="dev-item">This Portfolio ONE</button>
-      <button @click="showModal(projectList.project_one)" class="dev-item">This Portfolio ONE</button>
+      <simplebar
+        @scroll="getScrollPosition"
+        :style="`--scrollPos: ${scrollPosition}; --scrollPosDeg: ${scrollPositionDeg};`"
+
+        class="dev-list__simplebar"
+        data-simplebar-direction="rtl"
+        data-simplebar-auto-hide="false">
+        <button @click="showModal(projectList.project_one)" class="dev-item">This Portfolio ONE</button>
+        <button @click="showModal(projectList.project_one)" class="dev-item">This Portfolio TWO</button>
+        <button @click="showModal(projectList.project_one)" class="dev-item">This Portfolio THRE</button>
+        <button @click="showModal(projectList.project_one)" class="dev-item">This Portfolio FOUR</button>
+        <button @click="showModal(projectList.project_one)" class="dev-item">This Portfolio FIVE</button>
+      </simplebar>
+
+
 
 
     </div>
@@ -44,13 +60,23 @@
 </template>
 
 <script>
+
+import simplebar from 'simplebar-vue';
+import 'simplebar/dist/simplebar.min.css';
+
 export default {
   name: "development",
+  components: {
+    simplebar
+  },
 
   data() {
     return {
       isModalVisible: false,
       currentModalProject: null,
+
+      scrollPosition: 0 + "%",
+      scrollPositionDeg: 0 + "%",
 
       projectList: {
         project_one: {
@@ -132,8 +158,30 @@ export default {
     showModal(currentModalProject) {
       this.isModalVisible = true
       this.currentModalProject = currentModalProject
-    }
+    },
+
+    /* Get scrollbar-thumb position */
+    getScrollPosition: function (el) {
+      let elementHeight = el.target.offsetHeight;
+      let scrollTopPos = el.target.scrollTop;
+      let maxScrollHeight = el.target.scrollHeight;
+
+      /* This is to calculate the scrollbar-thumb position in percentage */
+      let scrollPositionPercentage = Math.ceil(
+        (scrollTopPos / (maxScrollHeight - elementHeight)) * 100
+      );
+
+      this.scrollPosition = scrollPositionPercentage + "%";
+      this.scrollPositionDeg = scrollPositionPercentage * 1.8 + "deg";
+
+      console.log(this.scrollPositionDeg);
+    },
+  },
+
+  computed: {
+
   }
+
 }
 </script>
 
@@ -142,7 +190,7 @@ export default {
 
 
 // ====  ON MOBILE
-// =  Dev Background
+// =  Dev Background - mobile
 .dev-container {
   width: 100%;
 
@@ -157,8 +205,8 @@ export default {
   flex-flow: column;
 }
 
-// =  Dev Text Defaults
-.dev-container, .dev-item {
+// =  Dev Text Defaults - mobile
+.dev-container, .dev-item, .dev-nav-tablet {
   color: white;
   font-family: "Blue Screen Personal Use", "Consolas", Courier, monospace;
   text-shadow: 0px 0px 10px #000000;
@@ -171,7 +219,7 @@ export default {
   text-align: center;
 }
 
-// =  Dev List
+// =  Dev List - mobile
 .dev-list {
   width: 100%;
   height: 70vh;
@@ -179,7 +227,7 @@ export default {
   overflow-y: auto;
 }
 
-// =  Dev List Item
+// =  Dev List Item - mobile
 .dev-item {
   background-image: url("../assets/images/dev-item-mobile-bg.png");
   background-repeat: no-repeat;
@@ -201,7 +249,7 @@ export default {
   }
 }
 
-// =  Dev Nav
+// =  Dev Nav - mobile
 .dev-nav {
   display: flex;
   justify-content: space-around;
@@ -212,7 +260,7 @@ export default {
   font-size: 2em;
 }
 
-// =  Dev Modal
+// =  Dev Modal - mobile
 .dev-modal {
 
   padding: 20px;
@@ -269,53 +317,72 @@ export default {
 
 }
 
+.dev-nav-tablet {
+  display: none;
+}
+
 /* BreakPoints */
 $breakpoint-tablet: 768px;
 $breakpoint-mobile: 501px;
 
-// ====  Dev media queries - ON TABLET
+// ====  Dev media queries - ON TABLET ==== ==== ==== ==== ==== ==== ==== ==== ==== ====
 @media (min-width: $breakpoint-mobile) {
 
-  // =  Dev Background
+  // =  Dev Background - tablet
   .dev-container {
 
   }
 
-  // =  Dev Text Defaults
+  // =  Dev Text Defaults - tablet
   .dev-container, .dev-item {
 
   }
 
   .dev-title {
-
+    text-align: left;
+    padding-left: 9vw;
   }
 
-  // =  Dev List
+  // =  Dev List - tablet
   .dev-list {
-    text-align: right;
-    direction: rtl;
+    height: auto;
+    overflow: unset;
+
+    position: fixed;
+    bottom: 0;
+
   }
 
-  // =  Dev List Item
+  // =  Dev List Item - tablet
   .dev-item {
-    padding: 100px;
-    width: 85%;
+    padding: 70px;
+    width: 75%;
+
 
     &:last-child {
 
     }
   }
 
-  // =  Dev Nav
+  // =  Dev Nav - tablet
   .dev-nav {
-
+    display: none;
   }
 
-  .dev-nav__item {
+  .dev-nav-tablet {
+    display: flex;
+    justify-content: space-between;
 
+    padding: 5vh 9vw 7vh 9vw;
+
+    .dev-nav-tablet__item {
+      font-size: 1.5em;
+    }
   }
 
-  // =  Dev Modal
+
+
+  // =  Dev Modal - tablet
   .dev-modal {
 
 
@@ -337,54 +404,38 @@ $breakpoint-mobile: 501px;
     }
   }
 
-  // = Scrollbar styles
-  /* width */
-  ::-webkit-scrollbar {
-    width: 50px;
+  .dev-list__simplebar {
+    height: 70vh;
+    direction: rtl;
   }
 
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background-image: url("../assets/images/scroll-bg.png");
-    background-size: contain;
-  }
-
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: white;
-    mix-blend-mode: exclusion;
-  }
-
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: lime;
-  }
 }
 
-// ====  Dev media queries - ON DESKTOP
+
+
+// ====  Dev media queries - ON DESKTOP ==== ==== ==== ==== ==== ==== ==== ==== ==== ====
 @media (min-width: $breakpoint-tablet) {
 
-  // ====  ON MOBILE
-  // =  Dev Background
+  // =  Dev Background - desktop
   .dev-container {
 
   }
 
-  // =  Dev Text Defaults
+  // =  Dev Text Defaults - desktop
   .dev-container, .dev-item {
 
   }
 
   .dev-title {
-
+      color: lime;
   }
 
-  // =  Dev List
+  // =  Dev List - desktop
   .dev-list {
 
   }
 
-  // =  Dev List Item
+  // =  Dev List Item - desktop
   .dev-item {
 
 
@@ -393,16 +444,15 @@ $breakpoint-mobile: 501px;
     }
   }
 
-  // =  Dev Nav
+  // =  Dev Nav - desktop
   .dev-nav {
-
   }
 
   .dev-nav__item {
 
   }
 
-  // =  Dev Modal
+  // =  Dev Modal - desktop
   .dev-modal {
 
 
@@ -432,6 +482,73 @@ $breakpoint-mobile: 501px;
 
 
 <style>
+
+/* ================ ================ ================  SIMPLEBAR STYLES ================ ================ ================ */
+
+/*
+.simplebar-scrollbar  {
+  background-image: url("../assets/images/scroll-thumb-arrow.svg");
+  mix-blend-mode: exclusion;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  transition: all .5s;
+}
+*/
+
+.simplebar-scrollbar > * {
+  box-sizing: border-box;
+}
+
+.simplebar-scrollbar{
+  box-sizing: border-box;
+
+  position: relative;
+  width: 60px;
+  right: -30px;
+
+  mix-blend-mode: exclusion;
+}
+
+.simplebar-scrollbar:before {
+
+  top: calc(var(--scrollPos) - (var(--scrollPos) * .21 )) !important;
+
+  background-image: url("./assets/images/scroll-thumb-arrow2.svg") !important;
+  background-repeat: no-repeat;
+  background-position-x: center;
+
+  mix-blend-mode: exclusion;
+
+  transform: rotate( calc(var(--scrollPosDeg) * -1) ) !important;
+  transform-origin: 50% 50%;
+
+  position: absolute !important;
+  width: 100% !important;
+  height: 75px !important;
+
+  margin-top: 5px;
+
+  left: 0;
+  right: 0;
+
+  z-index: -1 !important;
+
+  border-radius: 0;
+  opacity: 1 !important;
+
+}
+
+
+.simplebar-track {
+  padding: 0 30px 0 30px;
+  margin: 0 30vw 0 9vw;
+  background-image: url("../assets/images/scroll-bg.png");
+  background-size: contain;
+}
+
+
+/* ================ ================ ================  SILENTBOX STYLES ================ ================ ================ */
 
 #silentbox-gallery {
   display: flex;
