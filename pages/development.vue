@@ -430,6 +430,7 @@ $breakpoint-mobile: 501px;
   // =  Dev Background - desktop
   .dev-container {
     background-image: url("../assets/images/big-bg3.png");
+    background-size: 100% 1100px;
   }
 
   // =  Dev Text Defaults - desktop
@@ -558,7 +559,6 @@ $breakpoint-mobile: 501px;
   width: 100% !important;
   height: 75px !important;
 
-  margin-top: 2px;
 
   left: 0;
   right: 0;
@@ -572,7 +572,7 @@ $breakpoint-mobile: 501px;
 
 
 .simplebar-track {
-  padding: 0 30px 0 30px;
+  padding: 0px 30px 0 30px;
   margin: 0 30vw 0 9vw;
   background-image: url("../assets/images/scroll-bg.png");
   background-size: contain;
@@ -585,8 +585,12 @@ $breakpoint-mobile: 501px;
   .simplebar-track {
     margin-left: 2vw;
 
-    padding: 0 3vw 0 3vw;
+    padding: 10px 3vw 0 3vw;
 
+  }
+
+  .simplebar-track {
+    background-image: url("../assets/images/scroll-bg-btm-white.png");
   }
 
   .simplebar-scrollbar:before {
