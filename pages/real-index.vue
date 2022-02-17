@@ -112,7 +112,7 @@ export default {
   // ====  Index media queries - ON TABLET
   @media  (min-width: $breakpoint-mobile) {
     .index-container {
-      background-image: url("../assets/images/big-bg.png");
+      background-image: url("../assets/images/big-bg3.png");
       background-size: cover;
     }
 

@@ -322,11 +322,17 @@ export default {
 }
 
 /* BreakPoints */
-$breakpoint-tablet: 768px;
+$breakpoint-tablet: 930px;
 $breakpoint-mobile: 501px;
 
 // ====  Dev media queries - ON TABLET ==== ==== ==== ==== ==== ==== ==== ==== ==== ====
 @media (min-width: $breakpoint-mobile) {
+
+  // = Deb Simplebar - desktop
+  .dev-list__simplebar {
+    height: 70vh;
+    direction: rtl;
+  }
 
   // =  Dev Background - tablet
   .dev-container {
@@ -341,6 +347,9 @@ $breakpoint-mobile: 501px;
   .dev-title {
     text-align: left;
     padding-left: 9vw;
+    pointer-events: none;
+
+
   }
 
   // =  Dev List - tablet
@@ -376,7 +385,7 @@ $breakpoint-mobile: 501px;
     padding: 5vh 9vw 7vh 9vw;
 
     .dev-nav-tablet__item {
-      font-size: 1.5em;
+      font-size: 1.8em;
     }
   }
 
@@ -399,15 +408,11 @@ $breakpoint-mobile: 501px;
     }
 
     .dev-modal__body {
-
+      width: 50vw;
 
     }
   }
 
-  .dev-list__simplebar {
-    height: 70vh;
-    direction: rtl;
-  }
 
 }
 
@@ -416,9 +421,15 @@ $breakpoint-mobile: 501px;
 // ====  Dev media queries - ON DESKTOP ==== ==== ==== ==== ==== ==== ==== ==== ==== ====
 @media (min-width: $breakpoint-tablet) {
 
+  // = Deb Simplebar - desktop
+  .dev-list__simplebar {
+    height: 90vh;
+    direction: rtl;
+  }
+
   // =  Dev Background - desktop
   .dev-container {
-
+    background-image: url("../assets/images/big-bg3.png");
   }
 
   // =  Dev Text Defaults - desktop
@@ -427,17 +438,30 @@ $breakpoint-mobile: 501px;
   }
 
   .dev-title {
-      color: lime;
+    padding-left: 0;
+    margin-top: -100px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+    width: 50%;
   }
 
   // =  Dev List - desktop
   .dev-list {
+    width: 50%;
+    position: fixed;
+    right: 0;
+    bottom: 0;
 
   }
 
   // =  Dev List Item - desktop
   .dev-item {
-
+    width: 40vw;
 
     &:last-child {
 
@@ -445,10 +469,17 @@ $breakpoint-mobile: 501px;
   }
 
   // =  Dev Nav - desktop
-  .dev-nav {
+  .dev-nav-tablet {
+
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 40px 0 40px;
+
+
   }
 
-  .dev-nav__item {
+  .dev-nav-tablet__item {
 
   }
 
@@ -527,7 +558,7 @@ $breakpoint-mobile: 501px;
   width: 100% !important;
   height: 75px !important;
 
-  margin-top: 5px;
+  margin-top: 2px;
 
   left: 0;
   right: 0;
@@ -547,6 +578,25 @@ $breakpoint-mobile: 501px;
   background-size: contain;
 }
 
+/* ================ ================ ================  SIMPLEBAR STYLES MEDIA QUERIES ================ ================ ================ */
+
+/* ====  Dev media queries - ON DESKTOP ==== ==== ==== ==== ==== ==== ==== ==== ==== ==== */
+@media (min-width: 930px) {
+  .simplebar-track {
+    margin-left: 2vw;
+
+    padding: 0 3vw 0 3vw;
+
+  }
+
+  .simplebar-scrollbar:before {
+
+    top: calc(var(--scrollPos) - (var(--scrollPos) * .12 )) !important;
+
+
+  }
+
+}
 
 /* ================ ================ ================  SILENTBOX STYLES ================ ================ ================ */
 
@@ -555,7 +605,7 @@ $breakpoint-mobile: 501px;
   justify-content: space-around;
   max-width: 100%;
   overflow: hidden;
-  padding-left: 20px;
+  margin: 10% 0 0 0;
 }
 
 .silentbox-item {
@@ -571,5 +621,8 @@ $breakpoint-mobile: 501px;
   max-width: 145px;
   object-fit: cover;
 }
+
+
+
 
 </style>
