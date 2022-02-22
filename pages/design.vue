@@ -1,48 +1,48 @@
 <template>
-  <main class="dev-container">
+  <main class="des-container">
 
-    <div class="dev-nav-tablet">
-      <a class="dev-nav-tablet__item" href="">about</a>
-      <a class="dev-nav-tablet__item" href="">design</a>
+    <div class="des-nav-tablet">
+      <a class="des-nav-tablet__item" href="">about</a>
+      <a class="des-nav-tablet__item" href="">dev</a>
     </div>
 
-    <div class="dev-title">
-      DEVELOPMENT
+    <div class="des-title">
+      DESIGN
     </div>
 
 
-    <div class="dev-list">
+    <div class="des-list">
 
       <simplebar
         :style="`--scrollPos: ${scrollPosition}; --scrollPosDeg: ${scrollPositionDeg};`"
-        class="dev-list__simplebar"
+        class="des-list__simplebar"
 
         data-simplebar-auto-hide="false"
         data-simplebar-direction="rtl"
         @scroll="getScrollPosition">
-        <button class="dev-item" @click="showModal(projectList.project_one)">This Portfolio ONE</button>
-        <button class="dev-item" @click="showModal(projectList.project_one)">This Portfolio TWO</button>
-        <button class="dev-item" @click="showModal(projectList.project_one)">This Portfolio THRE</button>
-        <button class="dev-item" @click="showModal(projectList.project_one)">This Portfolio FOUR</button>
-        <button class="dev-item" @click="showModal(projectList.project_one)">This Portfolio FIVE</button>
+        <button class="des-item" @click="showModal(projectList.project_one)">This Portfolio ONE</button>
+        <button class="des-item" @click="showModal(projectList.project_one)">This Portfolio TWO</button>
+        <button class="des-item" @click="showModal(projectList.project_one)">This Portfolio THRE</button>
+        <button class="des-item" @click="showModal(projectList.project_one)">This Portfolio FOUR</button>
+        <button class="des-item" @click="showModal(projectList.project_one)">This Portfolio FIVE</button>
       </simplebar>
 
 
     </div>
-    <div class="dev-nav">
-      <a class="dev-nav__item" href="">about</a>
-      <a class="dev-nav__item" href="">design</a>
+    <div class="des-nav">
+      <a class="des-nav__item" href="">about</a>
+      <a class="des-nav__item" href="">dev</a>
 
     </div>
 
 
-    <div v-if="isModalVisible" class="dev-modal">
-      <button class="dev-modal__close" @click="closeModal()">X</button>
+    <div v-if="isModalVisible" class="des-modal">
+      <button class="des-modal__close" @click="closeModal()">X</button>
 
-      <h1 class="dev-modal__title">{{ this.currentModalProject.title }}</h1>
+      <h1 class="des-modal__title">{{ this.currentModalProject.title }}</h1>
 
-      <div class="dev-modal__body-image-wrapper">
-        <div class="dev-modal__body">
+      <div class="des-modal__body-image-wrapper">
+        <div class="des-modal__body">
           <p v-for="paragraph in this.currentModalProject.description">{{ paragraph }}</p>
         </div>
 
@@ -51,7 +51,7 @@
       </div>
 
       <a href="#">
-        <img alt="" class="dev-modal__github" src="../assets/images/github.svg">
+        <img alt="" class="des-modal__github" src="../assets/images/github.svg">
       </a>
 
     </div>
@@ -66,7 +66,7 @@ import simplebar from 'simplebar-vue';
 import 'simplebar/dist/simplebar.min.css';
 
 export default {
-  name: "development",
+  name: "deselopment",
   components: {
     simplebar
   },
@@ -190,7 +190,7 @@ export default {
 
 // ====  ON MOBILE
 // =  Dev Background - mobile
-.dev-container {
+.des-container {
   width: 100%;
 
   background-color: black;
@@ -205,13 +205,13 @@ export default {
 }
 
 // =  Dev Text Defaults - mobile
-.dev-container, .dev-item, .dev-nav-tablet {
+.des-container, .des-item, .des-nav-tablet {
   color: white;
   font-family: "Blue Screen Personal Use", "Consolas", Courier, monospace;
   text-shadow: 0px 0px 10px #000000;
 }
 
-.dev-title {
+.des-title {
   font-size: 3em;
   padding: 20px 0 20px 0;
   width: 100%;
@@ -219,7 +219,7 @@ export default {
 }
 
 // =  Dev List - mobile
-.dev-list {
+.des-list {
   width: 100%;
   height: 70vh;
 
@@ -227,7 +227,7 @@ export default {
 }
 
 // =  Dev List Item - mobile
-.dev-item {
+.des-item {
   background-image: url("../assets/images/dev-item-mobile-bg.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -249,18 +249,18 @@ export default {
 }
 
 // =  Dev Nav - mobile
-.dev-nav {
+.des-nav {
   display: flex;
   justify-content: space-around;
   padding-top: 6%;
 }
 
-.dev-nav__item {
+.des-nav__item {
   font-size: 2em;
 }
 
 // =  Dev Modal - mobile
-.dev-modal {
+.des-modal {
 
   padding: 20px;
 
@@ -274,20 +274,20 @@ export default {
 
   color: white;
 
-  .dev-modal__close {
+  .des-modal__close {
     background-color: white;
     color: black;
     width: 27px;
     float: right;
   }
 
-  .dev-modal__title {
+  .des-modal__title {
     font-family: 'IBM Plex Mono', monospace;
     font-style: italic;
     text-decoration: underline;
   }
 
-  .dev-modal__github {
+  .des-modal__github {
     position: absolute;
     width: 23px;
     top: 72px;
@@ -295,11 +295,11 @@ export default {
   }
 
 
-  .dev-modal__body-image-wrapper {
+  .des-modal__body-image-wrapper {
     height: 99%;
 
 
-    .dev-modal__body {
+    .des-modal__body {
 
       &::-webkit-scrollbar {
         background: transparent;
@@ -340,7 +340,7 @@ export default {
 
 }
 
-.dev-nav-tablet {
+.des-nav-tablet {
   display: none;
 }
 
@@ -352,22 +352,22 @@ $breakpoint-mobile: 501px;
 @media (min-width: $breakpoint-mobile) {
 
   // = Deb Simplebar - tablet
-  .dev-list__simplebar {
+  .des-list__simplebar {
     height: 70vh;
     direction: rtl;
   }
 
   // =  Dev Background - tablet
-  .dev-container {
+  .des-container {
 
   }
 
   // =  Dev Text Defaults - tablet
-  .dev-container, .dev-item {
+  .des-container, .des-item {
 
   }
 
-  .dev-title {
+  .des-title {
     text-align: left;
     padding-left: 9vw;
     pointer-events: none;
@@ -376,7 +376,7 @@ $breakpoint-mobile: 501px;
   }
 
   // =  Dev List - tablet
-  .dev-list {
+  .des-list {
     height: auto;
     overflow: unset;
 
@@ -386,7 +386,7 @@ $breakpoint-mobile: 501px;
   }
 
   // =  Dev List Item - tablet
-  .dev-item {
+  .des-item {
     padding: 70px;
     width: 75%;
 
@@ -397,17 +397,17 @@ $breakpoint-mobile: 501px;
   }
 
   // =  Dev Nav - tablet
-  .dev-nav {
+  .des-nav {
     display: none;
   }
 
-  .dev-nav-tablet {
+  .des-nav-tablet {
     display: flex;
     justify-content: space-between;
 
     padding: 5vh 9vw 6vh 9vw;
 
-    .dev-nav-tablet__item {
+    .des-nav-tablet__item {
       font-size: 1.5em;
     }
 
@@ -415,23 +415,23 @@ $breakpoint-mobile: 501px;
 
 
   // =  Dev Modal - tablet
-  .dev-modal {
+  .des-modal {
 
 
-    .dev-modal__close {
-
-    }
-
-    .dev-modal__title {
+    .des-modal__close {
 
     }
 
-    .dev-modal__github {
+    .des-modal__title {
 
     }
 
-    .dev-modal__body-image-wrapper {
-      .dev-modal__body {
+    .des-modal__github {
+
+    }
+
+    .des-modal__body-image-wrapper {
+      .des-modal__body {
         width: 60vw;
 
         font-size: .9em;
@@ -449,23 +449,23 @@ $breakpoint-mobile: 501px;
 @media (min-width: $breakpoint-tablet) {
 
   // = Deb Simplebar - desktop
-  .dev-list__simplebar {
+  .des-list__simplebar {
     height: 90vh;
     direction: rtl;
   }
 
   // =  Dev Background - desktop
-  .dev-container {
+  .des-container {
     background-image: url("../assets/images/big-bg3.png");
     background-size: 100% 1100px;
   }
 
   // =  Dev Text Defaults - desktop
-  .dev-container, .dev-item {
+  .des-container, .des-item {
 
   }
 
-  .dev-title {
+  .des-title {
     padding-left: 0;
     margin-top: -100px;
 
@@ -479,7 +479,7 @@ $breakpoint-mobile: 501px;
   }
 
   // =  Dev List - desktop
-  .dev-list {
+  .des-list {
     width: 50%;
     position: fixed;
     right: 0;
@@ -488,7 +488,7 @@ $breakpoint-mobile: 501px;
   }
 
   // =  Dev List Item - desktop
-  .dev-item {
+  .des-item {
     width: 40vw;
 
     &:last-child {
@@ -497,14 +497,14 @@ $breakpoint-mobile: 501px;
   }
 
   // =  Dev Nav - desktop
-  .dev-nav-tablet {
+  .des-nav-tablet {
 
     width: 50%;
     display: flex;
     justify-content: space-between;
     padding: 40px 40px 0 40px;
 
-    .dev-nav-tablet__item {
+    .des-nav-tablet__item {
 
     }
 
@@ -512,25 +512,25 @@ $breakpoint-mobile: 501px;
 
 
   // =  Dev Modal - desktop
-  .dev-modal {
+  .des-modal {
 
 
-    .dev-modal__close {
-
-    }
-
-    .dev-modal__title {
+    .des-modal__close {
 
     }
 
-    .dev-modal__github {
+    .des-modal__title {
 
     }
 
-    .dev-modal__body-image-wrapper {
+    .des-modal__github {
+
+    }
+
+    .des-modal__body-image-wrapper {
       display: flex;
 
-      .dev-modal__body {
+      .des-modal__body {
         width: 90vw;
         max-height: 100%;
         max-width: 600px;
