@@ -20,11 +20,21 @@
         data-simplebar-auto-hide="false"
         data-simplebar-direction="rtl"
         @scroll="getScrollPosition">
-        <button class="des-item" @click="showModal(projectList.project_one)">This Portfolio ONE</button>
-        <button class="des-item" @click="showModal(projectList.project_one)">This Portfolio TWO</button>
-        <button class="des-item" @click="showModal(projectList.project_one)">This Portfolio THRE</button>
-        <button class="des-item" @click="showModal(projectList.project_one)">This Portfolio FOUR</button>
-        <button class="des-item" @click="showModal(projectList.project_one)">This Portfolio FIVE</button>
+        <button class="des-item" @click="showModal(projectList.project_one)">
+          <img src="../assets/images/design/excalibur.png" alt="">
+        </button>
+        <button class="des-item" @click="showModal(projectList.project_one)">
+          <img src="../assets/images/design/messed-up.png" alt="">
+        </button>
+        <button class="des-item" @click="showModal(projectList.project_one)">
+          <img src="../assets/images/design/red-mist.png" alt="">
+        </button>
+        <button class="des-item" @click="showModal(projectList.project_one)">
+          <img src="../assets/images/design/silent.png" alt="">
+        </button>
+        <button class="des-item" @click="showModal(projectList.project_one)">
+          <img src="../assets/images/design/sinful.png" alt="">
+        </button>
       </simplebar>
 
 
@@ -46,7 +56,7 @@
           <p v-for="paragraph in this.currentModalProject.description">{{ paragraph }}</p>
         </div>
 
-        <silent-box :gallery="this.currentModalProject.images" :preview-count="3"></silent-box>
+        <silent-box :gallery="this.currentModalProject.images" :preview-count="1"></silent-box>
 
       </div>
 
@@ -66,7 +76,7 @@ import simplebar from 'simplebar-vue';
 import 'simplebar/dist/simplebar.min.css';
 
 export default {
-  name: "deselopment",
+  name: "design",
   components: {
     simplebar
   },
@@ -92,38 +102,8 @@ export default {
           ],
           images: [
             {
-              src: require('assets/images/placeholder.png'),
-              srcSet: require('assets/images/placeholder.png'),
-              description: 'Sunken dreams II. by Arbebuk',
-              thumbnailWidth: '1600px',
-            },
-            {
-              src: require('assets/images/placeholder.png'),
-              srcSet: require('assets/images/placeholder.png'),
-              description: 'Sunken dreams II. by Arbebuk',
-              thumbnailWidth: '1600px',
-            },
-            {
-              src: require('assets/images/placeholder.png'),
-              srcSet: require('assets/images/placeholder.png'),
-              description: 'Sunken dreams II. by Arbebuk',
-              thumbnailWidth: '1600px',
-            },
-            {
-              src: require('assets/images/tester1.png'),
-              srcSet: require('assets/images/tester1.png'),
-              description: 'Sunken dreams II. by Arbebuk',
-              thumbnailWidth: '1600px',
-            },
-            {
-              src: require('assets/images/tester2.png'),
-              srcSet: require('assets/images/tester2.png'),
-              description: 'Sunken dreams II. by Arbebuk',
-              thumbnailWidth: '1600px',
-            },
-            {
-              src: require('assets/images/tester3.png'),
-              srcSet: require('assets/images/tester3.png'),
+              src: require('assets/images/design/excalibur.png'),
+              srcSet: require('assets/images/design/excalibur.png'),
               description: 'Sunken dreams II. by Arbebuk',
               thumbnailWidth: '1600px',
             },
@@ -195,7 +175,7 @@ export default {
 
   background-color: black;
   background-image: url("../assets/images/mobile-bg.png");
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   background-position: center;
 
   background-size: 100% 1500px;
@@ -228,18 +208,16 @@ export default {
 
 // =  Dev List Item - mobile
 .des-item {
-  background-image: url("../assets/images/dev-item-mobile-bg.png");
   background-repeat: no-repeat;
   background-size: cover;
 
   color: white;
   width: 100%;
 
-  padding: 50px;
-
   text-align: center;
-
   font-size: 1.5em;
+
+  padding: 50px;
 
   margin-bottom: 20px;
 
@@ -313,9 +291,6 @@ export default {
 
       }
 
-      padding-top: 10px;
-      padding-left: 5px;
-      padding-right: 15px;
 
       padding: 10px 25px 0 5px;
 
@@ -345,6 +320,7 @@ export default {
 }
 
 /* BreakPoints */
+$breakpoint-desktopxl: 930px;
 $breakpoint-tablet: 930px;
 $breakpoint-mobile: 501px;
 
@@ -387,12 +363,13 @@ $breakpoint-mobile: 501px;
 
   // =  Dev List Item - tablet
   .des-item {
-    padding: 70px;
-    width: 75%;
+    width: 85%;
 
+    padding: 0 120px;
+
+    margin-bottom: 100px;
 
     &:last-child {
-
     }
   }
 
@@ -489,7 +466,9 @@ $breakpoint-mobile: 501px;
 
   // =  Dev List Item - desktop
   .des-item {
-    width: 40vw;
+    width: 42vw;
+
+    padding: 100px 30px;
 
     &:last-child {
 
@@ -566,7 +545,7 @@ $breakpoint-mobile: 501px;
 
 .simplebar-scrollbar:before {
 
-  top: calc(var(--scrollPos) - (var(--scrollPos) * .21)) !important;
+  top: calc(var(--scrollPos) - (var(--scrollPos) * .8)) !important;
 
   background-image: url("./assets/images/scroll-thumb-arrow2.svg") !important;
   background-repeat: no-repeat;
@@ -607,7 +586,9 @@ $breakpoint-mobile: 501px;
   .simplebar-track {
     margin-left: 2vw;
 
-    padding: 10px 3vw 0 3vw;
+    padding: 10px 2.5vw 0 2.5vw;
+
+    background-size: cover;
 
   }
 
@@ -617,7 +598,7 @@ $breakpoint-mobile: 501px;
 
   .simplebar-scrollbar:before {
 
-    top: calc(var(--scrollPos) - (var(--scrollPos) * .12)) !important;
+    top: calc(var(--scrollPos) - (var(--scrollPos) * .7)) !important;
 
 
   }
