@@ -468,7 +468,7 @@ $breakpoint-mobile: 501px;
   .des-item {
     width: 42vw;
 
-    padding: 100px 30px;
+    padding: 0 30px;
 
     &:last-child {
 
@@ -619,11 +619,13 @@ $breakpoint-mobile: 501px;
 .silentbox-item {
   margin-right: 20px;
 
+  width: 100%;
+
 }
 
 .silentbox-item > img {
-  height: 211px;
-  max-width: 145px;
+  height: 200px;
+
   object-fit: cover;
 }
 
@@ -637,11 +639,11 @@ $breakpoint-mobile: 501px;
 
   .silentbox-item {
     margin-right: 0;
-
   }
 
   .silentbox-item > img {
-    max-width: 90% !important;
+    max-width: 90% ;
+    height: 100%;
   }
 
 
