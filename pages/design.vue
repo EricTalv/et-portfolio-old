@@ -2,12 +2,14 @@
   <main class="des-container">
 
     <div class="des-nav-tablet">
-      <a class="des-nav-tablet__item" href="">about</a>
-      <a class="des-nav-tablet__item" href="">dev</a>
+      <a class="des-nav-tablet__item" href="/about">about</a>
+      <a class="des-nav-tablet__item" href="/development">dev</a>
     </div>
 
-    <div class="des-title">
-      DESIGN
+    <div class="des-title-container">
+      <button class="des-title-container__title-btn" @click="showAboutModal()">
+        DESIGN
+      </button>
     </div>
 
 
@@ -20,21 +22,14 @@
         data-simplebar-auto-hide="false"
         data-simplebar-direction="rtl"
         @scroll="getScrollPosition">
-        <button class="des-item" @click="showModal(projectList.project_one)">
-          <img src="../assets/images/design/excalibur.png" alt="">
+
+        <button class="des-item" @click="showModal(projectList.excalibur)">
+          <img alt="" src="../assets/images/design/excalibur.png">
         </button>
-        <button class="des-item" @click="showModal(projectList.project_one)">
-          <img src="../assets/images/design/messed-up.png" alt="">
+        <button class="des-item" @click="showModal(projectList.messed_up)">
+          <img alt="" src="../assets/images/design/messed-up.png">
         </button>
-        <button class="des-item" @click="showModal(projectList.project_one)">
-          <img src="../assets/images/design/red-mist.png" alt="">
-        </button>
-        <button class="des-item" @click="showModal(projectList.project_one)">
-          <img src="../assets/images/design/silent.png" alt="">
-        </button>
-        <button class="des-item" @click="showModal(projectList.project_one)">
-          <img src="../assets/images/design/sinful.png" alt="">
-        </button>
+
       </simplebar>
 
 
@@ -47,23 +42,37 @@
 
 
     <div v-if="isModalVisible" class="des-modal">
-      <button class="des-modal__close" @click="closeModal()">X</button>
+      <button class="des-modal__close" @click="closeModal()"></button>
 
-      <h1 class="des-modal__title">{{ this.currentModalProject.title }}</h1>
 
       <div class="des-modal__body-image-wrapper">
-        <div class="des-modal__body">
-          <p v-for="paragraph in this.currentModalProject.description">{{ paragraph }}</p>
+
+
+        <div class="des-modal-body-wrapper">
+
+          <h1 class="des-modal__title">{{ this.currentModalProject.title }}</h1>
+
+          <div class="des-modal__body">
+            <p v-for="paragraph in this.currentModalProject.description" >{{ paragraph }}</p>
+
+          </div>
+
         </div>
 
         <silent-box :gallery="this.currentModalProject.images" :preview-count="1"></silent-box>
 
       </div>
 
-      <a href="#">
-        <img alt="" class="des-modal__github" src="../assets/images/github.svg">
-      </a>
+    </div>
 
+
+    <div v-if="aboutModal.visible" class="des-about-modal">
+      <button class="des-about-modal__close" @click="closeModal()"></button>
+
+      <div class="des-about-modal-body-wrapper">
+        <div class="des-about-modal__title">{{ this.aboutModal.title }}</div>
+        <div class="des-about-modal__body" v-html="this.aboutModal.desc"></div>
+      </div>
     </div>
 
 
@@ -89,44 +98,44 @@ export default {
       scrollPosition: 0 + "%",
       scrollPositionDeg: 0 + "%",
 
+      aboutModal: {
+        visible: false,
+        title: 'In The Name Of Design',
+        desc: `Come forth to my curated selection of what I believe are <i><u>some</u></i> of my better works`
+      },
+
       projectList: {
-        project_one: {
-          title: "This Portfolio ONE",
+        excalibur: {
+          title: "Excalibur",
           description: [
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab odio provident quo voluptate. Doloribus et fugit officiis quaerat reprehenderit sunt?\n",
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis eaque enim est excepturi facilis illum repellat veniam? Alias blanditiis cum dolore, quae qui quibusdam sequi. Architecto debitis dolor ipsa molestiae nobis repellat repudiandae, sequi ut!\n",
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus magnam odit placeat quae reiciendis vero.\n",
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, eum exercitationem impedit laudantium officiis voluptatum?\n",
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aut eligendi id impedit labore magni officiis omnis quae repellendus vel! Atque aut consequatur ea eaque facilis fugit illo in reiciendis?\n",
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, architecto blanditiis corporis dicta, ducimus eaque explicabo fugit harum hic ipsam minus ratione. A, aliquid autem beatae ea facilis fugit illum placeat quod sequi totam! Architecto autem expedita in ipsam labore omnis ratione rem rerum veritatis voluptatum! Accusamus, aliquid beatae commodi excepturi, iste laboriosam libero mollitia odit porro quia quos repellendus, voluptate? Corporis, praesentium, voluptate? Accusantium consequatur deleniti deserunt distinctio error et eum eveniet ex fuga iusto, modi molestiae, pariatur placeat quia quo sequi vitae voluptas voluptatibus. Aliquid cum hic ipsum possimus recusandae. Ab, laborum, ut. Aut minima quia quidem velit.\n"
+            "Excalibur Description"
+
           ],
           images: [
             {
               src: require('assets/images/design/excalibur.png'),
               srcSet: require('assets/images/design/excalibur.png'),
-              description: 'Sunken dreams II. by Arbebuk',
+              description: 'Exaclibur',
               thumbnailWidth: '1600px',
             },
           ]
-
         },
-        project_two: {
-          title: "This Portfolio TWO",
+
+        messed_up: {
+          title: "Messed Up",
           description: [
-            "This is some text one",
-            "This is some text Three",
-            "This is some text Two"
+            "Excalibur Description"
+
+          ],
+          images: [
+            {
+              src: require('assets/images/design/messed-up.png'),
+              srcSet: require('assets/images/design/messed-up.png'),
+              description: 'Messed Up',
+              thumbnailWidth: '1600px',
+            },
           ]
         },
-        project_three: {
-          title: "This Portfolio THREE",
-          description: [
-            "This is some text one",
-            "This is some text Three",
-            "This is some text Two"
-          ]
-
-        }
       }
     }
   },
@@ -134,11 +143,16 @@ export default {
   methods: {
     closeModal() {
       this.isModalVisible = false
+      this.aboutModal.visible = false
     },
 
     showModal(currentModalProject) {
       this.isModalVisible = true
       this.currentModalProject = currentModalProject
+    },
+
+    showAboutModal() {
+      this.aboutModal.visible = true
     },
 
     /* Get scrollbar-thumb position */
@@ -185,17 +199,29 @@ export default {
 }
 
 // =  Dev Text Defaults - mobile
-.des-container, .des-item, .des-nav-tablet {
+.des-container, .des-item, .des-nav-tablet, .des-title-container__title-btn {
   color: white;
   font-family: "Blue Screen Personal Use", "Consolas", Courier, monospace;
   text-shadow: 0px 0px 10px #000000;
 }
 
-.des-title {
+.des-title-container {
   font-size: 3em;
   padding: 20px 0 20px 0;
   width: 100%;
   text-align: center;
+
+  .des-title-container__title-btn {
+    outline: none;
+
+    transition: all .5s;
+
+    &:hover {
+      letter-spacing: 5px;
+    }
+
+  }
+
 }
 
 // =  Dev List - mobile
@@ -231,16 +257,75 @@ export default {
   display: flex;
   justify-content: space-around;
   padding-top: 6%;
+
+
+  .des-nav__item {
+    font-size: 2em;
+
+
+
+  }
+
 }
 
-.des-nav__item {
-  font-size: 2em;
+// =  Dev ABOUT Modal - mobile
+.des-about-modal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  background-color: black;
+  color: white;
+
+  padding: 50px;
+
+  font-family: 'IBM Plex Mono', monospace;
+
+
+  .des-about-modal__close {
+    background-image: url("./assets/images/closebutton.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    float: right;
+
+    width: 30px;
+    height: 30px;
+  }
+
+
+  .des-about-modal-body-wrapper {
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+
+
+    .des-about-modal__title {
+      text-decoration: underline;
+      margin-bottom: 10px;
+    }
+
+    .des-about-modal__body {
+      font-size: .8em;
+
+      text-align: center;
+
+      padding: 0 100px;
+
+    }
+
+  }
 }
+
 
 // =  Dev Modal - mobile
 .des-modal {
 
-  padding: 20px;
+  padding: 0;
 
   position: absolute;
   width: 100%;
@@ -253,10 +338,16 @@ export default {
   color: white;
 
   .des-modal__close {
-    background-color: white;
-    color: black;
-    width: 27px;
-    float: right;
+    background-image: url("./assets/images/closebutton.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    position: absolute;
+
+    right: 0;
+    width: 30px;
+    height: 30px;
   }
 
   .des-modal__title {
@@ -274,49 +365,68 @@ export default {
 
 
   .des-modal__body-image-wrapper {
-    height: 99%;
+    height: 100%;
 
 
-    .des-modal__body {
+    .des-modal-body-wrapper {
 
-      &::-webkit-scrollbar {
-        background: transparent;
-        width: 5px;
-      }
+      padding: 20px;
 
 
-      &::-webkit-scrollbar-thumb {
-        background: white;
-        border-radius: 50px;
 
-      }
+      .des-modal__body {
 
 
-      padding: 10px 25px 0 5px;
 
-      width: 70vw;
-      max-height: 65%;
-
-
-      font-family: "IBM Plex Mono", monospace;
-      font-weight: 300;
-      font-size: .8em;
-
-      overflow: auto;
+        &::-webkit-scrollbar {
+          background: transparent;
+          width: 5px;
+        }
 
 
-      p {
-        margin-bottom: 15px;
+        &::-webkit-scrollbar-thumb {
+          background: white;
+          border-radius: 50px;
 
+        }
+
+
+        padding: 10px 25px 0 5px;
+
+        width: 70%;
+        max-height: 500px;
+
+
+        font-family: "IBM Plex Mono", monospace;
+        font-weight: 300;
+        font-size: .8em;
+
+        overflow: auto;
+
+
+        p {
+          margin-bottom: 15px;
+
+        }
       }
     }
   }
-
 
 }
 
 .des-nav-tablet {
   display: none;
+
+  .des-nav-tablet__item {
+    transition: all .5s;
+
+    &:hover {
+      letter-spacing: 5px;
+
+    }
+
+  }
+
 }
 
 /* BreakPoints */
@@ -343,10 +453,9 @@ $breakpoint-mobile: 501px;
 
   }
 
-  .des-title {
+  .des-title-container {
     text-align: left;
     padding-left: 9vw;
-    pointer-events: none;
 
 
   }
@@ -390,6 +499,29 @@ $breakpoint-mobile: 501px;
 
   }
 
+  // =  Dev ABOUT Modal - tablet
+  .des-about-modal {
+
+    .des-about-modal__close {
+
+    }
+
+
+    .des-about-modal-body-wrapper {
+
+      .des-about-modal__title {
+        font-size: 2em;
+        margin-bottom: 20px;
+      }
+
+      .des-about-modal__body {
+        font-size: 1.5em;
+      }
+
+    }
+
+  }
+
 
   // =  Dev Modal - tablet
   .des-modal {
@@ -408,11 +540,17 @@ $breakpoint-mobile: 501px;
     }
 
     .des-modal__body-image-wrapper {
-      .des-modal__body {
-        width: 60vw;
 
-        font-size: .9em;
+      .des-modal-body-wrapper {
+        .des-modal__body {
+          width: 60vw;
 
+          max-height: 300px;
+
+
+          font-size: .9em;
+
+        }
       }
     }
 
@@ -425,7 +563,7 @@ $breakpoint-mobile: 501px;
 // ====  Dev media queries - ON DESKTOP ==== ==== ==== ==== ==== ==== ==== ==== ==== ====
 @media (min-width: $breakpoint-tablet) {
 
-  // = Deb Simplebar - desktop
+  // = Dev Simplebar - desktop
   .des-list__simplebar {
     height: 90vh;
     direction: rtl;
@@ -442,16 +580,15 @@ $breakpoint-mobile: 501px;
 
   }
 
-  .des-title {
+  .des-title-container {
     padding-left: 0;
-    margin-top: -100px;
 
     display: flex;
 
     justify-content: center;
     align-items: center;
 
-    height: 100%;
+    height: 80%;
     width: 50%;
   }
 
@@ -489,6 +626,40 @@ $breakpoint-mobile: 501px;
 
   }
 
+  // =  Dev ABOUT Modal - desk
+  .des-about-modal {
+
+    position: fixed;
+
+    height: 40%;
+    width: 70%;
+
+    top: 30%;
+    transform: translateY(-50%);
+    left: 50%;
+    transform: translateX(-50%);
+
+
+    .des-about-modal__close {
+
+    }
+
+
+    .des-about-modal-body-wrapper {
+
+
+      .des-about-modal__title {
+        font-size: 1em;
+        margin-bottom: 20px;
+      }
+
+      .des-about-modal__body {
+        font-size: .9em;
+      }
+
+    }
+
+  }
 
   // =  Dev Modal - desktop
   .des-modal {
@@ -499,7 +670,6 @@ $breakpoint-mobile: 501px;
     }
 
     .des-modal__title {
-
     }
 
     .des-modal__github {
@@ -509,11 +679,16 @@ $breakpoint-mobile: 501px;
     .des-modal__body-image-wrapper {
       display: flex;
 
-      .des-modal__body {
-        width: 90vw;
-        max-height: 100%;
-        max-width: 600px;
+      .des-modal-body-wrapper {
+        width: 50%;
+
+        .des-modal__body {
+          width: 100%;
+          max-height: 90%;
+        }
       }
+
+
     }
 
   }
@@ -612,29 +787,27 @@ $breakpoint-mobile: 501px;
   justify-content: space-around;
   max-width: 100%;
   overflow: hidden;
-  padding: 10px;
   margin-top: 15px;
 }
 
 .silentbox-item {
-  margin-right: 20px;
 
   width: 100%;
 
 }
 
 .silentbox-item > img {
-  height: 200px;
 
   object-fit: cover;
 }
 
+
+/* DES - SILENTBOX - DESK */
 @media (min-width: 930px) {
   #silentbox-gallery {
-    flex-flow: column;
-    justify-content: space-between;
     margin: 0;
-    padding: 0 5vw 0 5vw;
+    padding: 0;
+    width: 50%;
   }
 
   .silentbox-item {
@@ -642,7 +815,7 @@ $breakpoint-mobile: 501px;
   }
 
   .silentbox-item > img {
-    max-width: 90% ;
+    width: 100%;
     height: 100%;
   }
 

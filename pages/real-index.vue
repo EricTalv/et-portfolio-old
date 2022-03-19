@@ -7,9 +7,9 @@
         <span class="title--talv">TALVISTE</span>
       </div>
       <div class="nav">
-        <a href="" class="nav__item nav__item--about">about</a>
-        <a href="" class="nav__item nav__item--design">design</a>
-        <a href="" class="nav__item nav__item--dev">development</a>
+        <a href="/about" class="nav__item nav__item--about">about</a>
+        <a href="/design" class="nav__item nav__item--design">design</a>
+        <a href="/development" class="nav__item nav__item--dev">development</a>
       </div>
     </div>
   </main>
