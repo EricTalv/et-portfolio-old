@@ -23,11 +23,17 @@
         data-simplebar-direction="rtl"
         @scroll="getScrollPosition">
 
-        <button class="des-item" @click="showModal(projectList.excalibur)">
-          <img alt="" src="../assets/images/design/excalibur.png">
+        <button class="des-item" @click="showModal(projectList.etxp)">
+          <img alt="" src="../assets/images/design/etxp-posters/images-gif.gif">
         </button>
-        <button class="des-item" @click="showModal(projectList.messed_up)">
-          <img alt="" src="../assets/images/design/messed-up.png">
+        <button class="des-item" @click="showModal(projectList.this_portfolio)">
+          <img alt="" src="../assets/images/design/this-portfolio.jpg">
+        </button>
+        <button class="des-item" @click="showModal(projectList.datagambit)">
+          <img alt="" src="../assets/images/placeholder.png">
+        </button>
+        <button class="des-item" @click="showModal(projectList.greensaar)">
+          <img alt="" src="../assets/images/placeholder.png">
         </button>
 
       </simplebar>
@@ -101,37 +107,146 @@ export default {
       aboutModal: {
         visible: false,
         title: 'In The Name Of Design',
-        desc: `Come forth to my curated selection of what I believe are <i><u>some</u></i> of my better works`
+        desc: `Here's a deeper look into my thought process when it comes to various kinds of design work`
       },
 
       projectList: {
-        excalibur: {
-          title: "Excalibur",
+        etxp: {
+          title: "ETXO",
           description: [
-            "Excalibur Description"
+            "ETXP"
 
           ],
           images: [
             {
-              src: require('assets/images/design/excalibur.png'),
-              srcSet: require('assets/images/design/excalibur.png'),
-              description: 'Exaclibur',
+              src: require('assets/images/design/etxp-posters/images-gif.gif'),
+              srcSet: require('assets/images/design/etxp-posters/images-gif.gif'),
+              description: '',
+              thumbnailWidth: '1600px',
+            },
+
+            {
+              src: require('assets/images/design/etxp-posters/xanax.jpg'),
+              srcSet: require('assets/images/design/etxp-posters/xanax.jpg'),
+              description: '',
+              thumbnailWidth: '1600px',
+            },
+
+            {
+              src: require('assets/images/design/etxp-posters/excalibur.jpg'),
+              srcSet: require('assets/images/design/etxp-posters/excalibur.jpg'),
+              description: '',
+              thumbnailWidth: '1600px',
+            },
+
+            {
+              src: require('assets/images/design/etxp-posters/lost-in-space.jpeg'),
+              srcSet: require('assets/images/design/etxp-posters/lost-in-space.jpeg'),
+              description: '',
+              thumbnailWidth: '1600px',
+            },
+
+            {
+              src: require('assets/images/design/etxp-posters/messed-up.jpg'),
+              srcSet: require('assets/images/design/etxp-posters/messed-up.jpg'),
+              description: '',
+              thumbnailWidth: '1600px',
+            },
+
+            {
+              src: require('assets/images/design/etxp-posters/nothing-really-matters.jpg'),
+              srcSet: require('assets/images/design/etxp-posters/nothing-really-matters.jpg'),
+              description: '',
+              thumbnailWidth: '1600px',
+            },
+
+            {
+              src: require('assets/images/design/etxp-posters/placebo.jpg'),
+              srcSet: require('assets/images/design/etxp-posters/placebo.jpg'),
+              description: '',
+              thumbnailWidth: '1600px',
+            },
+
+            {
+              src: require('assets/images/design/etxp-posters/red-mist.jpg'),
+              srcSet: require('assets/images/design/etxp-posters/red-mist.jpg'),
+              description: '',
+              thumbnailWidth: '1600px',
+            },
+
+            {
+              src: require('assets/images/design/etxp-posters/silent.jpg'),
+              srcSet: require('assets/images/design/etxp-posters/silent.jpg'),
+              description: '',
+              thumbnailWidth: '1600px',
+            },
+
+            {
+              src: require('assets/images/design/etxp-posters/sinful.jpg'),
+              srcSet: require('assets/images/design/etxp-posters/sinful.jpg'),
+              description: '',
+              thumbnailWidth: '1600px',
+            },
+
+            {
+              src: require('assets/images/design/etxp-posters/theperfect-circle.jpg'),
+              srcSet: require('assets/images/design/etxp-posters/theperfect-circle.jpg'),
+              description: '',
+              thumbnailWidth: '1600px',
+            },
+
+            {
+              src: require('assets/images/design/etxp-posters/everythings-the-same.jpg'),
+              srcSet: require('assets/images/design/etxp-posters/everythings-the-same.jpg'),
+              description: '',
               thumbnailWidth: '1600px',
             },
           ]
         },
 
-        messed_up: {
-          title: "Messed Up",
+        this_portfolio: {
+          title: "This Portfolio",
           description: [
-            "Excalibur Description"
+            "this folio"
 
           ],
           images: [
             {
-              src: require('assets/images/design/messed-up.png'),
-              srcSet: require('assets/images/design/messed-up.png'),
-              description: 'Messed Up',
+              src: require('assets/images/design/this-portfolio.jpg'),
+              srcSet: require('assets/images/design/this-portfolio.jpg'),
+              description: '',
+              thumbnailWidth: '1600px',
+            },
+          ]
+        },
+
+        datagambit: {
+          title: "DataGambit",
+          description: [
+            "DataGambit"
+
+          ],
+          images: [
+            {
+              src: require('assets/images/placeholder.png'),
+              srcSet: require('assets/images/placeholder.png'),
+              description: '',
+              thumbnailWidth: '1600px',
+            },
+          ]
+        },
+
+        greensaar: {
+          title: "GreenSaar",
+          description: [
+            "Greensaar",
+
+          ],
+          images: [
+            {
+              src: require('assets/images/placeholder.png'),
+              srcSet: require('assets/images/placeholder.png'),
+              description: '',
               thumbnailWidth: '1600px',
             },
           ]
@@ -246,6 +361,8 @@ export default {
   padding: 50px;
 
   margin-bottom: 20px;
+
+
 
   &:last-child {
     margin-bottom: 0;
@@ -368,11 +485,10 @@ export default {
     height: 100%;
 
 
+
     .des-modal-body-wrapper {
 
       padding: 20px;
-
-
 
       .des-modal__body {
 
@@ -541,7 +657,10 @@ $breakpoint-mobile: 501px;
 
     .des-modal__body-image-wrapper {
 
+
       .des-modal-body-wrapper {
+
+
         .des-modal__body {
           width: 60vw;
 
@@ -606,6 +725,11 @@ $breakpoint-mobile: 501px;
     width: 42vw;
 
     padding: 0 30px;
+
+    img {
+      width: 100%;
+
+    }
 
     &:last-child {
 
@@ -679,7 +803,14 @@ $breakpoint-mobile: 501px;
     .des-modal__body-image-wrapper {
       display: flex;
 
+      align-items: center;
+
       .des-modal-body-wrapper {
+
+        margin-top: -100px;
+
+        padding: 50px;
+
         width: 50%;
 
         .des-modal__body {
@@ -788,6 +919,7 @@ $breakpoint-mobile: 501px;
   max-width: 100%;
   overflow: hidden;
   margin-top: 15px;
+  height: 100%;
 }
 
 .silentbox-item {

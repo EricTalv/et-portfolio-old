@@ -1,12 +1,9 @@
 <template>
   <main class="about_container">
 
-
-
-
     <div class="nav">
       <a class="nav--item" href="/design">design</a>
-      <a class="nav--item" href="/dev">dev</a>
+      <a class="nav--item" href="/development">dev</a>
     </div>
 
     <div class="about_body_wrapper">
@@ -23,19 +20,19 @@
           <div class="text_group--description">eric@erictalviste.com</div>
         </div>
         <div class="link_group">
-          <a href="#">
+          <a target="_blank" href="https://www.behance.net/erictalviste6">
             <img src="../assets/images/social-icons/behance.svg" alt="">
           </a>
-          <a href="#">
+          <a target="_blank" href="https://dribbble.com/EricTalv">
             <img src="../assets/images/social-icons/dribbble.svg" alt="">
           </a>
-          <a href="#">
+          <a target="_blank" href="https://www.instagram.com/et_experience/">
             <img src="../assets/images/social-icons/instagram.svg" alt="">
           </a>
-          <a href="#">
+          <a target="_blank" href="https://github.com/EricTalv">
             <img src="../assets/images/social-icons/github.svg" alt="">
           </a>
-          <a href="#">
+          <a target="_blank" href="https://www.linkedin.com/in/erictalviste/">
             <img src="../assets/images/social-icons/linkedin.svg" alt="">
           </a>
 
@@ -103,6 +100,18 @@ $breakpoint-mobile: 501px;
     .link_group {
       display: flex;
       justify-content: center;
+
+
+      a {
+
+        transition: all .5s;
+
+
+        &:hover {
+          opacity: .5;
+        }
+      }
+
     }
 
   }
@@ -119,6 +128,13 @@ $breakpoint-mobile: 501px;
     justify-content: space-around;
 
     .nav--item {
+      font-size: 1.5em;
+
+      transition: all .5s;
+
+      &:hover {
+        letter-spacing: 5px;
+      }
     }
   }
 

@@ -22,11 +22,13 @@
         data-simplebar-auto-hide="false"
         data-simplebar-direction="rtl"
         @scroll="getScrollPosition">
-        <button class="dev-item" @click="showModal(projectList.project_one)">This Portfolio</button>
-        <button class="dev-item" @click="showModal(projectList.project_one)">This Portfolio</button>
-        <button class="dev-item" @click="showModal(projectList.project_one)">This Portfolio</button>
-        <button class="dev-item" @click="showModal(projectList.project_one)">This Portfolio</button>
-        <button class="dev-item" @click="showModal(projectList.project_one)">This Portfolio</button>
+        <button class="dev-item" @click="showModal(projectList.this_portfolio)">This Portfolio</button>
+        <button class="dev-item" @click="showModal(projectList.luella_photography)">Luella Photography</button>
+        <button class="dev-item" >Coming Soon</button>
+        <button class="dev-item" >Coming Soon</button>
+        <button class="dev-item" >Coming Soon</button>
+        <button class="dev-item" >Coming Soon</button>
+        <button class="dev-item" >Coming Soon</button>
       </simplebar>
 
 
@@ -45,14 +47,14 @@
 
       <div class="dev-modal__body-image-wrapper">
         <div class="dev-modal__body">
-          <p v-for="paragraph in this.currentModalProject.description">{{ paragraph }}</p>
+          <p v-for="paragraph in this.currentModalProject.description" v-html="paragraph"></p>
         </div>
 
         <silent-box :gallery="this.currentModalProject.images" :preview-count="3"></silent-box>
 
       </div>
 
-      <a href="#">
+      <a target="_blank" v-if="this.currentModalProject.github" :href="this.currentModalProject.github">
         <img alt="" class="dev-modal__github" src="../assets/images/github.svg">
       </a>
 
@@ -63,7 +65,7 @@
 
       <div class="des-about-modal-body-wrapper">
         <div class="des-about-modal__title">{{ this.aboutModal.title }}</div>
-        <div class="des-about-modal__body">{{ this.aboutModal.desc }}</div>
+        <div class="des-about-modal__body" >{{ this.aboutModal.desc }}</div>
       </div>
     </div>
 
@@ -93,20 +95,53 @@ export default {
       aboutModal: {
         visible: false,
         title: 'On The Look For a Semicolon',
-        desc: 'Here are some of my works in the web-development realm'
+        desc: 'Here are various project where I have primarily dealt with different web-software technicalities and real coding work'
       },
 
       projectList: {
-        project_one: {
+        this_portfolio: {
+          github: "https://github.com/EricTalv/et-portfolio",
           title: "This Portfolio",
           description: [
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, architecto blanditiis corporis dicta, ducimus eaque explicabo fugit harum hic ipsam minus ratione. A, aliquid autem beatae ea facilis fugit illum placeat quod sequi totam! Architecto autem expedita in ipsam labore omnis ratione rem rerum veritatis voluptatum! Accusamus, aliquid beatae commodi excepturi, iste laboriosam libero mollitia odit porro quia quos repellendus, voluptate? Corporis, praesentium, voluptate? Accusantium consequatur deleniti deserunt distinctio error et eum eveniet ex fuga iusto, modi molestiae, pariatur placeat quia quo sequi vitae voluptas voluptatibus. Aliquid cum hic ipsum possimus recusandae. Ab, laborum, ut. Aut minima quia quidem velit.\n"
-          ],
+            "This portfolio has been built from the ground up with vue.js, running on-top of my favourite framework nuxt and hosted on netlify.",
+            "This time around I decided not to use any CSS libraries, only the pre-processor SCSS is my helping hand in this regard.",
+            "I’ve decided to go this route, as I’ve found creating such more unorthodox designs, CSS libraries seem to limit workflow rather than really help it.",
+            "Probably my most ambitious technicality was creating the quirky rotating scrollbar, who knew that these days scrollbar designs have become rather obsolete.",
+            "My scrollbar isn’t entirely perfect, it definitely poses many UX questions, and also I have yet to entirely figured out how to make the scrolling position scale properly with changing screen heights, thus If you find that on your screen the arrow goes off the screen at the bottom, lets just keep it between each other and pass it off as a design feature ;)",
+            "Creating such a custom site by scratch I have learned so much.",
+            "But one of the primary things that has always changed when building such sites, is workflow methodology, theres always some efficiency, some better productivity foundation that I later incorporate into my work.",
+
+            "Interested specifically about the design process of this site? <a href='/design'><u>See my design section here</u></a>"
+
+             ],
           images: [
             {
               src: require('assets/images/placeholder.png'),
               srcSet: require('assets/images/placeholder.png'),
-              description: 'Sunken dreams II. by Arbebuk',
+              description: '',
+              thumbnailWidth: '1600px',
+            },
+          ]
+        },
+
+        luella_photography: {
+          github: "https://github.com/EricTalv/luella-photography",
+          title: "Luella Photography",
+          description: [
+            "See the site live  <a target='_blank' href='https://luella.photography/'><u>here</u></a>",
+            "Luella Photography Is built with my favourite combo, vue.js, nuxt and ran on netlify",
+            "Much of the sites layout inspiration has been taken from various squarespace themes",
+            "My primary challenge was making the grid have a slight altering pattern with the image width.",
+            "So basically I came up with the grand solution of checking how many images have passed and then adjusting the image size",
+            "Additionally taking in to account that if theres an odd amount of images, the last image should take up the appropriate amount of room",
+            "Looking back at my code, I went way to wild with the maths and I probably could have done this much more simpler with a CSS grid.",
+            "I just enjoy experimenting and trying out different ways of approach to things, it's always a time for exploration."
+             ],
+          images: [
+            {
+              src: require('assets/images/development/luella-photography/luellaphotography-front.jpg'),
+              srcSet: require('assets/images/development/luella-photography/luellaphotography-front.jpg'),
+              description: 'Front page of Luella Photography',
               thumbnailWidth: '1600px',
             },
           ]
