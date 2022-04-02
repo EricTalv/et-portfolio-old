@@ -116,8 +116,20 @@ export default {
              ],
           images: [
             {
-              src: require('assets/images/placeholder.png'),
-              srcSet: require('assets/images/placeholder.png'),
+              src: require('assets/images/big-bg.png'),
+              srcSet: require('assets/images/big-bg.png'),
+              description: '',
+              thumbnailWidth: '1600px',
+            },
+            {
+              src: require('assets/images/big-bg.png'),
+              srcSet: require('assets/images/big-bg.png'),
+              description: '',
+              thumbnailWidth: '1600px',
+            },
+            {
+              src: require('assets/images/big-bg.png'),
+              srcSet: require('assets/images/big-bg.png'),
               description: '',
               thumbnailWidth: '1600px',
             },
@@ -557,7 +569,7 @@ $breakpoint-mobile: 501px;
 
   // =  Dev Background - desktop
   .dev-container {
-    background-image: url("../assets/images/big-bg3.png");
+    background-image: url("../assets/images/desk-bg.webp");
     background-size: 100% 1100px;
   }
 
@@ -750,7 +762,7 @@ $breakpoint-mobile: 501px;
 
   .simplebar-scrollbar:before {
 
-    top: calc(var(--scrollPos) - (var(--scrollPos) * .12)) !important;
+    top: calc(var(--scrollPos) - (var(--scrollPos) * .19)) !important;
 
 
   }

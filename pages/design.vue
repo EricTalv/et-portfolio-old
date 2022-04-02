@@ -24,17 +24,12 @@
         @scroll="getScrollPosition">
 
         <button class="des-item" @click="showModal(projectList.etxp)">
-          <img alt="" src="../assets/images/design/etxp-posters/images-gif.gif">
+          <img alt="" src="../assets/images/design/etxp-posters/coverpic.jpg">
         </button>
         <button class="des-item" @click="showModal(projectList.this_portfolio)">
           <img alt="" src="../assets/images/design/this-portfolio.jpg">
         </button>
-        <button class="des-item" @click="showModal(projectList.datagambit)">
-          <img alt="" src="../assets/images/placeholder.png">
-        </button>
-        <button class="des-item" @click="showModal(projectList.greensaar)">
-          <img alt="" src="../assets/images/placeholder.png">
-        </button>
+
 
       </simplebar>
 
@@ -59,7 +54,7 @@
           <h1 class="des-modal__title">{{ this.currentModalProject.title }}</h1>
 
           <div class="des-modal__body">
-            <p v-for="paragraph in this.currentModalProject.description" >{{ paragraph }}</p>
+            <p v-for="paragraph in this.currentModalProject.description" v-html="paragraph"></p>
 
           </div>
 
@@ -112,15 +107,16 @@ export default {
 
       projectList: {
         etxp: {
-          title: "ETXO",
+          title: "ETXP",
           description: [
-            "ETXP"
+            "ETXP - is my personal digital media experimentation playground, where I try out different techinques and styles",
+            `<a target="_blank" href="https://www.instagram.com/et_experience/"><u>See more of ETXP here</u></a>`,
 
           ],
           images: [
             {
-              src: require('assets/images/design/etxp-posters/images-gif.gif'),
-              srcSet: require('assets/images/design/etxp-posters/images-gif.gif'),
+              src: require('assets/images/design/etxp-posters/coverpic.jpg'),
+              srcSet: require('assets/images/design/etxp-posters/coverpic.jpg'),
               description: '',
               thumbnailWidth: '1600px',
             },
@@ -207,13 +203,20 @@ export default {
         this_portfolio: {
           title: "This Portfolio",
           description: [
-            "this folio"
+            "Much of my work can be derived by the brutalism movement.",
+            "I enjoy the principles of being bold, brave and brutalic, thus was this design born.",
+            "But besides my enjoyment to experimentalism and exploration, there are certain rules when it comes to web-design.",
+            "Granted, here today, I am definitely going to offend many accessibility users and UX designers, I have attempted to stay true to one principle and that is simplicity.",
+            "Though the design might not be that intuitive, like the rotating scrollbar, or the disguised titles as buttons, I have kept away from endless monotony of pages, sub-menus and whatnot.",
+            "The message I wish to convey is that I'm neither truly a dev or a designer, but something of an visual explorer, utilizing web technologies, blending graphic design and interactivity, bending the rules of design as I see fit.",
+            "I believe personal portfolios should convey some insight to the designers/developers character, because character shows who we truly are.",
+
 
           ],
           images: [
             {
-              src: require('assets/images/design/this-portfolio.jpg'),
-              srcSet: require('assets/images/design/this-portfolio.jpg'),
+              src: require('assets/images/mobile-bg.png'),
+              srcSet: require('assets/images/mobile-bg.png'),
               description: '',
               thumbnailWidth: '1600px',
             },
@@ -690,7 +693,7 @@ $breakpoint-mobile: 501px;
 
   // =  Dev Background - desktop
   .des-container {
-    background-image: url("../assets/images/big-bg3.png");
+    background-image: url("../assets/images/desk-bg.webp");
     background-size: 100% 1100px;
   }
 
@@ -904,7 +907,7 @@ $breakpoint-mobile: 501px;
 
   .simplebar-scrollbar:before {
 
-    top: calc(var(--scrollPos) - (var(--scrollPos) * .7)) !important;
+    top: calc(var(--scrollPos) - (var(--scrollPos) * .19)) !important;
 
 
   }
