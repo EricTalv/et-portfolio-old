@@ -34,8 +34,8 @@
 
     </div>
     <div class="dev-nav">
-      <a class="dev-nav__item" href="">about</a>
-      <a class="dev-nav__item" href="">design</a>
+      <a class="dev-nav__item" href="/about">about</a>
+      <a class="dev-nav__item" href="/design">design</a>
 
     </div>
 
